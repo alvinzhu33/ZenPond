@@ -1,7 +1,8 @@
-int xpos = 100;
-int ypos = 50;
-float x = 70;
-float y = 15;
+double xpos = 100;
+double ypos = 50;
+double scale = 
+double x = 70; //create fixed proportions for size 
+//double y = 15;
 
 void setup() {
   size(700,500);
@@ -14,41 +15,46 @@ void draw() {
   fill(255,128,0);
   
 
-  quad(xpos, ypos, xpos+12, ypos-y, xpos-12+x-10, ypos-y, xpos+x-10, ypos);
+  quad(xpos, ypos, xpos+12, ypos-15, xpos+48, ypos-15, xpos+60, ypos);
   
   xpos -= 5;
-  ypos += y;
-  x += 2;
-  quad(xpos, ypos, xpos+5, ypos-y, xpos-7+x, ypos-y, xpos+x, ypos);
+  ypos += 15;
+  quad(xpos, ypos, xpos+5, ypos-15, xpos+65, ypos-15, xpos+72, ypos);
   
   xpos -= 3;
   ypos += y;
   x += 6;
-  quad(xpos, ypos, xpos+3, ypos-y, xpos-3+x, ypos-y, xpos+x, ypos);
+  quad(xpos, ypos, xpos+3, ypos-15, xpos-3+x, ypos-15, xpos+x, ypos);
   
   ypos += y;
-  quad(xpos, ypos, xpos, ypos-y, xpos+x, ypos-y, xpos+x, ypos);
+  quad(xpos, ypos, xpos, ypos-15, xpos+x, ypos-15, xpos+x, ypos);
   
-  for(int i=0; i<2; i++){
-    ypos += y; 
-    xpos += 3;
-    x -= 6;
-    quad(xpos, ypos, xpos-3, ypos-y, xpos+3+x, ypos-y, xpos+x, ypos);
-  }
+  
+  ypos += y; 
+  xpos += 3;
+  x -= 6;
+  quad(xpos, ypos, xpos-3, ypos-15, xpos+3+x, ypos-15, xpos+x, ypos);
+  
+  
+  ypos += y; 
+  xpos += 3;
+  x -= 6;
+  quad(xpos, ypos, xpos-3, ypos-15, xpos+3+x, ypos-15, xpos+x, ypos);
+  
   
   ypos += y; 
   xpos += 5;
   x -= 5;
-  quad(xpos, ypos, xpos-5, ypos-y, xpos+x, ypos-y, xpos+x-5, ypos);
+  quad(xpos, ypos, xpos-5, ypos-15, xpos+x, ypos-15, xpos+x-5, ypos);
   
   ypos += y; 
   xpos += 6;
   x -= 11;
-  quad(xpos, ypos, xpos-6, ypos-y, xpos+x, ypos-y, xpos+x-6, ypos);
+  quad(xpos, ypos, xpos-6, ypos-15, xpos+x, ypos-15, xpos+x-6, ypos);
   
   //xpos -= 1;
   x -= 6;
-  triangle(xpos, ypos, xpos+(0.5*x), ypos+2*y, xpos+x, ypos);
+  triangle(xpos, ypos, xpos+(0.5*x), ypos+30, xpos+x, ypos);
   
   //tail
   xpos += 0.11*x;
