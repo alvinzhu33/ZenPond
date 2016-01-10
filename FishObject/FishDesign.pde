@@ -1,7 +1,8 @@
-double xpos = 100;
-double ypos = 50;
-double scale = 
-double x = 70; //create fixed proportions for size 
+float xpos = 100;
+float ypos = 50;
+float scale = 1; //3 is default
+float x = 70; //create fixed proportions for size
+float y = 15;
 //double y = 15;
 
 void setup() {
@@ -19,7 +20,7 @@ void draw() {
   
   xpos -= 5;
   ypos += 15;
-  quad(xpos, ypos, xpos+5, ypos-15, xpos+65, ypos-15, xpos+72, ypos);
+  quad(xpos, ypos, xpos+5, ypos-15, xpos+65, ypos-15, xpos+70, ypos);
   
   xpos -= 3;
   ypos += y;
@@ -57,28 +58,18 @@ void draw() {
   triangle(xpos, ypos, xpos+(0.5*x), ypos+30, xpos+x, ypos);
   
   //tail
-  xpos += 0.11*x;
-  ypos += 20;
+  xpos += 0.58*x;
+  ypos += 22;
   beginShape();
-  vertex(xpos+20, ypos);
-  
-  bezierVertex(xpos+20, ypos+10, xpos+70, ypos+50, xpos+20, ypos+100);
-  
-  bezierVertex(xpos-20, ypos+70, xpos+40, ypos+30, xpos+5, ypos-20);
-  
+    vertex(xpos, ypos);
+    bezierVertex(xpos-(2*scale*3), ypos+(5*scale*3), xpos+(3*scale*3), ypos+(6*scale*3), xpos+(7*scale*3), ypos+(11*scale*3));
+    bezierVertex(xpos+(10*scale*3), ypos+(15*scale*3), xpos+(14*scale*3), ypos+(21*scale*3), xpos+(7*scale*3), ypos+(29*scale*3));
+    bezierVertex(xpos+(9*scale*3), ypos+(26*scale*3), xpos+(7*scale*3), ypos+(22*scale*3), xpos+(3*scale*3), ypos+(19*scale*3));
+    bezierVertex(xpos-(1*scale*3), ypos+(15*scale*3), xpos-(5*scale*3), ypos+(8*scale*3), xpos-(2*scale*3), ypos+(3*scale*3));
+    
   endShape();
 
 
   //move();
   //display();
-}
-
-
-//quad(x1, y1, x2, y2, x3, y3, x4, y4)
-void display(){
-  noStroke();
-  fill(255,128,0);
-  quad(xpos, ypos, xpos+5, ypos-y, xpos-5+x, ypos-y, xpos+x, ypos);
-  ypos += 20;
-  quad(xpos, ypos, xpos+5, ypos-y, xpos-5+x, ypos-y, xpos+x, ypos);
 }
