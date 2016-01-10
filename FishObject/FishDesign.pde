@@ -1,17 +1,23 @@
-float xpos = 200;
-float ypos = 150;
-float scale = 0.7; //1 is default
+float xpos;
+float ypos;
+float scale; //0.5 is default
 float x = 70; //variable used to help constuct sizes
-
 
 void setup() {
   size(700,500);
-  noLoop();
 }
 
 void draw() {
+  xpos = 100;
+  ypos = 150;
+  scale = 0.5;
+  x = 70;
   background(0,180,250);
   noStroke();
+  drawFish();
+}
+
+void drawFish(){
   fill(255,128,0);
   
   quad(xpos, ypos, xpos+(12*scale), ypos-(15*scale), xpos+(48*scale), ypos-(15*scale), xpos+(60*scale), ypos);
@@ -53,7 +59,6 @@ void draw() {
   x -= 6;
   triangle(xpos, ypos, xpos+((0.5*x)*scale), ypos+(30*scale), xpos+(x*scale), ypos);
   
-  //eyes
   fill(245,255,235);
   ellipse(xpos-(10*scale), ypos-(100*scale), 22*scale, 22*scale);
   ellipse(xpos+(50*scale), ypos-(100*scale), 22*scale, 22*scale);
@@ -73,5 +78,4 @@ void draw() {
     bezierVertex(xpos+(9*scale*3), ypos+(26*scale*3), xpos+(7*scale*3), ypos+(22*scale*3), xpos+(3*scale*3), ypos+(19*scale*3));
     bezierVertex(xpos-(1*scale*3), ypos+(15*scale*3), xpos-(5*scale*3), ypos+(8*scale*3), xpos-(2*scale*3), ypos+(3*scale*3));  
   endShape();
-
 }
