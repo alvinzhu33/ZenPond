@@ -1,6 +1,6 @@
-float xpos = 100;
-float ypos = 50;
-float scale = 0.1; //1 is default
+float xpos = 200;
+float ypos = 150;
+float scale = 0.7; //1 is default
 float x = 70; //variable used to help constuct sizes
 
 
@@ -10,11 +10,10 @@ void setup() {
 }
 
 void draw() {
-  background(255);
+  background(0,180,250);
   noStroke();
   fill(255,128,0);
   
-
   quad(xpos, ypos, xpos+(12*scale), ypos-(15*scale), xpos+(48*scale), ypos-(15*scale), xpos+(60*scale), ypos);
   
   xpos -= (5*scale);
@@ -28,7 +27,6 @@ void draw() {
   
   ypos += (15*scale);
   quad(xpos, ypos, xpos, ypos-(15*scale), xpos+(x*scale), ypos-(15*scale), xpos+(x*scale), ypos);
-  
   
   ypos += (15*scale); 
   xpos += (3*scale);
@@ -54,6 +52,16 @@ void draw() {
   
   x -= 6;
   triangle(xpos, ypos, xpos+((0.5*x)*scale), ypos+(30*scale), xpos+(x*scale), ypos);
+  
+  //eyes
+  fill(245,255,235);
+  ellipse(xpos-(10*scale), ypos-(100*scale), 22*scale, 22*scale);
+  ellipse(xpos+(50*scale), ypos-(100*scale), 22*scale, 22*scale);
+  fill(0,200,100);
+  ellipse(xpos-(10*scale), ypos-(103*scale), 12*scale, 12*scale);
+  ellipse(xpos+(50*scale), ypos-(103*scale), 12*scale, 12*scale);
+  
+  fill(255,128,0);
   
   //tail
   xpos += ((0.57*x)*scale);
