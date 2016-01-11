@@ -21,7 +21,8 @@ void setup(){
   fill(115,230,204,125);
   rect(0,0,900,675);
   lillypad();
-  flowers();
+  flowers(170,130);
+  flowers(650,580);
 }
 
 boolean pebble(int x, int y){
@@ -68,18 +69,20 @@ void lillypad(){
   popMatrix();
 }
 
-void flowers(){
-  pushMatrix();
-  translate(350,350);
-  fill(0,0,0);
-  stroke(0);
-  beginShape();
-  vertex(0,0);
-  bezierVertex(20,30,15,50,0,50);
-  endShape();
-  beginShape();
-  vertex(0,0);
-  bezierVertex(-20,30,-15,50,0,50);
-  endShape();
-  popMatrix();
+void flowers(int xvalue, int yvalue, int size){
+  int degrees=0;
+  while(degrees<360){
+    pushMatrix();
+    translate(xvalue,yvalue);
+    rotate(radians(degrees));
+    fill(232,144,203);
+    noStroke();
+    beginShape();
+    vertex(0,0);
+    bezier(0,0,20,30,15,50,0,50);
+    bezier(0,0,-20,30,-15,50,0,50);
+    endShape();
+    popMatrix();
+    degrees+=60;
+  }
 }
