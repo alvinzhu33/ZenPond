@@ -2,7 +2,6 @@ import java.util.*;
 
 void setup(){
   size(900,675);
-  System.out.println(get(200,200));
   int counter=0;
   while(counter<600){
     int xvalue = (int)(Math.random()*900);
@@ -21,8 +20,8 @@ void setup(){
   }
   fill(115,230,204,125);
   rect(0,0,900,675);
-  fill(255,255,255);
   lillypad();
+  flowers();
 }
 
 boolean pebble(int x, int y){
@@ -65,6 +64,22 @@ void lillypad(){
   fill(27,172,51);
   beginShape();
   arc(0,0,90,90, -PI*14/15,PI*19/20);
+  endShape();
+  popMatrix();
+}
+
+void flowers(){
+  pushMatrix();
+  translate(350,350);
+  fill(0,0,0);
+  stroke(0);
+  beginShape();
+  vertex(0,0);
+  bezierVertex(20,30,15,50,0,50);
+  endShape();
+  beginShape();
+  vertex(0,0);
+  bezierVertex(-20,30,-15,50,0,50);
   endShape();
   popMatrix();
 }
