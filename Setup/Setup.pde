@@ -20,6 +20,7 @@ void setup(){
   }
   fill(115,230,204,125);
   rect(0,0,900,675);
+  draw();
   lillypad();
   flowers(170,130,60);
   flowers(650,580,50);
