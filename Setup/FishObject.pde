@@ -20,7 +20,7 @@ public class FishObject{
   }
   
   void drawFish(){
-    fill(255,128,0);
+    fill(255,128,0,230);
     
     quad(xpos, ypos, xpos+(12*scale), ypos-(15*scale), xpos+(48*scale), ypos-(15*scale), xpos+(60*scale), ypos);
     
@@ -61,14 +61,14 @@ public class FishObject{
     x -= 6;
     triangle(xpos, ypos, xpos+((0.5*x)*scale), ypos+(30*scale), xpos+(x*scale), ypos);
     
-    fill(245,255,235);
+    fill(245,255,235,230);
     ellipse(xpos-(10*scale), ypos-(100*scale), 22*scale, 22*scale);
     ellipse(xpos+(50*scale), ypos-(100*scale), 22*scale, 22*scale);
-    fill(0,200,100);
+    fill(0,200,100,230);
     ellipse(xpos-(10*scale), ypos-(103*scale), 12*scale, 12*scale);
     ellipse(xpos+(50*scale), ypos-(103*scale), 12*scale, 12*scale);
     
-    fill(255,128,0);
+    fill(255,128,0,230);
     
     //tail
     xpos += ((0.57*x)*scale);

@@ -1,9 +1,16 @@
 void makePond(){
+  pebble();
+  fill(115,230,204,125);
+  rect(0,0,900,675);
+}
+
+void pebble(){
+  //Makes pebble floor
   int counter=0;
   while(counter<600){
     int xvalue = (int)(Math.random()*900);
     int yvalue = (int)(Math.random()*675);
-    while(pebble(xvalue,yvalue)){
+    while(pebbleCheck(xvalue,yvalue)){
       xvalue = (int)(Math.random()*900);
       yvalue = (int)(Math.random()*675);
     }
@@ -15,11 +22,9 @@ void makePond(){
     ellipse(xvalue,yvalue,xpebble,ypebble);
     counter++;
   }
-  fill(115,230,204,125);
-  rect(0,0,900,675);
 }
 
-boolean pebble(int x, int y){
+boolean pebbleCheck(int x, int y){
   //Checks to see if there's already a stone there
   if(get(x,y)!=-3355444 &&
       get(x+10,y)!=-3355444 &&
@@ -64,6 +69,7 @@ void lillypad(){
 }
 
 void flowers(int xvalue, int yvalue, int size){
+  //Outer flower
   int degrees=0;
   int start=(int)(Math.random()*6)*10;
   while(degrees<360){
@@ -71,6 +77,24 @@ void flowers(int xvalue, int yvalue, int size){
     translate(xvalue,yvalue);
     rotate(radians(start + degrees));
     fill(232,144,203);
+    noStroke();
+    beginShape();
+    vertex(0,0);
+    bezier(0,0,size/2,size/2,size/5,size,0,size);
+    bezier(0,0,-size/2,size/2,-size/5,size,0,size);
+    endShape();
+    popMatrix();
+    degrees+=60;
+  }
+  
+  //Inner flower
+  degrees=30;
+  size=size*3/4;
+  while(degrees<390){
+    pushMatrix();
+    translate(xvalue,yvalue);
+    rotate(radians(start + degrees));
+    fill(245,15,76,230);
     noStroke();
     beginShape();
     vertex(0,0);
