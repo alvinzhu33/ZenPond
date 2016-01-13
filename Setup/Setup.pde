@@ -5,7 +5,7 @@ void setup(){
   makePond();
   
   FishObject f1 = new FishObject(0.5, 200, 200);
-  FishObject f2 = new FishObject(0.5, 500, 200);
+  //FishObject f2 = new FishObject(0.5, 500, 200);
   
   Lilypad lp1 = new Lilypad(110,570,150);
   Lilypad lp2 = new Lilypad(800,170,120);
@@ -16,7 +16,7 @@ void setup(){
   Flower fl3 = new Flower(700,80,30); 
   
   f1.drawFish();
-  f2.drawFish();
+  //f2.drawFish();
   
   lp1.drawLilypad();
   lp2.drawLilypad();
