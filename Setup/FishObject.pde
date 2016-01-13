@@ -5,19 +5,12 @@ public class FishObject{
   float ypos;
   float scale; //0.5 is default
   float x = 70; //variable used to help constuct sizes
-  int degrees=1;
+  float degrees=1;
   
   public FishObject(float size, float x, float y){
     scale = size;
     xpos = x;
     ypos = y;
-  }
-  
-  void draw() {
-    noStroke();
-    drawFish();
-    calcMove();
-    move();
   }
   
   public void drawFish(){
@@ -35,7 +28,7 @@ public class FishObject{
     tail();
   }
   
-  void fish1(int trans){
+  void fish1(float trans){
     //Upper Head
     //pushMatrix();
     //translate(xpos,ypos);
@@ -44,7 +37,7 @@ public class FishObject{
     //popMatrix();
   }
   
-  void fish2(int trans){
+  void fish2(float trans){
     //Lower head
     //pushMatrix();
     xpos -= (5*scale);
@@ -55,7 +48,7 @@ public class FishObject{
     //popMatrix();
   }
   
-  void fish3(int trans){
+  void fish3(float trans){
     //Upper middle
     //pushMatrix();
     xpos -= (3*scale);
@@ -67,7 +60,7 @@ public class FishObject{
     //popMatrix();
   }
   
-  void fish4(int trans){
+  void fish4(float trans){
     //Middle
     //pushMatrix();
     ypos += (15*scale);
@@ -77,7 +70,7 @@ public class FishObject{
     //popMatrix();
   }
   
-  void fish5(int trans){
+  void fish5(float trans){
     //Lower middle
     //pushMatrix();
     ypos += (15*scale); 
@@ -89,7 +82,7 @@ public class FishObject{
     //popMatrix();
   }
   
-  void fish6(int trans){
+  void fish6(float trans){
     //Upper bottom
     ypos += (15*scale); 
     xpos += (3*scale);
@@ -97,7 +90,7 @@ public class FishObject{
     quad(xpos+trans, ypos, xpos-(3*scale)+trans, ypos-(15*scale), xpos+((3+x)*scale)+trans, ypos-(15*scale), xpos+(x*scale)+trans, ypos);
   }
   
-  void fish7(int trans){
+  void fish7(float trans){
     //lower bottom
     ypos += (15*scale); 
     xpos += (5*scale);
@@ -105,7 +98,7 @@ public class FishObject{
     quad(xpos+trans, ypos, xpos-(5*scale)+trans, ypos-(15*scale), xpos+(x*scale)+trans, ypos-(15*scale), xpos+((x-5)*scale)+trans, ypos); 
   }
   
-  void fish8(int trans){
+  void fish8(float trans){
     //Bottom
     ypos += (15*scale); 
     xpos += (6*scale);
@@ -113,7 +106,7 @@ public class FishObject{
     quad(xpos+trans, ypos, xpos-(6*scale)+trans, ypos-(15*scale), xpos+(x*scale)+trans, ypos-(15*scale), xpos+((x-6)*scale)+trans, ypos);
   }
   
-  void fish9(int trans){
+  void fish9(float trans){
     //Last
     x -= 6;
     triangle(xpos+trans, ypos, xpos+((0.5*x)*scale)+trans, ypos+(30*scale), xpos+(x*scale)+trans, ypos);
@@ -143,18 +136,18 @@ public class FishObject{
     ellipse(xpos+(50*scale), ypos-(103*scale), 12*scale, 12*scale);
   }
   
-  int xspacing=16;
-  int w=50;
+  /*float xspacing=16;
+  float w=50;
   float theta=0;
   float amp=20;
   float period=50;
   float dx=(TWO_PI/period)*xspacing;
-  float[] yvalues;
+  float[] yvalues=new float[w/xspacing];
   
   void calcMove(){
     theta+=0.5;
     float x=theta;
-    for(int i=0; i<yvalues.length; i++){
+    for(float i=0; i<yvalues.length; i++){
       yvalues[i]=sin(x)*amp;
       x+=dx;
     }
@@ -162,7 +155,8 @@ public class FishObject{
   
   void move(){
     noStroke();
-    for(int x=0; x<yvalues.length; x++){
+    for(float x=0; x<yvalues.length; x++){
+      fill(25);
       fish1(x);
       fish2(x);
       fish3(x);
@@ -173,5 +167,5 @@ public class FishObject{
       fish8(x);
       fish9(x);
     }
-  }
+  }*/
 }
