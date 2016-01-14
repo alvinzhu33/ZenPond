@@ -17,8 +17,8 @@ public class FishObject{
     diameter = dia;
     amplitude = amp;
     scale = 0.1;
-    xpos = x;
-    ypos = y;
+    xpos = y;
+    ypos = x; //due to rotation, ypos is xpos 
   }
   
   public void drawFish(){

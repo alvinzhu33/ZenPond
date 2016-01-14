@@ -2,6 +2,7 @@ import java.util.*;
 PImage bg;
 
 float dt = .1;
+float forward = 0.1; 
 
 FishObject f1;
 FishObject f2;
@@ -18,7 +19,7 @@ void setup(){
   frameRate(34);
   noStroke();
   //16 and 40 are the default sizes
-  f1 = new FishObject(16, 40, 300, 10);
+  f1 = new FishObject(16, 40, 30, 20);
  
   
   //f2 = new FishObject(0.7, 500, 200);
@@ -40,10 +41,12 @@ void draw(){
   background(bg);
   f1.drawFish();
   //f2.drawFish();
-  f1.xpos = 10;
-  f1.ypos = 10;
-  f1.x = 70;
+  //f1.xpos = 300;
+  //f1.x = 70;
   f1.t += dt;
+  f1.ypos = 20;
+  forward+= .2;  
+  f1.ypos += forward;
 
   
   lp1.drawLilypad(65);
