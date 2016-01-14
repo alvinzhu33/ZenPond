@@ -4,8 +4,14 @@ public class FishObject{
   float xpos;
   float ypos;
   float scale; //0.5 is default
-  float x = 70; //variable used to help constuct sizes
-  float degrees=1;
+  float x = 70.0; //variable used to help constuct sizes
+  
+  int diameter = 16;
+  float t = 0.0;
+
+  float amplitude = 40.0;
+  float frequency = 0.2;
+  
   
   public FishObject(float size, float x, float y){
     scale = size;
@@ -17,6 +23,8 @@ public class FishObject{
     fill(255,128,0);
     fish1(0);
     fish2(0);
+    
+    /*
     fish3(0);
     fish4(0);
     fish5(0);
@@ -26,18 +34,21 @@ public class FishObject{
     fish9(0);
     eyes();
     tail();
+    */
   }
   
   void fish1(float trans){
     //Upper Head
-    quad(ypos, xpos+trans, ypos-(15*scale), xpos+(12*scale)+trans, ypos-(15*scale), xpos+(48*scale)+trans, ypos, xpos+(60*scale)+trans);
+    
+    quad(ypos*diameter, amplitude*sin(frequency*(t+(xpos+trans)))+height/2, (ypos-(15*scale))*diameter, amplitude*sin(frequency*(t+(xpos+(12*scale)+trans)))+height/2, (ypos-(15*scale))*diameter, amplitude*sin(frequency*(t+(xpos+(48*scale)+trans)))+height/2, ypos*diameter, amplitude*sin(frequency*(t+(xpos+(60*scale)+trans)))+height/2);
+     
   }
   
   void fish2(float trans){
     //Lower head
     xpos -= (5*scale);
     ypos += (15*scale);
-    quad(ypos, xpos+trans, ypos-(15*scale), xpos+(5*scale)+trans, ypos-(15*scale), xpos+(65*scale)+trans, ypos, xpos+(70*scale)+trans);
+    quad(ypos*diameter, amplitude*sin(frequency*(t+(xpos+trans)))+height/2, (ypos-(15*scale))*diameter, amplitude*sin(frequency*(t+(xpos+(5*scale)+trans)))+height/2, (ypos-(15*scale))*diameter, amplitude*sin(frequency*(t+(xpos+(65*scale)+trans)))+height/2, ypos*diameter, amplitude*sin(frequency*(t+(xpos+(70*scale)+trans)))+height/2);
   }
   
   void fish3(float trans){
