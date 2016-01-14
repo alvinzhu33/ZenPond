@@ -30,56 +30,36 @@ public class FishObject{
   
   void fish1(float trans){
     //Upper Head
-    //pushMatrix();
-    //translate(xpos,ypos);
-    //rotate(radians(degrees));
-    quad(xpos+trans, ypos, xpos+(12*scale)+trans, ypos-(15*scale), xpos+(48*scale)+trans, ypos-(15*scale), xpos+(60*scale)+trans, ypos);
-    //popMatrix();
+    quad(ypos, xpos+trans, ypos-(15*scale), xpos+(12*scale)+trans, ypos-(15*scale), xpos+(48*scale)+trans, ypos, xpos+(60*scale)+trans);
   }
   
   void fish2(float trans){
     //Lower head
-    //pushMatrix();
     xpos -= (5*scale);
     ypos += (15*scale);
-    //translate(xpos,ypos);
-    //rotate(radians(degrees+3));
-    quad(xpos+trans, ypos, xpos+(5*scale)+trans, ypos-(15*scale), xpos+(65*scale)+trans, ypos-(15*scale), xpos+(70*scale)+trans, ypos);
-    //popMatrix();
+    quad(ypos, xpos+trans, ypos-(15*scale), xpos+(5*scale)+trans, ypos-(15*scale), xpos+(65*scale)+trans, ypos, xpos+(70*scale)+trans);
   }
   
   void fish3(float trans){
     //Upper middle
-    //pushMatrix();
     xpos -= (3*scale);
     ypos += (15*scale);
-    //translate(xpos,ypos);
-    //rotate(radians(degrees+6));
     x += 6;
-    quad(xpos+trans, ypos, xpos+(3*scale)+trans, ypos-(15*scale), xpos+((-3+x)*scale)+trans, ypos-(15*scale), xpos+(x*scale)+trans, ypos);
-    //popMatrix();
+    quad(ypos, xpos+trans, ypos-(15*scale), xpos+(3*scale)+trans, ypos-(15*scale), xpos+((-3+x)*scale)+trans, ypos, xpos+(x*scale)+trans);
   }
   
   void fish4(float trans){
     //Middle
-    //pushMatrix();
     ypos += (15*scale);
-    //translate(xpos,ypos);
-    //rotate(radians(degrees+9));
-    quad(xpos+trans, ypos, xpos+trans, ypos-(15*scale), xpos+(x*scale)+trans, ypos-(15*scale), xpos+(x*scale)+trans, ypos);
-    //popMatrix();
+    quad(ypos, xpos+trans, ypos-(15*scale), xpos+trans, ypos-(15*scale), xpos+(x*scale)+trans, ypos, xpos+(x*scale)+trans);
   }
   
   void fish5(float trans){
     //Lower middle
-    //pushMatrix();
     ypos += (15*scale); 
     xpos += (3*scale);
     x -= 6;
-    //translate(xpos,ypos);
-    //rotate(radians(degrees+12));
-    quad(xpos+trans, ypos, xpos-(3*scale)+trans, ypos-(15*scale), xpos+((3+x)*scale)+trans, ypos-(15*scale), xpos+(x*scale)+trans, ypos);
-    //popMatrix();
+    quad(ypos, xpos+trans, ypos-(15*scale), xpos-(3*scale)+trans, ypos-(15*scale), xpos+((3+x)*scale)+trans, ypos, xpos+(x*scale)+trans);
   }
   
   void fish6(float trans){
@@ -87,7 +67,7 @@ public class FishObject{
     ypos += (15*scale); 
     xpos += (3*scale);
     x -= 6;
-    quad(xpos+trans, ypos, xpos-(3*scale)+trans, ypos-(15*scale), xpos+((3+x)*scale)+trans, ypos-(15*scale), xpos+(x*scale)+trans, ypos);
+    quad(ypos, xpos+trans, ypos-(15*scale), xpos-(3*scale)+trans, ypos-(15*scale), xpos+((3+x)*scale)+trans, ypos, xpos+(x*scale)+trans);
   }
   
   void fish7(float trans){
@@ -95,7 +75,7 @@ public class FishObject{
     ypos += (15*scale); 
     xpos += (5*scale);
     x -= 5;
-    quad(xpos+trans, ypos, xpos-(5*scale)+trans, ypos-(15*scale), xpos+(x*scale)+trans, ypos-(15*scale), xpos+((x-5)*scale)+trans, ypos); 
+    quad(ypos, xpos+trans, ypos-(15*scale), xpos-(5*scale)+trans, ypos-(15*scale), xpos+(x*scale)+trans, ypos, xpos+((x-5)*scale)+trans); 
   }
   
   void fish8(float trans){
@@ -103,13 +83,13 @@ public class FishObject{
     ypos += (15*scale); 
     xpos += (6*scale);
     x -= 11;
-    quad(xpos+trans, ypos, xpos-(6*scale)+trans, ypos-(15*scale), xpos+(x*scale)+trans, ypos-(15*scale), xpos+((x-6)*scale)+trans, ypos);
+    quad(ypos, xpos+trans, ypos-(15*scale), xpos-(6*scale)+trans, ypos-(15*scale), xpos+(x*scale)+trans, ypos, xpos+((x-6)*scale)+trans);
   }
   
   void fish9(float trans){
     //Last
     x -= 6;
-    triangle(xpos+trans, ypos, xpos+((0.5*x)*scale)+trans, ypos+(30*scale), xpos+(x*scale)+trans, ypos);
+    triangle(ypos, xpos+trans, ypos+(30*scale), xpos+((0.5*x)*scale)+trans, ypos, xpos+(x*scale)+trans);
   }
   
   void tail(){
@@ -118,22 +98,25 @@ public class FishObject{
     ypos += (20*scale);
     
     beginShape();
-      vertex(xpos, ypos);
-      bezierVertex(xpos-(2*scale*3), ypos+(5*scale*3), xpos+(3*scale*3), ypos+(6*scale*3), xpos+(7*scale*3), ypos+(11*scale*3));
-      bezierVertex(xpos+(10*scale*3), ypos+(15*scale*3), xpos+(14*scale*3), ypos+(21*scale*3), xpos+(7*scale*3), ypos+(29*scale*3));
-      bezierVertex(xpos+(9*scale*3), ypos+(26*scale*3), xpos+(7*scale*3), ypos+(22*scale*3), xpos+(3*scale*3), ypos+(19*scale*3));
-      bezierVertex(xpos-(1*scale*3), ypos+(15*scale*3), xpos-(5*scale*3), ypos+(8*scale*3), xpos-(2*scale*3), ypos+(3*scale*3));  
+      vertex(ypos, xpos);
+      /*bezier(ypos, xpos, ypos+10, xpos-10, ypos+15, xpos-10, ypos+25, xpos);
+      bezier(ypos+25, xpos, ypos+35, xpos+10, ypos+40, xpos+10, ypos+50, xpos);
+      bezier(ypos, xpos, ypos+15, xpos, ypos+25, xpos-10, ypos+40, xpos+7);*/
+      bezierVertex(ypos+(5*scale*3), xpos-(2*scale*3), ypos+(6*scale*3), xpos+(3*scale*3), ypos+(11*scale*3), xpos+(7*scale*3));
+      bezierVertex(ypos+(15*scale*3), xpos+(10*scale*3), ypos+(21*scale*3), xpos+(14*scale*3), ypos+(29*scale*3), xpos+(7*scale*3));
+      bezierVertex(ypos+(26*scale*3), xpos+(9*scale*3), ypos+(22*scale*3), xpos+(7*scale*3), ypos+(19*scale*3), xpos+(3*scale*3));
+      bezierVertex(ypos+(15*scale*3), xpos-(1*scale*3), ypos+(8*scale*3), xpos-(5*scale*3), ypos+(3*scale*3), xpos-(2*scale*3));  
     endShape();
   }
   
   void eyes(){
     pushMatrix();
     fill(245,255,235);
-    ellipse(xpos-(10*scale), ypos-(100*scale), 22*scale, 22*scale);
-    ellipse(xpos+(50*scale), ypos-(100*scale), 22*scale, 22*scale);
+    ellipse(ypos-(100*scale), xpos-(10*scale), 22*scale, 22*scale);
+    ellipse(ypos-(100*scale), xpos+(50*scale), 22*scale, 22*scale);
     fill(0,200,100);
-    ellipse(xpos-(10*scale), ypos-(103*scale), 12*scale, 12*scale);
-    ellipse(xpos+(50*scale), ypos-(103*scale), 12*scale, 12*scale);
+    ellipse(ypos-(103*scale), xpos-(10*scale), 12*scale, 12*scale);
+    ellipse(ypos-(103*scale), xpos+(50*scale), 12*scale, 12*scale);
   }
   
   /*float xspacing=16;
