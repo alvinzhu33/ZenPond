@@ -6,15 +6,17 @@ public class FishObject{
   float scale; //0.5 is default
   float x = 70.0; //variable used to help constuct sizes
   
-  int diameter = 16;
+  float diameter;
   float t = 0.0;
 
-  float amplitude = 40.0;
+  float amplitude;
   float frequency = 0.2;
   
   
-  public FishObject(float size, float x, float y){
-    scale = size;
+  public FishObject(float dia, float amp, float x, float y){
+    diameter = dia;
+    amplitude = amp;
+    scale = 0.1;
     xpos = x;
     ypos = y;
   }

@@ -15,10 +15,10 @@ Flower fl3;
 void setup(){
   size(900,675);
   bg = loadImage("bg.jpg");
-  //frameRate(4);
+  frameRate(34);
   noStroke();
-  
-  f1 = new FishObject(0.1, 10, 10);
+  //16 and 40 are the default sizes
+  f1 = new FishObject(16, 40, 300, 10);
  
   
   //f2 = new FishObject(0.7, 500, 200);
