@@ -16,8 +16,8 @@ void setup(){
   background(bg);
   noStroke();
   
-  f1 = new FishObject(0.5, 200, 200);
-  f2 = new FishObject(0.5, 500, 200);
+  f1 = new FishObject(0.5, 300, 400);
+  f2 = new FishObject(0.7, 500, 200);
   
   lp1 = new Lilypad(110,570,150);
   lp2 = new Lilypad(800,170,120);

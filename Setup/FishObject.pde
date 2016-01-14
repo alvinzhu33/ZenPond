@@ -99,9 +99,6 @@ public class FishObject{
     
     beginShape();
       vertex(ypos, xpos);
-      /*bezier(ypos, xpos, ypos+10, xpos-10, ypos+15, xpos-10, ypos+25, xpos);
-      bezier(ypos+25, xpos, ypos+35, xpos+10, ypos+40, xpos+10, ypos+50, xpos);
-      bezier(ypos, xpos, ypos+15, xpos, ypos+25, xpos-10, ypos+40, xpos+7);*/
       bezierVertex(ypos+(5*scale*3), xpos-(2*scale*3), ypos+(6*scale*3), xpos+(3*scale*3), ypos+(11*scale*3), xpos+(7*scale*3));
       bezierVertex(ypos+(15*scale*3), xpos+(10*scale*3), ypos+(21*scale*3), xpos+(14*scale*3), ypos+(29*scale*3), xpos+(7*scale*3));
       bezierVertex(ypos+(26*scale*3), xpos+(9*scale*3), ypos+(22*scale*3), xpos+(7*scale*3), ypos+(19*scale*3), xpos+(3*scale*3));
