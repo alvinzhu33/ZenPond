@@ -13,7 +13,7 @@ Flower fl3;
 void setup(){
   size(900,675);
   bg = loadImage("bg.jpg");
-  background(bg);
+  frameRate(4);
   noStroke();
   
   f1 = new FishObject(0.5, 300, 400);
@@ -27,22 +27,27 @@ void setup(){
   fl2 = new Flower(800,200,50);
   fl3 = new Flower(700,80,30); 
   
-  f1.drawFish();
-  f2.drawFish();
-  
-  lp1.drawLilypad();
-  lp2.drawLilypad();
-  lp3.drawLilypad();
-  
-  fl1.drawFlower();
-  fl2.drawFlower();
-  fl3.drawFlower();
+
 }
 
 void draw(){
-  float x = f1.xpos;
-  while(x<900){
-    fill(25);
-    f1.fish1(20);
-  }
+  background(bg);
+  f1.drawFish();
+  f2.drawFish();
+  f1.xpos = 300;
+  f1.ypos = 400;
+  f1.x = 70;
+  f2.xpos = 500;
+  f2.ypos = 200;
+  f2.x = 70;
+  
+  lp1.drawLilypad(65);
+  lp2.drawLilypad(175);
+  lp3.drawLilypad(182);
+  
+  /*
+  fl1.drawFlower();
+  fl2.drawFlower();
+  fl3.drawFlower();
+  */
 }

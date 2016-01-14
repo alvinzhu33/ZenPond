@@ -107,7 +107,6 @@ public class FishObject{
   }
   
   void eyes(){
-    pushMatrix();
     fill(245,255,235);
     ellipse(ypos-(100*scale), xpos-(10*scale), 22*scale, 22*scale);
     ellipse(ypos-(100*scale), xpos+(50*scale), 22*scale, 22*scale);
