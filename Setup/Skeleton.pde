@@ -8,7 +8,7 @@ public class Skeleton{
    public Skeleton(float x, float y, float l){
      xpos = x;
      ypos = y;
-     len = l;
+     len = l;//Include tail later
    }
   
   void bones(){
