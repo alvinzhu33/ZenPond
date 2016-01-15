@@ -3,11 +3,10 @@ PImage bg;
 
 PFont f;
 
-float dt = .1;
-float forward = 0.1; 
+/*float dt = .1;
+float forward = 0.1;*/
 
-FishObject f1;
-FishObject f2;
+Skeleton s1;
 Lilypad lp1;
 Lilypad lp2;
 Lilypad lp3;
@@ -18,14 +17,12 @@ Flower fl3;
 void setup(){
   size(900,675);
   bg = loadImage("bg.jpg");
+  frameRate(34);
   f = createFont("Arial",32,false);
   
   noStroke();
   //16 and 40 are the default sizes
-  f1 = new FishObject(16, 40, 300, 200);
- 
-  
-  //f2 = new FishObject(0.7, 500, 200);
+  s1 = new Skeleton(100, 100, 5);
   
   lp1 = new Lilypad(110,570,150);
   lp2 = new Lilypad(800,170,120);
@@ -43,11 +40,12 @@ void setup(){
 void draw(){
   background(bg);
   
-  f1.drawFish();
+  s1.bones();
+  /*f1.drawFish();
   f1.t += dt;
   f1.ypos = 20;
-  forward+= 0;  
-  f1.ypos += forward;
+  forward+= -0.2;  
+  f1.ypos += forward;*/
 
   
   lp1.drawLilypad(65);

@@ -32,8 +32,8 @@ public class FishObject{
     fish7(0);
     fish8(0);
     fish9(0);
-    eyes();
-    tail();
+    //eyes();
+    //tail();
   }
   
   void fish1(float trans){
