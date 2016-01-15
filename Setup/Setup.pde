@@ -16,10 +16,9 @@ Flower fl3;
 void setup(){
   size(900,675);
   bg = loadImage("bg.jpg");
-  frameRate(34);
   noStroke();
   //16 and 40 are the default sizes
-  f1 = new FishObject(16, 40, 30, 20);
+  f1 = new FishObject(16, 40, 300, 200);
  
   
   //f2 = new FishObject(0.7, 500, 200);
@@ -40,12 +39,9 @@ void setup(){
 void draw(){
   background(bg);
   f1.drawFish();
-  //f2.drawFish();
-  //f1.xpos = 300;
-  //f1.x = 70;
   f1.t += dt;
   f1.ypos = 20;
-  forward+= .2;  
+  forward+= 0;  
   f1.ypos += forward;
 
   
