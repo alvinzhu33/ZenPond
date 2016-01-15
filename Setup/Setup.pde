@@ -1,6 +1,8 @@
 import java.util.*;
 PImage bg;
 
+PFont f;
+
 float dt = .1;
 float forward = 0.1; 
 
@@ -16,6 +18,8 @@ Flower fl3;
 void setup(){
   size(900,675);
   bg = loadImage("bg.jpg");
+  f = createFont("Arial",32,false);
+  
   noStroke();
   //16 and 40 are the default sizes
   f1 = new FishObject(16, 40, 300, 200);
@@ -38,6 +42,7 @@ void setup(){
 
 void draw(){
   background(bg);
+  
   f1.drawFish();
   f1.t += dt;
   f1.ypos = 20;
@@ -57,4 +62,9 @@ void draw(){
   fl1.size = 60;
   fl2.size = 50;
   fl3.size = 30;
+  
+  fill(0);
+  textFont(f);
+  textAlign(CENTER);
+  text((millis()/1000) + " sec", width/2, 60);
 }
