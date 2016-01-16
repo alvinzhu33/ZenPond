@@ -24,7 +24,7 @@ void setup(){
   frameRate(34);
   f = createFont("Arial",32,false);
   
-  s1 = new Skeleton(100, 100, 100);
+  s1 = new Skeleton(500, 100, 100);
   
   lp1 = new Lilypad(110,570,150);
   lp2 = new Lilypad(800,170,120);

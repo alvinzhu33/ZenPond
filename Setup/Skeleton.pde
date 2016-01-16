@@ -17,6 +17,7 @@ public class Skeleton{
   void bones1(float x, float y){
     noFill();
     stroke(255);
+    //The space between two beziers is one quad
     bezier(xpos+x, ypos+y, xpos+x*1.01, ypos+len+y, xpos+x*1.10, ypos+2*len+y, xpos+x*1.2, ypos+3*len+y);
   }
   
@@ -32,8 +33,14 @@ public class Skeleton{
     /*if((millis()/1000)%20>10){
       x = -x;
     }*/
+    turn(0); //PI/2 = goes down, 3*PI/2 = goes up, PI = left, 0 = right unit circle
     bones1(x,y);
     bones2(x,y);
     bones3(x,y);
+  }
+  
+  void turn(float angle){
+   xpos = xpos+cos(angle);
+   ypos = ypos+sin(angle); 
   }
 }
