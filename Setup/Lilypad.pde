@@ -12,6 +12,7 @@ public class Lilypad{
   }
   
   public void drawLilypad(int angle){
+    noStroke();
     pushMatrix();
     translate(xpos,ypos);
     rotate(angle);
@@ -22,6 +23,5 @@ public class Lilypad{
     arc(0,0,size,size, -PI*14/15,PI*19/20);
     endShape();
     popMatrix();
- 
    }  
 }

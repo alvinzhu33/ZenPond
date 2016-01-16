@@ -14,15 +14,17 @@ Flower fl1;
 Flower fl2;
 Flower fl3;
 
+float fishx = 0;
+float fishy = 0;
+boolean reverse = false;
+
 void setup(){
   size(900,675);
   bg = loadImage("bg.jpg");
   frameRate(34);
   f = createFont("Arial",32,false);
   
-  noStroke();
-  //16 and 40 are the default sizes
-  s1 = new Skeleton(100, 100, 5);
+  s1 = new Skeleton(100, 100, 100);
   
   lp1 = new Lilypad(110,570,150);
   lp2 = new Lilypad(800,170,120);
@@ -32,22 +34,13 @@ void setup(){
   fl1 = new Flower(170,570,60); 
   fl2 = new Flower(800,200,50);
   fl3 = new Flower(700,80,30); 
-  
-  
-
 }
 
 void draw(){
   background(bg);
   
-  s1.bones();
-  /*f1.drawFish();
-  f1.t += dt;
-  f1.ypos = 20;
-  forward+= -0.2;  
-  f1.ypos += forward;*/
-
-  
+  s1.move(fishx,fishy);
+    
   lp1.drawLilypad(65);
   lp2.drawLilypad(175);
   lp3.drawLilypad(182);
@@ -65,4 +58,17 @@ void draw(){
   textFont(f);
   textAlign(CENTER);
   text((millis()/1000) + " sec", width/2, 60);
+  
+  if(reverse){
+    fishx--;
+    if(fishx==-20){
+      reverse=false;
+    }
+  }
+  if(! reverse){
+    fishx++;
+    if(fishx==20){
+      reverse=true;
+    }
+  }
 }

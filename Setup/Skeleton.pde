@@ -8,15 +8,32 @@ public class Skeleton{
    public Skeleton(float x, float y, float l){
      xpos = x;
      ypos = y;
-     len = l;//Include tail later
+     len = l/9;//Include tail later
+     bones1(0,0);
+     bones2(0,0);
+     bones3(0,0);
    }
   
-  void bones(){
+  void bones1(float x, float y){
     noFill();
     stroke(255);
-    bezier(xpos, ypos, xpos, ypos+len, xpos, ypos+2*len, xpos, ypos+3*len);
-    //bezier(xpos, ypos+2*len, xpos, ypos+3*len, xpos, ypos+4*len);
-    //bezier(xpos, ypos+3*len, xpos, ypos+len, xpos, ypos+2*len);
-    //bezier(xpos, ypos+3*len, xpos, ypos+len, xpos, ypos+2*len);
+    bezier(xpos+x, ypos+y, xpos+x*1.1, ypos+len+y, xpos+x*1.2, ypos+2*len+y, xpos+x*1.3, ypos+3*len+y);
+  }
+  
+  void bones2(float x, float y){
+    bezier(xpos+x*1.3, ypos+3*len+y, xpos+x*1.4, ypos+4*len+y, xpos+x*1.5, ypos+5*len+y, xpos+x*1.6, ypos+6*len+y);
+  }
+  
+  void bones3(float x, float y){
+    bezier(xpos+x*1.6, ypos+6*len+y, xpos+x*1.7, ypos+7*len+y, xpos+x*1.8, ypos+8*len+y, xpos+x*1.9, ypos+9*len+y);
+  }
+  
+  void move(float x, float y){
+    /*if((millis()/1000)%20>10){
+      x = -x;
+    }*/
+    bones1(x,y);
+    bones2(x,y);
+    bones3(x,y);
   }
 }
