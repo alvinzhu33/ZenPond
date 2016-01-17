@@ -45,29 +45,29 @@ public class Skeleton{
   }
   
   void step1(float x, float y){
-    bezier(xpos+x*1.2+10, ypos+y, xpos+x*1.10+7, ypos+len+y, xpos+x*1.01+3, ypos+2*len+y, xpos+x, ypos+3*len+y);
+    bezier(xpos+x*1.2+20, ypos+y, xpos+x*1.10+14, ypos+len+y, xpos+x*1.01+6, ypos+2*len+y, xpos+x+2, ypos+3*len+y);
   }
   
   void step2(float x, float y){
-    bezier(xpos+x+20, ypos+3*len+y, xpos+x*1.01+17, ypos+2*len+y, xpos+x*1.10+13, ypos+len+y, xpos+x*1.2+10, ypos+y);
-    bezier(xpos+x*1.2+10, ypos+y, xpos+x*1.10+7, ypos+len+y, xpos+x*1.01+3, ypos+2*len+y, xpos+x, ypos+3*len+y);
+    bezier(xpos+x+40, ypos+3*len+y, xpos+x*1.01+34, ypos+2*len+y, xpos+x*1.10+26, ypos+len+y, xpos+x*1.2+20, ypos+y);
+    bezier(xpos+x*1.2+20, ypos+y, xpos+x*1.10+14, ypos+len+y, xpos+x*1.01+6, ypos+2*len+y, xpos+x+2, ypos+3*len+y);
   }
   
   void step3(float x, float y){
-    bezier(xpos+x+20, ypos+6*len+y, xpos+x+20, ypos+5*len+y, xpos+x+20, ypos+4*len+y, xpos+x+20, ypos+3*len+y);
-    bezier(xpos+x+20, ypos+3*len+y, xpos+x*1.01+17, ypos+2*len+y, xpos+x*1.10+13, ypos+len+y, xpos+x*1.2+10, ypos+y);
-    bezier(xpos+x*1.2+10, ypos+y, xpos+x*1.10+7, ypos+len+y, xpos+x*1.01+3, ypos+2*len+y, xpos+x, ypos+3*len+y);
+    bezier(xpos+x+40, ypos+6*len+y, xpos+x+40, ypos+5*len+y, xpos+x+40, ypos+4*len+y, xpos+x+40, ypos+3*len+y);
+    bezier(xpos+x+40, ypos+3*len+y, xpos+x*1.01+34, ypos+2*len+y, xpos+x*1.10+26, ypos+len+y, xpos+x*1.2+20, ypos+y);
+    bezier(xpos+x*1.2+20, ypos+y, xpos+x*1.10+14, ypos+len+y, xpos+x*1.01+6, ypos+2*len+y, xpos+x+2, ypos+3*len+y);
   }
   
   void step4(float x, float y){
-    bezier(xpos+x+20, ypos+9*len+y, xpos+x+20, ypos+8*len+y, xpos+x+20, ypos+7*len+y, xpos+x+20, ypos+6*len+y);
-    bezier(xpos+x+20, ypos+6*len+y, xpos+x+20, ypos+5*len+y, xpos+x+20, ypos+4*len+y, xpos+x+20, ypos+3*len+y);
-    bezier(xpos+x+20, ypos+3*len+y, xpos+x*1.01+17, ypos+2*len+y, xpos+x*1.10+13, ypos+len+y, xpos+x*1.2+10, ypos+y);
+    bezier(xpos+x+40, ypos+9*len+y, xpos+x+40, ypos+8*len+y, xpos+x+40, ypos+7*len+y, xpos+x+40, ypos+6*len+y);
+    bezier(xpos+x+40, ypos+6*len+y, xpos+x+40, ypos+5*len+y, xpos+x+40, ypos+4*len+y, xpos+x+40, ypos+3*len+y);
+    bezier(xpos+x+40, ypos+3*len+y, xpos+x*1.01+34, ypos+2*len+y, xpos+x*1.10+26, ypos+len+y, xpos+x*1.2+20, ypos+y);
   }
   
   void step5(float x, float y){
-    bezier(xpos+x+20, ypos+12*len+y, xpos+x+20, ypos+11*len+y, xpos+x+20, ypos+10*len+y, xpos+x+20, ypos+9*len+y);
-    bezier(xpos+x+20, ypos+9*len+y, xpos+x+20, ypos+8*len+y, xpos+x+20, ypos+7*len+y, xpos+x+20, ypos+6*len+y);
-    bezier(xpos+x+20, ypos+6*len+y, xpos+x+20, ypos+5*len+y, xpos+x+20, ypos+4*len+y, xpos+x+20, ypos+3*len+y);
+    bezier(xpos+x+40, ypos+12*len+y, xpos+x+40, ypos+11*len+y, xpos+x+40, ypos+10*len+y, xpos+x+40, ypos+9*len+y);
+    bezier(xpos+x+40, ypos+9*len+y, xpos+x+40, ypos+8*len+y, xpos+x+40, ypos+7*len+y, xpos+x+40, ypos+6*len+y);
+    bezier(xpos+x+40, ypos+6*len+y, xpos+x+40, ypos+5*len+y, xpos+x+40, ypos+4*len+y, xpos+x+40, ypos+3*len+y);
   }
 }
