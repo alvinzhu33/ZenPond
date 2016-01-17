@@ -36,12 +36,13 @@ void setup(){
 void draw(){
   background(bg);
   
-  s1.move(fishx,fishy);
-  s1.step1(fishx, fishy);
-  s1.step2(fishx, fishy);
-  s1.step3(fishx, fishy);
-  s1.step4(fishx, fishy);
-  s1.step5(fishx, fishy);
+  //s1.move(fishx,fishy);
+  //s1.step1(fishx, fishy);
+  //s1.step2(fishx, fishy);
+  //s1.step3(fishx, fishy);
+  //s1.step4(fishx, fishy);
+  //s1.step5(fishx, fishy);
+  s1.uturn(fishx, fishy);
   
   lp1.drawLilypad(65);
   lp2.drawLilypad(175);
