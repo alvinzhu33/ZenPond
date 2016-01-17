@@ -5,10 +5,25 @@ public class Flower{
   int yvalue;
   int size;
   
+  //Large flower colors
+  int lr;
+  int lg;
+  int lb;
+  //Small flower colors
+  int sr;
+  int sg;
+  int sb;
+  
   public Flower(int x, int y, int s){
     xvalue = x;
     yvalue = y;
     size = s;
+    lr = (232+(int)(Math.random()*50));
+    lg = (144+(int)(Math.random()*50));
+    lb = (203+(int)(Math.random()*50));
+    sr = (245+(int)(Math.random()*70));
+    sg = (15+(int)(Math.random()*70));
+    sb = (76+(int)(Math.random()*70));
   }
   
  public void drawFlower(){
@@ -16,7 +31,6 @@ public class Flower{
     int degrees=0;
     int start=60;//(int)(Math.random()*6)*10;
     fill(232,144,203);
-    //fill((232+(int)(Math.random()*50)),(144+(int)(Math.random()*50)),(203+(int)(Math.random()*50)));
     while(degrees<360){
       pushMatrix();
       translate(xvalue,yvalue);
@@ -34,8 +48,7 @@ public class Flower{
     //Smaller flower
     degrees=30;
     size=size*3/4;
-    fill(265,40,120,180);
-    //fill((245+(int)(Math.random()*70)),(15+(int)(Math.random()*70)),(76+(int)(Math.random()*70)),180);
+    fill(sr,sg,sb,180);
     while(degrees<390){
       pushMatrix();
       translate(xvalue,yvalue);
