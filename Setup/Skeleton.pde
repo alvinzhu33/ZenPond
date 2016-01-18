@@ -90,12 +90,12 @@ public class Skeleton{
   }
   void boundary(float y){
     if (up()){
-      if(fishy <= -len*9*1.9){
-        fishy = 650;
+      if(ypos+y <= -len*9){
+        fishy = 300;
       }
     }else{
-      if (fishy >= 700){
-        fishy = -1509;
+      if (ypos+y >= 700){
+        fishy = -700;
       }
     }
   }
