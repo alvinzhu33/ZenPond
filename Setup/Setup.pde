@@ -36,7 +36,7 @@ void draw(){
   background(bg);
   
   s1.move(0,fishy); //0 defaults down
-  //s1.turn(PI/2);
+  //s1.turn(3*PI/2);
   //s1.turn(3*PI/2);
   s1.boundary(fishy);
   
