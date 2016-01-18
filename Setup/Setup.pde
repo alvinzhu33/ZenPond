@@ -40,7 +40,7 @@ void draw(){
   //s1.turn(3*PI/2);
   s1.boundary(fishy);
   
- // lp1.drawLilypad(65);
+  lp1.drawLilypad(65);
   lp2.drawLilypad(175);
   lp3.drawLilypad(182);
   

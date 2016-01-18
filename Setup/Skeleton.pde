@@ -5,7 +5,7 @@ public class Skeleton{
   float ypos;
   float len;
   float wid = 20;
-  float scale = 0.5;
+  float scale = 1;
   
   float wag = 0;
   boolean reverse = false;
@@ -44,11 +44,12 @@ public class Skeleton{
     (xpos+wag*1.4)+x-wid/1.4, ypos+5*len+y, (xpos+wag*1.4)+x+wid/1.4, ypos+5*len+y);
     
     quad((xpos+wag*1.4)+x+wid/1.4, ypos+5*len+y, (xpos+wag*1.4)+x-wid/1.4, ypos+5*len+y, 
-    (xpos+wag*1.5)+x-wid/1.6, ypos+6*len+y, (xpos+wag*1.5)+x+wid/1.6, ypos+6*len+y);
+    (xpos+wag*1.5)+x+6-wid/1.6, ypos+6*len+y, (xpos+wag*1.5)+x-6+wid/1.6, ypos+6*len+y);
     //bezier(, (xpos+wag*1.4)+x, ypos+5*len+y, (xpos+wag*1.5)+x, ypos+6*len+y);
   }
   
   void bones3(float x, float y){
+    /*
     quad((xpos+wag*1.5)+x+wid/1.6, ypos+6*len+y, (xpos+wag*1.5)+x-wid/1.6, ypos+6*len+y, 
     (xpos+wag*1.65)+x-wid/1.8, ypos+7*len+y, (xpos+wag*1.65)+x+wid/1.8, ypos+7*len+y);
     
@@ -58,23 +59,23 @@ public class Skeleton{
     triangle((xpos+wag*1.8)+x+wid/2, ypos+8*len+y, (xpos+wag*1.8)+x-wid/2, ypos+8*len+y, (xpos+wag*2)+x, ypos+9*len+y);
     //bezier(, , (xpos+wag*2)+x, ypos+9*len+y);
    
-    
+    */
     //can't see the tail yet though because xpos and ypos has to be added the appropriate amount
     beginShape();
-      vertex((xpos+wag*2)+x, ypos+9*len+y);
-      bezierVertex((xpos+wag*2)+x+(5*scale*3), ypos+9*len+y-(2*scale*3), (xpos+wag*2)+x+(6*scale*3), ypos+9*len+y+(3*scale*3), (xpos+wag*2)+x+(11*scale*3), ypos+9*len+y+(7*scale*3));
-      bezierVertex((xpos+wag*2)+x+(15*scale*3), ypos+9*len+y+(10*scale*3), (xpos+wag*2)+x+(21*scale*3), ypos+9*len+y+(14*scale*3), (xpos+wag*2)+x+(29*scale*3), ypos+9*len+y+(7*scale*3));
-      bezierVertex((xpos+wag*2)+x+(26*scale*3), ypos+9*len+y+(9*scale*3), (xpos+wag*2)+x+(22*scale*3), ypos+9*len+y+(7*scale*3), (xpos+wag*2)+x+(19*scale*3), ypos+9*len+y+(3*scale*3));
-      bezierVertex((xpos+wag*2)+x+(15*scale*3), ypos+9*len+y-(1*scale*3), (xpos+wag*2)+x+(8*scale*3), ypos+9*len+y-(5*scale*3), (xpos+wag*2)+x+(3*scale*3), ypos+9*len+y-(2*scale*3));  
+      vertex((xpos+wag*1.5)+x-12+wid/1.6, ypos+6*len+y);
+      bezierVertex((xpos+wag*1.5)+x-12+wid/1.6+(5*scale*3), ypos+6*len+y-(2*scale*3), (xpos+wag*1.5)+x-12+wid/1.6+(6*scale*3), ypos+6*len+y+(3*scale*3), (xpos+wag*1.5)+x-12+wid/1.6+(11*scale*3), ypos+6*len+y+(7*scale*3));
+      bezierVertex((xpos+wag*1.5)+x-12+wid/1.6+(15*scale*3), ypos+6*len+y+(10*scale*3), (xpos+wag*1.5)+x-12+wid/1.6+(21*scale*3), ypos+6*len+y+(14*scale*3), (xpos+wag*1.5)+x-12+wid/1.6+(29*scale*3), ypos+6*len+y+(7*scale*3));
+      bezierVertex((xpos+wag*1.5)+x-12+wid/1.6+(26*scale*3), ypos+6*len+y+(9*scale*3), (xpos+wag*1.5)+x-12+wid/1.6+(22*scale*3), ypos+6*len+y+(7*scale*3), (xpos+wag*1.5)+x-12+wid/1.6+(19*scale*3), ypos+6*len+y+(3*scale*3));
+      bezierVertex((xpos+wag*1.5)+x-12+wid/1.6+(15*scale*3), ypos+6*len+y-(1*scale*3), (xpos+wag*1.5)+x-12+wid/1.6+(8*scale*3), ypos+6*len+y-(5*scale*3), (xpos+wag*1.5)+x-12+wid/1.6+(3*scale*3), ypos+6*len+y-(2*scale*3));  
     endShape();
     
     //void eyes(){
     fill(245,255,235);
-    ellipse(((xpos+wag*1.01)+x)+wid, ypos+len+y, 22*scale, 22*scale);
-    ellipse(((xpos+wag*1.01)+x)-wid, ypos+len+y, 22*scale, 22*scale);
+    ellipse(((xpos+wag*1.01)+x)+wid, ypos+len+y, 22*scale/2, 22*scale/2);
+    ellipse(((xpos+wag*1.01)+x)-wid, ypos+len+y, 22*scale/2, 22*scale/2);
     fill(0,200,100);
-    ellipse(((xpos+wag*1.01)+x)+wid, ypos+len+y-2, 12*scale, 12*scale);
-    ellipse(((xpos+wag*1.01)+x)-wid, ypos+len+y-2, 12*scale, 12*scale);
+    ellipse(((xpos+wag*1.01)+x)+wid, ypos+len+y-2, 12*scale/2, 12*scale/2);
+    ellipse(((xpos+wag*1.01)+x)-wid, ypos+len+y-2, 12*scale/2, 12*scale/2);
   
   }
   
