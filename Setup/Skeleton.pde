@@ -5,6 +5,7 @@ public class Skeleton{
   float ypos;
   float len;
   float wid = 60;
+  float scale = 0.5;
   
   float wag = 0;
   boolean reverse = false;
@@ -55,6 +56,15 @@ public class Skeleton{
     
     triangle((xpos+wag*1.8)+x+wid, ypos+8*len+y, (xpos+wag*2)+x+(wid/2), ypos+9*len+y+wid/3, (xpos+wag*1.8)+x, ypos+8*len+y);
     //bezier(, , (xpos+wag*2)+x, ypos+9*len+y);
+   
+    //can't see the tail yet though because xpos and ypos has to be added the appropriate amount
+    beginShape();
+      vertex(ypos, xpos);
+      bezierVertex(ypos+(5*scale*3), xpos-(2*scale*3), ypos+(6*scale*3), xpos+(3*scale*3), ypos+(11*scale*3), xpos+(7*scale*3));
+      bezierVertex(ypos+(15*scale*3), xpos+(10*scale*3), ypos+(21*scale*3), xpos+(14*scale*3), ypos+(29*scale*3), xpos+(7*scale*3));
+      bezierVertex(ypos+(26*scale*3), xpos+(9*scale*3), ypos+(22*scale*3), xpos+(7*scale*3), ypos+(19*scale*3), xpos+(3*scale*3));
+      bezierVertex(ypos+(15*scale*3), xpos-(1*scale*3), ypos+(8*scale*3), xpos-(5*scale*3), ypos+(3*scale*3), xpos-(2*scale*3));  
+    endShape();
   }
   
   void move(float x, float y){
