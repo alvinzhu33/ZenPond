@@ -20,7 +20,7 @@ void setup(){
   frameRate(64);
   f = createFont("Arial",32,false);
   
-  s1 = new Skeleton(500, 100, 100);
+  s1 = new Skeleton(500, 500, 100);
   
   lp1 = new Lilypad(110,570,150);
   lp2 = new Lilypad(800,170,120);
@@ -59,8 +59,8 @@ void draw(){
   text((millis()/1000) + " sec", width/2, 60);
   
   if(s1.up()){
-    fishy--;
+    fishy-=2;
   }else{
-    fishy++;
+    fishy+=2;
   }
 }
