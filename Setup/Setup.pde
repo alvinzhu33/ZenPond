@@ -12,7 +12,6 @@ Flower fl2;
 Flower fl3;
 
 float fishy=0;
-float fishx=0;
 
 void setup(){
   size(900,675);
@@ -35,7 +34,7 @@ void setup(){
 void draw(){
   background(bg);
   
-  s1.move(fishx,fishy);
+  s1.move(0,fishy);
   //s1.step1(fishx, fishy);
   //s1.step2(fishx, fishy);
   //s1.step3(fishx, fishy);
