@@ -36,6 +36,7 @@ public class Skeleton{
   }
   
   void bones2(float x, float y){
+    
     quad((xpos+wag*1.2)+x+wid/1.1, ypos+3*len+y,(xpos+wag*1.2)+x-wid/1.1, ypos+3*len+y, 
     (xpos+wag*1.3)+x-wid/1.2, ypos+4*len+y, (xpos+wag*1.3)+x+wid/1.2, ypos+4*len+y);
    
@@ -57,14 +58,24 @@ public class Skeleton{
     triangle((xpos+wag*1.8)+x+wid/2, ypos+8*len+y, (xpos+wag*1.8)+x-wid/2, ypos+8*len+y, (xpos+wag*2)+x, ypos+9*len+y);
     //bezier(, , (xpos+wag*2)+x, ypos+9*len+y);
    
+    
     //can't see the tail yet though because xpos and ypos has to be added the appropriate amount
     beginShape();
-      vertex(ypos, xpos);
-      bezierVertex(ypos+(5*scale*3), xpos-(2*scale*3), ypos+(6*scale*3), xpos+(3*scale*3), ypos+(11*scale*3), xpos+(7*scale*3));
-      bezierVertex(ypos+(15*scale*3), xpos+(10*scale*3), ypos+(21*scale*3), xpos+(14*scale*3), ypos+(29*scale*3), xpos+(7*scale*3));
-      bezierVertex(ypos+(26*scale*3), xpos+(9*scale*3), ypos+(22*scale*3), xpos+(7*scale*3), ypos+(19*scale*3), xpos+(3*scale*3));
-      bezierVertex(ypos+(15*scale*3), xpos-(1*scale*3), ypos+(8*scale*3), xpos-(5*scale*3), ypos+(3*scale*3), xpos-(2*scale*3));  
+      vertex((xpos+wag*2)+x, ypos+9*len+y);
+      bezierVertex((xpos+wag*2)+x+(5*scale*3), ypos+9*len+y-(2*scale*3), (xpos+wag*2)+x+(6*scale*3), ypos+9*len+y+(3*scale*3), (xpos+wag*2)+x+(11*scale*3), ypos+9*len+y+(7*scale*3));
+      bezierVertex((xpos+wag*2)+x+(15*scale*3), ypos+9*len+y+(10*scale*3), (xpos+wag*2)+x+(21*scale*3), ypos+9*len+y+(14*scale*3), (xpos+wag*2)+x+(29*scale*3), ypos+9*len+y+(7*scale*3));
+      bezierVertex((xpos+wag*2)+x+(26*scale*3), ypos+9*len+y+(9*scale*3), (xpos+wag*2)+x+(22*scale*3), ypos+9*len+y+(7*scale*3), (xpos+wag*2)+x+(19*scale*3), ypos+9*len+y+(3*scale*3));
+      bezierVertex((xpos+wag*2)+x+(15*scale*3), ypos+9*len+y-(1*scale*3), (xpos+wag*2)+x+(8*scale*3), ypos+9*len+y-(5*scale*3), (xpos+wag*2)+x+(3*scale*3), ypos+9*len+y-(2*scale*3));  
     endShape();
+    
+    //void eyes(){
+    fill(245,255,235);
+    ellipse(((xpos+wag*1.01)+x)+wid, ypos+len+y, 22*scale, 22*scale);
+    ellipse(((xpos+wag*1.01)+x)-wid, ypos+len+y, 22*scale, 22*scale);
+    fill(0,200,100);
+    ellipse(((xpos+wag*1.01)+x)+wid, ypos+len+y-2, 12*scale, 12*scale);
+    ellipse(((xpos+wag*1.01)+x)-wid, ypos+len+y-2, 12*scale, 12*scale);
+  
   }
   
   void move(float x, float y){
