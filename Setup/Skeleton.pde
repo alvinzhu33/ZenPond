@@ -5,6 +5,9 @@ public class Skeleton{
   float ypos;
   float len;
   
+  float wag = 0;
+  boolean reverse = false;
+  
    public Skeleton(float x, float y, float l){
      xpos = x;
      ypos = y;
@@ -18,22 +21,33 @@ public class Skeleton{
     noFill();
     stroke(255);
     //The space between two beziers is one quad
-    bezier(xpos+x, ypos+y, xpos+x*1.01, ypos+len+y, xpos+x*1.10, ypos+2*len+y, xpos+x*1.2, ypos+3*len+y);
+    bezier((xpos+wag)+x, ypos+y, (xpos+wag*1.01)+x, ypos+len+y, (xpos+wag*1.10)+x, ypos+2*len+y, (xpos+wag*1.2)+x, ypos+3*len+y);
   }
   
   void bones2(float x, float y){
-    bezier(xpos+x*1.2, ypos+3*len+y, xpos+x*1.3, ypos+4*len+y, xpos+x*1.4, ypos+5*len+y, xpos+x*1.5, ypos+6*len+y);
+    bezier((xpos+wag*1.2)+x, ypos+3*len+y, (xpos+wag*1.3)+x, ypos+4*len+y, (xpos+wag*1.4)+x, ypos+5*len+y, (xpos+wag*1.5)+x, ypos+6*len+y);
   }
   
   void bones3(float x, float y){
-    bezier(xpos+x*1.5, ypos+6*len+y, xpos+x*1.65, ypos+7*len+y, xpos+x*1.8, ypos+8*len+y, xpos+x*2, ypos+9*len+y);
+    bezier((xpos+wag*1.5)+x, ypos+6*len+y, (xpos+wag*1.65)+x, ypos+7*len+y, (xpos+wag*1.8)+x, ypos+8*len+y, (xpos+wag*2)+x, ypos+9*len+y);
   }
   
   void move(float x, float y){
-    /*if((millis()/1000)%20>10){
-      x = -x;
-    }*/
     //turn(0); //PI/2 = goes down, 3*PI/2 = goes up, PI = left, 0 = right unit circle
+    
+    //Wagging motion
+    if(reverse){
+      wag--;
+      if(wag==-len*9/5){
+        reverse=false;
+      }
+    }
+    else{
+      wag++;
+      if(wag==len*9/5){
+        reverse=true;
+      }
+    }
     bones1(x,y);
     bones2(x,y);
     bones3(x,y);
@@ -44,7 +58,7 @@ public class Skeleton{
    ypos = ypos+sin(angle); 
   }
   
-  void step1(float x, float y){
+  /*void step1(float x, float y){
     bezier(xpos+x*1.2+20, ypos+y, xpos+x*1.10+14, ypos+len+y, xpos+x*1.01+6, ypos+2*len+y, xpos+x+2, ypos+3*len+y);
     bezier(xpos+x, ypos+3*len+y, xpos+x, ypos+4*len+y, xpos+x, ypos+5*len+y, xpos+x, ypos+6*len+y);
     bezier(xpos+x, ypos+6*len+y, xpos+x*1.01, ypos+7*len+y, xpos+x*1.10, ypos+8*len+y, xpos+x*1.2, ypos+9*len+y);
@@ -92,5 +106,5 @@ public class Skeleton{
     if((millis()/1000)%10<10 && (millis()/1000)%10>=8){
       step5(x, y);
     }
-  }
+  }*/
 }

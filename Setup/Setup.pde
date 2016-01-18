@@ -11,9 +11,8 @@ Flower fl1;
 Flower fl2;
 Flower fl3;
 
-float fishx = 0;
-float fishy = 0;
-boolean reverse = false;
+float fishy=0;
+float fishx=0;
 
 void setup(){
   size(900,675);
@@ -36,13 +35,13 @@ void setup(){
 void draw(){
   background(bg);
   
-  //s1.move(fishx,fishy);
+  s1.move(fishx,fishy);
   //s1.step1(fishx, fishy);
   //s1.step2(fishx, fishy);
   //s1.step3(fishx, fishy);
   //s1.step4(fishx, fishy);
   //s1.step5(fishx, fishy);
-  s1.uturn(fishx, fishy);
+  //s1.uturn(fishx, fishy);
   
   lp1.drawLilypad(65);
   lp2.drawLilypad(175);
@@ -62,16 +61,5 @@ void draw(){
   textAlign(CENTER);
   text((millis()/1000) + " sec", width/2, 60);
   
-  if(reverse){
-    fishx--;
-    if(fishx==-20){
-      reverse=false;
-    }
-  }
-  if(! reverse){
-    fishx++;
-    if(fishx==20){
-      reverse=true;
-    }
-  }
+  fishy++;
 }
