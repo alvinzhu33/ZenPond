@@ -12,11 +12,12 @@ Flower fl2;
 Flower fl3;
 
 float fishy=0;
+String upordown = "up";
 
 void setup(){
   size(900,675);
   bg = loadImage("bg.jpg");
-  frameRate(34);
+  frameRate(64);
   f = createFont("Arial",32,false);
   
   s1 = new Skeleton(500, 100, 100);
@@ -34,7 +35,11 @@ void setup(){
 void draw(){
   background(bg);
   
-  s1.move(0,fishy);
+  s1.move(0,fishy); //0 defaults down
+  //s1.turn(PI/2);
+  //s1.turn(3*PI/2);
+  s1.boundary(fishy);
+  
   //s1.step1(fishx, fishy);
   //s1.step2(fishx, fishy);
   //s1.step3(fishx, fishy);
@@ -60,5 +65,9 @@ void draw(){
   textAlign(CENTER);
   text((millis()/1000) + " sec", width/2, 60);
   
-  fishy++;
+  if(s1.up()){
+    fishy--;
+  }else{
+    fishy++;
+  }
 }

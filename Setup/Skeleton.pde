@@ -51,6 +51,29 @@ public class Skeleton{
     bones1(x,y);
     bones2(x,y);
     bones3(x,y);
+    
+  }
+  void boundary(float y){
+    if (up()){
+      if(fishy <= -200){
+        fishy = 650;
+      }
+    }else{
+    if (fishy >= 700){
+      fishy = -150;
+    }//else{
+     // if (fishy <= -50){
+    //  fishy += 500;
+    }
+ //   }
+  }
+  
+  boolean up(){
+    if (upordown == "up"){
+      return true;
+    }else{
+      return false;
+    }
   }
   
   void turn(float angle){
