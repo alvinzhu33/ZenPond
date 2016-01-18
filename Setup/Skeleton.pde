@@ -4,7 +4,7 @@ public class Skeleton{
   float xpos;
   float ypos;
   float len;
-  float wid = 60;
+  float wid = 20;
   float scale = 0.5;
   
   float wag = 0;
@@ -24,37 +24,37 @@ public class Skeleton{
     noStroke();
     fill(204, 102, 0);
     //The space between two beziers is one quad
-    quad((xpos+wag)+x+(wid/6), ypos+y, (xpos+wag)+x+wid-(wid/6), 
-    ypos+y,(xpos+wag*1.01)+x+wid, ypos+len+y, (xpos+wag*1.01)+x, ypos+len+y);
+    quad(((xpos+wag)+x)+wid/2, ypos+y, ((xpos+wag)+x)-wid/2, 
+    ypos+y,((xpos+wag*1.01)+x)-(wid), ypos+len+y, ((xpos+wag*1.01)+x)+(wid), ypos+len+y);
     
-    quad((xpos+wag*1.01)+x, ypos+len+y, (xpos+wag*1.01)+x+wid, ypos+len+y, 
-    (xpos+wag*1.10)+x+wid+(wid/6), ypos+2*len+y, (xpos+wag*1.10)+x-(wid/6), ypos+2*len+y);
+    quad(((xpos+wag*1.01)+x)+wid, ypos+len+y, ((xpos+wag*1.01)+x)-wid, ypos+len+y, 
+    (xpos+wag*1.10)+x-wid, ypos+2*len+y, (xpos+wag*1.10)+x+wid, ypos+2*len+y);
     
-    quad((xpos+wag*1.10)+x, ypos+2*len+y, (xpos+wag*1.10)+x+wid, ypos+2*len+y,
-    (xpos+wag*1.2)+x+wid, ypos+3*len+y, (xpos+wag*1.2)+x, ypos+3*len+y);
+    quad((xpos+wag*1.10)+x+wid, ypos+2*len+y, (xpos+wag*1.10)+x-wid, ypos+2*len+y,
+    (xpos+wag*1.2)+x-wid/1.1, ypos+3*len+y, (xpos+wag*1.2)+x+wid/1.1, ypos+3*len+y);
     //bezier((xpos+wag*1.10)+x, ypos+2*len+y, (xpos+wag*1.2)+x, ypos+3*len+y);
   }
   
   void bones2(float x, float y){
-    quad((xpos+wag*1.2)+x, ypos+3*len+y,(xpos+wag*1.2)+x+wid, ypos+3*len+y, 
-    (xpos+wag*1.3)+x+wid, ypos+4*len+y, (xpos+wag*1.3)+x, ypos+4*len+y);
+    quad((xpos+wag*1.2)+x+wid/1.1, ypos+3*len+y,(xpos+wag*1.2)+x-wid/1.1, ypos+3*len+y, 
+    (xpos+wag*1.3)+x-wid/1.2, ypos+4*len+y, (xpos+wag*1.3)+x+wid/1.2, ypos+4*len+y);
+   
+    quad((xpos+wag*1.3)+x+wid/1.2, ypos+4*len+y, (xpos+wag*1.3)+x-wid/1.2, ypos+4*len+y, 
+    (xpos+wag*1.4)+x-wid/1.4, ypos+5*len+y, (xpos+wag*1.4)+x+wid/1.4, ypos+5*len+y);
     
-    quad((xpos+wag*1.3)+x, ypos+4*len+y, (xpos+wag*1.3)+x+wid, ypos+4*len+y, 
-    (xpos+wag*1.4)+x+wid, ypos+5*len+y, (xpos+wag*1.4)+x, ypos+5*len+y);
-    
-    quad((xpos+wag*1.4)+x, ypos+5*len+y, (xpos+wag*1.4)+x+wid, ypos+5*len+y, 
-    (xpos+wag*1.5)+x+wid, ypos+6*len+y, (xpos+wag*1.5)+x, ypos+6*len+y);
+    quad((xpos+wag*1.4)+x+wid/1.4, ypos+5*len+y, (xpos+wag*1.4)+x-wid/1.4, ypos+5*len+y, 
+    (xpos+wag*1.5)+x-wid/1.6, ypos+6*len+y, (xpos+wag*1.5)+x+wid/1.6, ypos+6*len+y);
     //bezier(, (xpos+wag*1.4)+x, ypos+5*len+y, (xpos+wag*1.5)+x, ypos+6*len+y);
   }
   
   void bones3(float x, float y){
-    quad((xpos+wag*1.5)+x, ypos+6*len+y, (xpos+wag*1.5)+x+wid, ypos+6*len+y, 
-    (xpos+wag*1.65)+x+wid, ypos+7*len+y, (xpos+wag*1.65)+x, ypos+7*len+y);
+    quad((xpos+wag*1.5)+x+wid/1.6, ypos+6*len+y, (xpos+wag*1.5)+x-wid/1.6, ypos+6*len+y, 
+    (xpos+wag*1.65)+x-wid/1.8, ypos+7*len+y, (xpos+wag*1.65)+x+wid/1.8, ypos+7*len+y);
     
-    quad((xpos+wag*1.65)+x, ypos+7*len+y, (xpos+wag*1.65)+x+wid, ypos+7*len+y, 
-    (xpos+wag*1.8)+x+wid, ypos+8*len+y, (xpos+wag*1.8)+x, ypos+8*len+y);
+    quad((xpos+wag*1.65)+x+wid/1.8, ypos+7*len+y, (xpos+wag*1.65)+x-wid/1.8, ypos+7*len+y, 
+    (xpos+wag*1.8)+x-wid/2.1, ypos+8*len+y, (xpos+wag*1.8)+x+wid/2.1, ypos+8*len+y);
     
-    triangle((xpos+wag*1.8)+x+wid, ypos+8*len+y, (xpos+wag*2)+x+(wid/2), ypos+9*len+y+wid/3, (xpos+wag*1.8)+x, ypos+8*len+y);
+    triangle((xpos+wag*1.8)+x+wid/2, ypos+8*len+y, (xpos+wag*1.8)+x-wid/2, ypos+8*len+y, (xpos+wag*2)+x, ypos+9*len+y);
     //bezier(, , (xpos+wag*2)+x, ypos+9*len+y);
    
     //can't see the tail yet though because xpos and ypos has to be added the appropriate amount
@@ -90,17 +90,14 @@ public class Skeleton{
   }
   void boundary(float y){
     if (up()){
-      if(fishy <= -200){
+      if(fishy <= -len*9*1.9){
         fishy = 650;
       }
     }else{
-    if (fishy >= 700){
-      fishy = -150;
-    }//else{
-     // if (fishy <= -50){
-    //  fishy += 500;
+      if (fishy >= 700){
+        fishy = -1509;
+      }
     }
- //   }
   }
   
   boolean up(){

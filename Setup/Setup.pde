@@ -12,7 +12,7 @@ Flower fl2;
 Flower fl3;
 
 float fishy=0;
-String upordown = "down";
+String upordown = "up";
 
 void setup(){
   size(900,675);
@@ -35,17 +35,10 @@ void setup(){
 void draw(){
   background(bg);
   
-  s1.move(0,fishy); //0 defaults down
+  s1.move(0,fishy); //straight up
   //s1.turn(3*PI/2);
   //s1.turn(3*PI/2);
   s1.boundary(fishy);
-  
-  //s1.step1(fishx, fishy);
-  //s1.step2(fishx, fishy);
-  //s1.step3(fishx, fishy);
-  //s1.step4(fishx, fishy);
-  //s1.step5(fishx, fishy);
-  //s1.uturn(fishx, fishy);
   
   lp1.drawLilypad(65);
   lp2.drawLilypad(175);
