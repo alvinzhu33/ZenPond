@@ -4,6 +4,7 @@ public class Skeleton{
   float xpos;
   float ypos;
   float len;
+  float wid = 60;
   
   float wag = 0;
   boolean reverse = false;
@@ -18,10 +19,13 @@ public class Skeleton{
    }
   
   void bones1(float x, float y){
-    noFill();
+ 
     stroke(255);
     //The space between two beziers is one quad
-    bezier((xpos+wag)+x, ypos+y, (xpos+wag*1.01)+x, ypos+len+y, (xpos+wag*1.10)+x, ypos+2*len+y, (xpos+wag*1.2)+x, ypos+3*len+y);
+    quad((xpos+wag)+x, ypos+y, (xpos+wag)+x+wid, ypos+y,(xpos+wag*1.01)+x+wid, ypos+len+y, (xpos+wag*1.01)+x, ypos+len+y);
+    quad((xpos+wag*1.01)+x, ypos+len+y, (xpos+wag*1.01)+x+wid, ypos+len+y, (xpos+wag*1.10)+x+wid, ypos+2*len+y, (xpos+wag*1.10)+x, ypos+2*len+y);
+    quad((xpos+wag*1.10)+x, ypos+2*len+y, (xpos+wag*1.10)+x+wid, ypos+2*len+y,(xpos+wag*1.2)+x+wid, ypos+3*len+y, (xpos+wag*1.2)+x, ypos+3*len+y);
+    //bezier((xpos+wag*1.10)+x, ypos+2*len+y, (xpos+wag*1.2)+x, ypos+3*len+y);
   }
   
   void bones2(float x, float y){
