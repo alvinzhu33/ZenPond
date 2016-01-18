@@ -12,7 +12,7 @@ Flower fl2;
 Flower fl3;
 
 float fishy=0;
-String upordown = "up";
+String upordown = "down";
 
 void setup(){
   size(900,675);
