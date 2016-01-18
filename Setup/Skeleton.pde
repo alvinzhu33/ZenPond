@@ -29,7 +29,10 @@ public class Skeleton{
   }
   
   void bones2(float x, float y){
-    bezier((xpos+wag*1.2)+x, ypos+3*len+y, (xpos+wag*1.3)+x, ypos+4*len+y, (xpos+wag*1.4)+x, ypos+5*len+y, (xpos+wag*1.5)+x, ypos+6*len+y);
+    quad((xpos+wag*1.2)+x, ypos+3*len+y,(xpos+wag*1.2)+x+wid, ypos+3*len+y, (xpos+wag*1.3)+x+wid, ypos+4*len+y, (xpos+wag*1.3)+x, ypos+4*len+y);
+    quad((xpos+wag*1.3)+x, ypos+4*len+y,(xpos+wag*1.3)+x+wid, ypos+4*len+y, (xpos+wag*1.4)+x+wid, ypos+5*len+y, (xpos+wag*1.4)+x, ypos+5*len+y);
+    quad((xpos+wag*1.4)+x, ypos+5*len+y, (xpos+wag*1.4)+x+wid, ypos+5*len+y, (xpos+wag*1.5)+x+wid, ypos+6*len+y, (xpos+wag*1.5)+x, ypos+6*len+y);
+    //bezier(, (xpos+wag*1.4)+x, ypos+5*len+y, (xpos+wag*1.5)+x, ypos+6*len+y);
   }
   
   void bones3(float x, float y){
