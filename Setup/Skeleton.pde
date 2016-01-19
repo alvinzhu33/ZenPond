@@ -85,7 +85,7 @@ public class Skeleton{
   void move(float x, float y){
     //turn(0); //PI/2 = goes down, 3*PI/2 = goes up, PI = left, 0 = right unit circle
    
-    if(((float)Math.random()*10000)<2 || spin > 0){
+    if(((float)Math.random()*1000)<2 || spin > 0){
       if (spin == 0){
         spin = 30; 
         totalangle += 30; 
@@ -109,7 +109,7 @@ public class Skeleton{
        fishx += 1.2;
      }
      if (totalangle == 90){
-       fishx += 1;
+       fishy += 1;
      }
      if (totalangle == 120){
        fishy += .5;
@@ -120,14 +120,14 @@ public class Skeleton{
        fishx += .1;
      }
      if (totalangle == 180){
-       fishy -= 1; 
+       fishy += 1; 
      }
     if (totalangle == 210){
-       fishy -= 1;
+       fishy += 1;
        fishx -= .5;
      }
      if (totalangle == 240){
-       fishy -= .5;
+       fishy += .5;
        fishx -= 1;
      }
      if (totalangle == 270){

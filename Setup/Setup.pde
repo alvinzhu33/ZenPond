@@ -18,7 +18,7 @@ String upordown = "up";
 void setup(){
   size(900,675);
   bg = loadImage("bg.jpg");
-  frameRate(50);
+  frameRate(100);
   f = createFont("Arial",32,false);
   
   s1 = new Skeleton(500, 500, 100);
@@ -65,16 +65,21 @@ void draw(){
 }
 
 void boundary(){
-    if(fishy<-10){
-      fishy=680;
+  
+     if(fishy<-s1.len*9){
+      fishy=600;
     }
-    if(fishy>650){
-      fishy=-s1.len*12;
+    if(fishy>700){
+      fishy=-s1.len*9;
+    }
+    if(fishx<-s1.len*13){
+      fishx=680;
     }
     if(fishx>900){
-      fishx = 50;
+      fishx=0;
     }
-    if(fishx<0){
-      fishx = 700; 
-    }
+}
+void mousePressed(){
+  fishx = mouseX;
+  fishy = mouseY;
 }
