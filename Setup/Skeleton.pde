@@ -1,11 +1,11 @@
 import java.util.*;
 
 public class Skeleton{
+  float fishx;
+  float fishy;
   float len;
   float wid = 20;
   float scale = 1;
-  float spin = 0;
-  float totalangle = 0;
   
   float wag = 0;
   boolean reverse = false;
@@ -13,6 +13,8 @@ public class Skeleton{
   
    public Skeleton(float x, float y, float l){
      len = l/9;//Include tail later
+     fishx=x;
+     fishy=y;
      bones1(x,y);
      bones2(x,y);
      bones3(x,y);
@@ -23,50 +25,50 @@ public class Skeleton{
     noStroke();
     fill(204, 102, 0);
     //The space between two beziers is one quad
-    quad(((0+wag)+x)+wid/2, 0+y, ((0+wag)+x)-wid/2, 
-    0+y,((0+wag*1.01)+x)-(wid), 0+len+y, ((0+wag*1.01)+x)+(wid), 0+len+y);
+    quad((wag+x)+wid/2, 0+y, (wag+x)-wid/2, 
+    0+y,(wag*1.01+x)-(wid), len+y, (wag*1.01+x)+(wid), len+y);
     
-    quad(((0+wag*1.01)+x)+wid, 0+len+y, ((0+wag*1.01)+x)-wid, 0+len+y, 
-    (0+wag*1.10)+x-wid, 0+2*len+y, (0+wag*1.10)+x+wid, 0+2*len+y);
+    quad((wag*1.01+x)+wid, len+y, (wag*1.01+x)-wid, len+y, 
+    (wag*1.10)+x-wid, 2*len+y, (wag*1.10)+x+wid, 2*len+y);
     
-    quad((0+wag*1.10)+x+wid, 0+2*len+y, (0+wag*1.10)+x-wid, 0+2*len+y,
-    (0+wag*1.2)+x-wid/1.1, 0+3*len+y, (0+wag*1.2)+x+wid/1.1, 0+3*len+y);
+    quad((wag*1.10)+x+wid, 2*len+y, (wag*1.10)+x-wid, 2*len+y,
+    (wag*1.2)+x-wid/1.1, 3*len+y, (wag*1.2)+x+wid/1.1, 3*len+y);
     //bezier((xpos+wag*1.10)+x, ypos+2*len+y, (xpos+wag*1.2)+x, ypos+3*len+y);
   }
   
   void bones2(float x, float y){
     
-    quad((0+wag*1.2)+x+wid/1.1, 0+3*len+y,(0+wag*1.2)+x-wid/1.1, 0+3*len+y, 
-    (0+wag*1.3)+x-wid/1.2, 0+4*len+y, (0+wag*1.3)+x+wid/1.2, 0+4*len+y);
+    quad((wag*1.2)+x+wid/1.1, 3*len+y,(wag*1.2)+x-wid/1.1, 3*len+y, 
+    (wag*1.3)+x-wid/1.2, 4*len+y, (wag*1.3)+x+wid/1.2, 4*len+y);
    
-    quad((0+wag*1.3)+x+wid/1.2, 0+4*len+y, (0+wag*1.3)+x-wid/1.2, 0+4*len+y, 
-    (0+wag*1.4)+x-wid/1.4, 0+5*len+y, (0+wag*1.4)+x+wid/1.4, 0+5*len+y);
+    quad((wag*1.3)+x+wid/1.2, 4*len+y, (wag*1.3)+x-wid/1.2, 4*len+y, 
+    (wag*1.4)+x-wid/1.4, 5*len+y, (wag*1.4)+x+wid/1.4, 5*len+y);
     
-    quad((0+wag*1.4)+x+wid/1.4, 0+5*len+y, (0+wag*1.4)+x-wid/1.4, 0+5*len+y, 
-    (0+wag*1.5)+x+6-wid/1.6, 0+6*len+y, (0+wag*1.5)+x-6+wid/1.6, 0+6*len+y);
+    quad((wag*1.4)+x+wid/1.4, 5*len+y, (wag*1.4)+x-wid/1.4, 5*len+y, 
+    (wag*1.5)+x+6-wid/1.6, 6*len+y, (wag*1.5)+x-6+wid/1.6, 6*len+y);
     //bezier(, (xpos+wag*1.4)+x, ypos+5*len+y, (xpos+wag*1.5)+x, ypos+6*len+y);
   }
   
   void bones3(float x, float y){
    beginShape();
-      vertex((0+wag*1.8)+x-12+wid/1.6, 0+6*len+y-20);
-      bezierVertex(((0+wag*1.5)+x-12+wid/1.6)-(2*scale*3), (0+6*len+y)+(5*scale*3), ((0+wag*1.5)+x-12+wid/1.6)+(3*scale*3), (0+6*len+y)+(6*scale*3), ((0+wag*1.8)+x-12+wid/1.6)+(7*scale*3), (0+6*len+y)+(11*scale*3));
-      bezierVertex(((0+wag*2)+x-12+wid/1.6)+(10*scale*3), (0+6*len+y)+(15*scale*3), ((0+wag*2)+x-12+wid/1.6)+(14*scale*3), (0+6*len+y)+(21*scale*3), ((0+wag*2)+x-12+wid/1.6)+(7*scale*3), (0+6*len+y)+(29*scale*3));
-      bezierVertex(((0+wag*2)+x-12+wid/1.6)+(9*scale*3), (0+6*len+y)+(26*scale*3), ((0+wag*2)+x-12+wid/1.6)+(7*scale*3), (0+6*len+y)+(22*scale*3), ((0+wag*2)+x-12+wid/1.6)+(3*scale*3), (0+6*len+y)+(19*scale*3));
-      bezierVertex(((0+wag*1.8)+x-12+wid/1.6)-(1*scale*3), (0+6*len+y)+(15*scale*3), ((0+wag*1.5)+x-12+wid/1.6)-(5*scale*3), (0+6*len+y)+(8*scale*3), ((0+wag*1.5)+x-12+wid/1.6)-(2*scale*3), (0+6*len+y)+(3*scale*3));
+      vertex((wag*1.8)+x-12+wid/1.6, 6*len+y-20);
+      bezierVertex(((wag*1.5)+x-12+wid/1.6)-(2*scale*3), (6*len+y)+(5*scale*3), ((wag*1.5)+x-12+wid/1.6)+(3*scale*3), (6*len+y)+(6*scale*3), ((wag*1.8)+x-12+wid/1.6)+(7*scale*3), (6*len+y)+(11*scale*3));
+      bezierVertex(((wag*2)+x-12+wid/1.6)+(10*scale*3), (6*len+y)+(15*scale*3), ((wag*2)+x-12+wid/1.6)+(14*scale*3), (6*len+y)+(21*scale*3), ((wag*2)+x-12+wid/1.6)+(7*scale*3), (6*len+y)+(29*scale*3));
+      bezierVertex(((wag*2)+x-12+wid/1.6)+(9*scale*3), (6*len+y)+(26*scale*3), ((wag*2)+x-12+wid/1.6)+(7*scale*3), (6*len+y)+(22*scale*3), ((wag*2)+x-12+wid/1.6)+(3*scale*3), (6*len+y)+(19*scale*3));
+      bezierVertex(((wag*1.8)+x-12+wid/1.6)-(1*scale*3), (6*len+y)+(15*scale*3), ((wag*1.5)+x-12+wid/1.6)-(5*scale*3), (6*len+y)+(8*scale*3), ((wag*1.5)+x-12+wid/1.6)-(2*scale*3), (6*len+y)+(3*scale*3));
     endShape();
     
     //void eyes(){
     fill(245,255,235);
-    ellipse(((0+wag*1.01)+x)+wid, 0+len+y, 22*scale/2, 22*scale/2);
-    ellipse(((0+wag*1.01)+x)-wid, 0+len+y, 22*scale/2, 22*scale/2);
+    ellipse(((wag*1.01)+x)+wid, len+y, 22*scale/2, 22*scale/2);
+    ellipse(((wag*1.01)+x)-wid, len+y, 22*scale/2, 22*scale/2);
     fill(0,200,100);
-    ellipse(((0+wag*1.01)+x)+wid, 0+len+y-2, 12*scale/2, 12*scale/2);
-    ellipse(((0+wag*1.01)+x)-wid, 0+len+y-2, 12*scale/2, 12*scale/2);
+    ellipse(((wag*1.01)+x)+wid, len+y-2, 12*scale/2, 12*scale/2);
+    ellipse(((wag*1.01)+x)-wid, len+y-2, 12*scale/2, 12*scale/2);
   
   }
   
-  void move(float x, float y){
+  void move(){
     //turn(0); //PI/2 = goes down, 3*PI/2 = goes up, PI = left, 0 = right unit circle
    
     /*if(((float)Math.random()*1000)<2 || spin > 0){
@@ -135,7 +137,7 @@ public class Skeleton{
     fishx+=sin(orientation);
     fishy-=cos(orientation);
     pushMatrix();
-    translate(x,y);
+    translate(fishx,fishy);
     rotate(orientation);
     //Wagging motion
     if(reverse){
@@ -154,5 +156,21 @@ public class Skeleton{
     bones2(0,0);
     bones3(0,0);
     popMatrix();
+    boundary();
+  }
+  
+  void boundary(){
+    if(fishy<-s1.len*10){
+      fishy=675+s1.len*10;
+    }
+    if(fishy>675+s1.len*10){
+      fishy=-s1.len*10;
+    }
+    if(fishx<-s1.len*10){
+      fishx=900+s1.len*10;
+    }
+    if(fishx>900+s1.len*10){
+      fishx=-s1.len*10;
+    }
   }
 }

@@ -4,15 +4,13 @@ PImage bg;
 PFont f;
 
 Skeleton s1;
+Skeleton s2;
 Lilypad lp1;
 Lilypad lp2;
 Lilypad lp3;
 Flower fl1;
 Flower fl2;
 Flower fl3;
-
-float fishy=500;
-float fishx=500;
 
 void setup(){
   size(900,675);
@@ -21,6 +19,7 @@ void setup(){
   f = createFont("Arial",32,false);
   
   s1 = new Skeleton(500, 500, 100);
+  s2 = new Skeleton(300,300,70);
   
   lp1 = new Lilypad(110,570,150);
   lp2 = new Lilypad(800,170,120);
@@ -35,8 +34,8 @@ void setup(){
 void draw(){
   background(bg);
   
-  s1.move(fishx,fishy);
-  boundary();
+  s1.move();
+  s2.move();
   
   lp1.drawLilypad(65);
   lp2.drawLilypad(175);
@@ -57,21 +56,7 @@ void draw(){
   text((millis()/1000) + " sec", width/2, 60);
 }
 
-void boundary(){
-    if(fishy<-s1.len*10){
-      fishy=675+s1.len*10;
-    }
-    if(fishy>675+s1.len*10){
-      fishy=-s1.len*10;
-    }
-    if(fishx<-s1.len*10){
-      fishx=900+s1.len*10;
-    }
-    if(fishx>900+s1.len*10){
-      fishx=-s1.len*10;
-    }
-}
-void mousePressed(){
+/*void mousePressed(){
   fishx = mouseX;
   fishy = mouseY;
-}
+}*/
