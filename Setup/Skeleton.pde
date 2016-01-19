@@ -1,8 +1,6 @@
 import java.util.*;
 
 public class Skeleton{
-  float xpos;
-  float ypos;
   float len;
   float wid = 20;
   float scale = 1;
@@ -14,12 +12,10 @@ public class Skeleton{
   float orientation=0;
   
    public Skeleton(float x, float y, float l){
-     xpos = x;
-     ypos = y;
      len = l/9;//Include tail later
-     bones1(0,0);
-     bones2(0,0);
-     bones3(0,0);
+     bones1(x,y);
+     bones2(x,y);
+     bones3(x,y);
    }
   
   void bones1(float x, float y){
@@ -85,7 +81,7 @@ public class Skeleton{
   void move(float x, float y){
     //turn(0); //PI/2 = goes down, 3*PI/2 = goes up, PI = left, 0 = right unit circle
    
-    if(((float)Math.random()*1000)<2 || spin > 0){
+    /*if(((float)Math.random()*1000)<2 || spin > 0){
       if (spin == 0){
         spin = 30; 
         totalangle += 30; 
@@ -144,16 +140,12 @@ public class Skeleton{
      if (totalangle == 360){
        fishy -= 1;
      }
-     /*
-     if(s1.up()){
-        fishy-=1;
-      }else{
-        fishy+=1;
-      }
-      */
-   }
-    
-    
+   }*/
+    if((float)Math.random()*10<1){
+      orientation += ((float)Math.random()*11/100)-5/100.;
+    }
+    fishx+=sin(orientation);
+    fishy-=cos(orientation);
     pushMatrix();
     translate(x,y);
     rotate(orientation);
@@ -176,18 +168,10 @@ public class Skeleton{
     popMatrix();
   }
   
-  boolean up(){
-    if (upordown == "up"){
-      return true;
-    }else{
-      return false;
-    }
-  }
-  
-  void turn(float angle){
-   xpos = xpos+cos(angle);
-   ypos = ypos+sin(angle); 
-  }
+  /*void turn(float angle){
+   xpos = xpos+sin(angle);
+   ypos = ypos+cos(angle); 
+  }*/
   
   /*void step1(float x, float y){
     bezier(xpos+x*1.2+20, ypos+y, xpos+x*1.10+14, ypos+len+y, xpos+x*1.01+6, ypos+2*len+y, xpos+x+2, ypos+3*len+y);

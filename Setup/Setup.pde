@@ -13,7 +13,6 @@ Flower fl3;
 
 float fishy=500;
 float fishx=500;
-String upordown = "up";
 
 void setup(){
   size(900,675);
@@ -37,10 +36,6 @@ void draw(){
   background(bg);
   
   s1.move(fishx,fishy);
-  
-  //straight up
-  //s1.turn(3*PI/2);
-  //s1.turn(3*PI/2);
   boundary();
   
   lp1.drawLilypad(65);
@@ -60,23 +55,20 @@ void draw(){
   textFont(f);
   textAlign(CENTER);
   text((millis()/1000) + " sec", width/2, 60);
-  
-  
 }
 
 void boundary(){
-  
-     if(fishy<-s1.len*9){
-      fishy=600;
+    if(fishy<-s1.len*10){
+      fishy=675+s1.len*10;
     }
-    if(fishy>700){
-      fishy=-s1.len*9;
+    if(fishy>675+s1.len*10){
+      fishy=-s1.len*10;
     }
-    if(fishx<-s1.len*13){
-      fishx=680;
+    if(fishx<-s1.len*10){
+      fishx=900+s1.len*10;
     }
-    if(fishx>900){
-      fishx=0;
+    if(fishx>900+s1.len*10){
+      fishx=-s1.len*10;
     }
 }
 void mousePressed(){
