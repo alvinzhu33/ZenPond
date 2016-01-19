@@ -24,7 +24,6 @@ public class Lilypad{
     pushMatrix();
     translate(xpos,ypos);
     rotate(angle);
-    //rotate(radians((int)(Math.random()*36)*10));
     fill(r, g, b);
     beginShape();
     arc(0,0,size,size, -PI*14/15,PI*19/20);

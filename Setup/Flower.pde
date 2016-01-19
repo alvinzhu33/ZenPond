@@ -29,7 +29,7 @@ public class Flower{
  public void drawFlower(){
     //Larger flower
     int degrees=0;
-    int start=60;//(int)(Math.random()*6)*10;
+    int start=60;
     fill(232,144,203);
     while(degrees<360){
       pushMatrix();
