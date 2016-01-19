@@ -62,11 +62,11 @@ public class Skeleton{
     */
     //can't see the tail yet though because xpos and ypos has to be added the appropriate amount
     beginShape();
-      vertex((xpos+wag*1.5)+x-12+wid/1.6, ypos+6*len+y);
-      bezierVertex((xpos+wag*1.5)+x-12+wid/1.6+(5*scale*3), ypos+6*len+y-(2*scale*3), (xpos+wag*1.5)+x-12+wid/1.6+(6*scale*3), ypos+6*len+y+(3*scale*3), (xpos+wag*1.5)+x-12+wid/1.6+(11*scale*3), ypos+6*len+y+(7*scale*3));
-      bezierVertex((xpos+wag*1.5)+x-12+wid/1.6+(15*scale*3), ypos+6*len+y+(10*scale*3), (xpos+wag*1.5)+x-12+wid/1.6+(21*scale*3), ypos+6*len+y+(14*scale*3), (xpos+wag*1.5)+x-12+wid/1.6+(29*scale*3), ypos+6*len+y+(7*scale*3));
-      bezierVertex((xpos+wag*1.5)+x-12+wid/1.6+(26*scale*3), ypos+6*len+y+(9*scale*3), (xpos+wag*1.5)+x-12+wid/1.6+(22*scale*3), ypos+6*len+y+(7*scale*3), (xpos+wag*1.5)+x-12+wid/1.6+(19*scale*3), ypos+6*len+y+(3*scale*3));
-      bezierVertex((xpos+wag*1.5)+x-12+wid/1.6+(15*scale*3), ypos+6*len+y-(1*scale*3), (xpos+wag*1.5)+x-12+wid/1.6+(8*scale*3), ypos+6*len+y-(5*scale*3), (xpos+wag*1.5)+x-12+wid/1.6+(3*scale*3), ypos+6*len+y-(2*scale*3));  
+      vertex((xpos+wag*1.5)+x-12+wid/1.6, ypos+6*len+y-20);
+      bezierVertex(((xpos+wag*1.5)+x-12+wid/1.6)-(2*scale*3), (ypos+6*len+y)+(5*scale*3), ((xpos+wag*1.5)+x-12+wid/1.6)+(3*scale*3), (ypos+6*len+y)+(6*scale*3), ((xpos+wag*1.5)+x-12+wid/1.6)+(7*scale*3), (ypos+6*len+y)+(11*scale*3));
+      bezierVertex(((xpos+wag*1.5)+x-12+wid/1.6)+(10*scale*3), (ypos+6*len+y)+(15*scale*3), ((xpos+wag*1.5)+x-12+wid/1.6)+(14*scale*3), (ypos+6*len+y)+(21*scale*3), ((xpos+wag*1.5)+x-12+wid/1.6)+(7*scale*3), (ypos+6*len+y)+(29*scale*3));
+      bezierVertex(((xpos+wag*1.5)+x-12+wid/1.6)+(9*scale*3), (ypos+6*len+y)+(26*scale*3), ((xpos+wag*1.5)+x-12+wid/1.6)+(7*scale*3), (ypos+6*len+y)+(22*scale*3), ((xpos+wag*1.5)+x-12+wid/1.6)+(3*scale*3), (ypos+6*len+y)+(19*scale*3));
+      bezierVertex(((xpos+wag*1.5)+x-12+wid/1.6)-(1*scale*3), (ypos+6*len+y)+(15*scale*3), ((xpos+wag*1.5)+x-12+wid/1.6)-(5*scale*3), (ypos+6*len+y)+(8*scale*3), ((xpos+wag*1.5)+x-12+wid/1.6)-(2*scale*3), (ypos+6*len+y)+(3*scale*3));
     endShape();
     
     //void eyes(){
