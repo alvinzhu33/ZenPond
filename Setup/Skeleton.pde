@@ -82,7 +82,7 @@ public class Skeleton{
   
   void move(float x, float y){
     //turn(0); //PI/2 = goes down, 3*PI/2 = goes up, PI = left, 0 = right unit circle
-    if((float)Math.random()*4<1){
+    if((float)Math.random()*5<1){
       orientation += ((float)(Math.random()*11)/100)-5.0/100;
     }
     
