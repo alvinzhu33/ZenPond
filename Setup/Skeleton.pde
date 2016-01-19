@@ -6,6 +6,8 @@ public class Skeleton{
   float len;
   float wid = 20;
   float scale = 1;
+  float spin = 0;
+  float totalangle = 0;
   
   float wag = 0;
   boolean reverse = false;
@@ -63,11 +65,11 @@ public class Skeleton{
     */
     //can't see the tail yet though because xpos and ypos has to be added the appropriate amount
     beginShape();
-      vertex((0+wag*1.5)+x-12+wid/1.6, 0+6*len+y-20);
-      bezierVertex(((0+wag*1.5)+x-12+wid/1.6)-(2*scale*3), (0+6*len+y)+(5*scale*3), ((0+wag*1.5)+x-12+wid/1.6)+(3*scale*3), (0+6*len+y)+(6*scale*3), ((0+wag*1.5)+x-12+wid/1.6)+(7*scale*3), (0+6*len+y)+(11*scale*3));
-      bezierVertex(((0+wag*1.5)+x-12+wid/1.6)+(10*scale*3), (0+6*len+y)+(15*scale*3), ((0+wag*1.5)+x-12+wid/1.6)+(14*scale*3), (0+6*len+y)+(21*scale*3), ((0+wag*1.5)+x-12+wid/1.6)+(7*scale*3), (0+6*len+y)+(29*scale*3));
-      bezierVertex(((0+wag*1.5)+x-12+wid/1.6)+(9*scale*3), (0+6*len+y)+(26*scale*3), ((0+wag*1.5)+x-12+wid/1.6)+(7*scale*3), (0+6*len+y)+(22*scale*3), ((0+wag*1.5)+x-12+wid/1.6)+(3*scale*3), (0+6*len+y)+(19*scale*3));
-      bezierVertex(((0+wag*1.5)+x-12+wid/1.6)-(1*scale*3), (0+6*len+y)+(15*scale*3), ((0+wag*1.5)+x-12+wid/1.6)-(5*scale*3), (0+6*len+y)+(8*scale*3), ((0+wag*1.5)+x-12+wid/1.6)-(2*scale*3), (0+6*len+y)+(3*scale*3));
+      vertex((0+wag*1.8)+x-12+wid/1.6, 0+6*len+y-20);
+      bezierVertex(((0+wag*1.5)+x-12+wid/1.6)-(2*scale*3), (0+6*len+y)+(5*scale*3), ((0+wag*1.5)+x-12+wid/1.6)+(3*scale*3), (0+6*len+y)+(6*scale*3), ((0+wag*1.8)+x-12+wid/1.6)+(7*scale*3), (0+6*len+y)+(11*scale*3));
+      bezierVertex(((0+wag*2)+x-12+wid/1.6)+(10*scale*3), (0+6*len+y)+(15*scale*3), ((0+wag*2)+x-12+wid/1.6)+(14*scale*3), (0+6*len+y)+(21*scale*3), ((0+wag*2)+x-12+wid/1.6)+(7*scale*3), (0+6*len+y)+(29*scale*3));
+      bezierVertex(((0+wag*2)+x-12+wid/1.6)+(9*scale*3), (0+6*len+y)+(26*scale*3), ((0+wag*2)+x-12+wid/1.6)+(7*scale*3), (0+6*len+y)+(22*scale*3), ((0+wag*2)+x-12+wid/1.6)+(3*scale*3), (0+6*len+y)+(19*scale*3));
+      bezierVertex(((0+wag*1.8)+x-12+wid/1.6)-(1*scale*3), (0+6*len+y)+(15*scale*3), ((0+wag*1.5)+x-12+wid/1.6)-(5*scale*3), (0+6*len+y)+(8*scale*3), ((0+wag*1.5)+x-12+wid/1.6)-(2*scale*3), (0+6*len+y)+(3*scale*3));
     endShape();
     
     //void eyes(){
@@ -82,9 +84,75 @@ public class Skeleton{
   
   void move(float x, float y){
     //turn(0); //PI/2 = goes down, 3*PI/2 = goes up, PI = left, 0 = right unit circle
-    if((float)Math.random()*5<1){
-      orientation += ((float)(Math.random()*11)/100)-5.0/100;
-    }
+   
+    if(((float)Math.random()*10000)<2 || spin > 0){
+      if (spin == 0){
+        spin = 30; 
+        totalangle += 30; 
+      }
+      orientation += (PI/3)/30;
+      spin--;
+      
+   }else{
+     if (totalangle == 360){
+       totalangle = 0;
+     }
+     if (totalangle == 0){
+       fishy -= 1;
+     }
+     if (totalangle == 30){
+       fishy -= 1;
+       fishx += 1; 
+     }
+     if (totalangle == 60){
+       fishy += 0.5;
+       fishx += 1.2;
+     }
+     if (totalangle == 90){
+       fishx += 1;
+     }
+     if (totalangle == 120){
+       fishy += .5;
+       fishx += 1;
+     }
+     if (totalangle == 150){
+       fishy += 1.2;
+       fishx += .1;
+     }
+     if (totalangle == 180){
+       fishy -= 1; 
+     }
+    if (totalangle == 210){
+       fishy -= 1;
+       fishx -= .5;
+     }
+     if (totalangle == 240){
+       fishy -= .5;
+       fishx -= 1;
+     }
+     if (totalangle == 270){
+       fishx -= -1;
+     }
+     if (totalangle == 300){
+       fishx -= 1;
+       fishy -= .5;
+     }
+     if (totalangle == 330){
+       fishx -= .5;
+       fishy -= 1;
+     }
+     if (totalangle == 360){
+       fishy -= 1;
+     }
+     /*
+     if(s1.up()){
+        fishy-=1;
+      }else{
+        fishy+=1;
+      }
+      */
+   }
+    
     
     pushMatrix();
     translate(x,y);
