@@ -19,7 +19,7 @@ void setup(){
   f = createFont("Arial",32,false);
   
   s1 = new Skeleton(500, 500, 100);
-  s2 = new Skeleton(300,300,70);
+  s2 = new Skeleton(300,300,90);
   
   lp1 = new Lilypad(110,570,150);
   lp2 = new Lilypad(800,170,120);

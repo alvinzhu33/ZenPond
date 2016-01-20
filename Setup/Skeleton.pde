@@ -4,17 +4,19 @@ public class Skeleton{
   float fishx;
   float fishy;
   float len;
-  float wid = 20;
+  float wid;
   float scale = 1;
   
   float wag = 0;
   boolean reverse = false;
-  float orientation=0;
+  float orientation;
   
    public Skeleton(float x, float y, float l){
-     len = l/9;//Include tail later
+     len = l/9.0;//Include tail later
+     wid = l/5.0;
      fishx=x;
      fishy=y;
+     orientation=(int)(Math.random()*360);
      bones1(x,y);
      bones2(x,y);
      bones3(x,y);
@@ -23,7 +25,7 @@ public class Skeleton{
   void bones1(float x, float y){
     //Fill();
     noStroke();
-    fill(204, 102, 0);
+    fill(204, 102, 0, 240);
     //The space between two beziers is one quad
     quad((wag+x)+wid/2, 0+y, (wag+x)-wid/2, 
     0+y,(wag*1.01+x)-(wid), len+y, (wag*1.01+x)+(wid), len+y);
@@ -59,10 +61,10 @@ public class Skeleton{
     endShape();
     
     //void eyes(){
-    fill(245,255,235);
+    fill(245,255,235,240);
     ellipse(((wag*1.01)+x)+wid, len+y, 22*scale/2, 22*scale/2);
     ellipse(((wag*1.01)+x)-wid, len+y, 22*scale/2, 22*scale/2);
-    fill(0,200,100);
+    fill(0,200,100,250);
     ellipse(((wag*1.01)+x)+wid, len+y-2, 12*scale/2, 12*scale/2);
     ellipse(((wag*1.01)+x)-wid, len+y-2, 12*scale/2, 12*scale/2);
   
@@ -132,7 +134,7 @@ public class Skeleton{
      }
    }*/
     if((float)Math.random()*10<1){
-      orientation += ((float)Math.random()*11/100)-5/100.;
+      orientation += ((float)Math.random()*11/100.0)-5/100.0;
     }
     fishx+=sin(orientation);
     fishy-=cos(orientation);
@@ -142,13 +144,13 @@ public class Skeleton{
     //Wagging motion
     if(reverse){
       wag--;
-      if(wag==-len*9/5){
+      if(wag==-len*9/5.0){
         reverse=false;
       }
     }
     else{
       wag++;
-      if(wag==len*9/5){
+      if(wag==len*9/5.0){
         reverse=true;
       }
     }
