@@ -23,10 +23,9 @@ public class Skeleton{
    }
   
   void bones1(float x, float y){
-    //Fill();
     noStroke();
     fill(204, 102, 0, 240);
-    //The space between two beziers is one quad
+    
     quad((wag+x)+wid/2, 0+y, (wag+x)-wid/2, 
     0+y,(wag*1.01+x)-(wid), len+y, (wag*1.01+x)+(wid), len+y);
     
@@ -35,7 +34,6 @@ public class Skeleton{
     
     quad((wag*1.10)+x+wid, 2*len+y, (wag*1.10)+x-wid, 2*len+y,
     (wag*1.2)+x-wid/1.1, 3*len+y, (wag*1.2)+x+wid/1.1, 3*len+y);
-    //bezier((xpos+wag*1.10)+x, ypos+2*len+y, (xpos+wag*1.2)+x, ypos+3*len+y);
   }
   
   void bones2(float x, float y){
@@ -48,7 +46,6 @@ public class Skeleton{
     
     quad((wag*1.4)+x+wid/1.4, 5*len+y, (wag*1.4)+x-wid/1.4, 5*len+y, 
     (wag*1.5)+x+6-wid/1.6, 6*len+y, (wag*1.5)+x-6+wid/1.6, 6*len+y);
-    //bezier(, (xpos+wag*1.4)+x, ypos+5*len+y, (xpos+wag*1.5)+x, ypos+6*len+y);
   }
   
   void bones3(float x, float y){
@@ -67,80 +64,20 @@ public class Skeleton{
     fill(0,200,100,250);
     ellipse(((wag*1.01)+x)+wid, len+y-2, 12*scale/2, 12*scale/2);
     ellipse(((wag*1.01)+x)-wid, len+y-2, 12*scale/2, 12*scale/2);
-  
   }
   
   void move(){
-    //turn(0); //PI/2 = goes down, 3*PI/2 = goes up, PI = left, 0 = right unit circle
-   
-    /*if(((float)Math.random()*1000)<2 || spin > 0){
-      if (spin == 0){
-        spin = 30; 
-        totalangle += 30; 
-      }
-      orientation += (PI/3)/30;
-      spin--;
-      
-   }else{
-     if (totalangle == 360){
-       totalangle = 0;
-     }
-     if (totalangle == 0){
-       fishy -= 1;
-     }
-     if (totalangle == 30){
-       fishy -= 1;
-       fishx += 1; 
-     }
-     if (totalangle == 60){
-       fishy += 0.5;
-       fishx += 1.2;
-     }
-     if (totalangle == 90){
-       fishy += 1;
-     }
-     if (totalangle == 120){
-       fishy += .5;
-       fishx += 1;
-     }
-     if (totalangle == 150){
-       fishy += 1.2;
-       fishx += .1;
-     }
-     if (totalangle == 180){
-       fishy += 1; 
-     }
-    if (totalangle == 210){
-       fishy += 1;
-       fishx -= .5;
-     }
-     if (totalangle == 240){
-       fishy += .5;
-       fishx -= 1;
-     }
-     if (totalangle == 270){
-       fishx -= -1;
-     }
-     if (totalangle == 300){
-       fishx -= 1;
-       fishy -= .5;
-     }
-     if (totalangle == 330){
-       fishx -= .5;
-       fishy -= 1;
-     }
-     if (totalangle == 360){
-       fishy -= 1;
-     }
-   }*/
+    //Random orientation
     if((float)Math.random()*10<1){
       orientation += ((float)Math.random()*11/100.0)-5/100.0;
     }
     fishx+=sin(orientation);
     fishy-=cos(orientation);
+    
     pushMatrix();
     translate(fishx,fishy);
     rotate(orientation);
+    
     //Wagging motion
     if(reverse){
       wag--;
@@ -154,10 +91,13 @@ public class Skeleton{
         reverse=true;
       }
     }
+    
+    //Draw fish
     bones1(0,0);
     bones2(0,0);
     bones3(0,0);
     popMatrix();
+    
     boundary();
   }
   
