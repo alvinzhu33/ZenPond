@@ -1,5 +1,6 @@
 # ZenPond
-APCS1 Final Project
+**APCS1 Final Project**
+
 
 **Description**
 A beautiful and elegant virtual pond where fish come to swim in a zen, peaceful environment.
@@ -21,6 +22,7 @@ Alvin
 	Fixed the boundaries so they function more consistently
 
 *Random Notes*
+
 Goldfish: ~10 in (half the size of Koifish)
 Koi Fish: ~20 in (little shorter and skinnier) than catfish
 Catfish: ~24 in (largest and fattest fish)
