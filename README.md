@@ -16,9 +16,7 @@ Sit back and relax by watching the fish swim around. There are no complicated bu
 Alvin
 
 1/19:
-
 * Modified the method for rotating the fish.
-
 * Bug of twitchy fish was introduced.
 * Made the fish swim according to its orientation (the forward direction matches up to its head)[Fixed bug where the fish faced one direction but moved in another]
 * Made the fish more textured (using transparency, I made the fish blend a little with the direction for better visuals when under the lilypads)
