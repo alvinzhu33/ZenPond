@@ -52,10 +52,10 @@ public class Skeleton{
    beginShape();
    
    //assignment: recreate tail with arcs
-   arc(x, y, width, height, start, stop);
-   arc(x, y, width, height, start, stop);
-   arc(x, y, width, height, start, stop);
-   arc(x, y, width, height, start, stop);
+   //arc(x, y, width, height, start, stop);
+   //arc(x, y, width, height, start, stop);
+   //arc(x, y, width, height, start, stop);
+   //arc(x, y, width, height, start, stop);
 
    
       vertex((wag*1.8)+x-12+wid/1.6, 6*len+y-20);
@@ -107,6 +107,7 @@ public class Skeleton{
     bones3(0,0);
     popMatrix();
     
+    //grow();
     boundary();
   }
   
@@ -124,4 +125,11 @@ public class Skeleton{
       fishx=-s1.len*10;
     }
   }
+  
+  /*void grow(){
+    System.out.println(millis()%60==0 && len<50);
+    if(millis()%60==0 && len<50){
+      len += 0.00001;
+    }
+  }*/
 }
