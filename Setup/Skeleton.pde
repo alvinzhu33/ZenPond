@@ -7,6 +7,8 @@ public class Skeleton{
   float wid;
   float scale = 1;
   
+  float tailchange = 1;
+  
   float wag = 0;
   boolean reverse = false;
   float orientation;
@@ -24,6 +26,18 @@ public class Skeleton{
   
   void bones1(float x, float y){
     noStroke();
+    
+     beginShape();
+
+      fill(223,112,432);
+      vertex((wag*1.8)+x-12+wid/1.6, 6*len+y-20);
+      bezierVertex(((wag*1.5)+x-12+wid/1.6)-(2*scale*3), (6*len+y)+(5*scale*3), ((wag*1.5)+x-12+wid/1.6)+(3*scale*3)-tailchange, (6*len+y)+(6*scale*3), ((wag*1.8)+x-12+wid/1.6)+(7*scale*3), (6*len+y)+(11*scale*3));
+      bezierVertex(((wag*2)+x-12+wid/1.6)+(10*scale*3), (6*len+y)+(15*scale*3), ((wag*2)+x-12+wid/1.6)+(14*scale*3)-tailchange, (6*len+y)+(21*scale*3), ((wag*2)+x-12+wid/1.6)+(7*scale*3), (6*len+y)+(29*scale*3));
+      bezierVertex(((wag*2)+x-12+wid/1.6)+(9*scale*3), (6*len+y)+(26*scale*3), ((wag*2)+x-12+wid/1.6)+(7*scale*3)+tailchange, (6*len+y)+(22*scale*3), ((wag*2)+x-12+wid/1.6)+(3*scale*3), (6*len+y)+(19*scale*3));
+      bezierVertex(((wag*1.8)+x-12+wid/1.6)-(1*scale*3), (6*len+y)+(15*scale*3), ((wag*1.5)+x-12+wid/1.6)-(5*scale*3)+tailchange, (6*len+y)+(8*scale*3), ((wag*1.5)+x-12+wid/1.6)-(2*scale*3), (6*len+y)+(3*scale*3));
+   
+    endShape();
+    
     fill(204, 102, 0, 240);
     
     quad((wag+x)+wid/2, 0+y, (wag+x)-wid/2, 
@@ -49,22 +63,7 @@ public class Skeleton{
   }
   
   void bones3(float x, float y){
-   beginShape();
-   
-   //assignment: recreate tail with arcs
-   arc(x, y, width, height, start, stop);
-   arc(x, y, width, height, start, stop);
-   arc(x, y, width, height, start, stop);
-   arc(x, y, width, height, start, stop);
-
-   
-      vertex((wag*1.8)+x-12+wid/1.6, 6*len+y-20);
-      bezierVertex(((wag*1.5)+x-12+wid/1.6)-(2*scale*3), (6*len+y)+(5*scale*3), ((wag*1.5)+x-12+wid/1.6)+(3*scale*3), (6*len+y)+(6*scale*3), ((wag*1.8)+x-12+wid/1.6)+(7*scale*3), (6*len+y)+(11*scale*3));
-      bezierVertex(((wag*2)+x-12+wid/1.6)+(10*scale*3), (6*len+y)+(15*scale*3), ((wag*2)+x-12+wid/1.6)+(14*scale*3), (6*len+y)+(21*scale*3), ((wag*2)+x-12+wid/1.6)+(7*scale*3), (6*len+y)+(29*scale*3));
-      bezierVertex(((wag*2)+x-12+wid/1.6)+(9*scale*3), (6*len+y)+(26*scale*3), ((wag*2)+x-12+wid/1.6)+(7*scale*3), (6*len+y)+(22*scale*3), ((wag*2)+x-12+wid/1.6)+(3*scale*3), (6*len+y)+(19*scale*3));
-      bezierVertex(((wag*1.8)+x-12+wid/1.6)-(1*scale*3), (6*len+y)+(15*scale*3), ((wag*1.5)+x-12+wid/1.6)-(5*scale*3), (6*len+y)+(8*scale*3), ((wag*1.5)+x-12+wid/1.6)-(2*scale*3), (6*len+y)+(3*scale*3));
-   
-    endShape();
+  
     
     //void eyes(){
     fill(245,255,235,240);
@@ -108,6 +107,23 @@ public class Skeleton{
     popMatrix();
     
     boundary();
+    
+    if(tailchange<20 && reverse==false){
+      tailchange++;
+    }
+    if(tailchange >= 20){
+      reverse = true;
+      tailchange--;
+    }
+    if(tailchange<20 && reverse==true){
+        tailchange--;
+    }
+    if(tailchange<-20 && reverse==true){
+      reverse=false;
+      tailchange++;
+    }
+    
+    
   }
   
   void boundary(){

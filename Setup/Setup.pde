@@ -15,7 +15,7 @@ Flower fl3;
 void setup(){
   size(900,675);
   bg = loadImage("bg.jpg");
-  frameRate(100);
+  frameRate(35);
   f = createFont("Arial",32,false);
   
   s1 = new Skeleton(500, 500, 100);
@@ -35,7 +35,7 @@ void draw(){
   background(bg);
   
   s1.move();
-  s2.move();
+//  s2.move();
   
   lp1.drawLilypad(65);
   lp2.drawLilypad(175);
