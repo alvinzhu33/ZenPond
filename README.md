@@ -22,7 +22,9 @@ Alvin
 * Made the fish more textured (using transparency, I made the fish blend a little with the direction for better visuals when under the lilypads)
 * Adapted the code so we can have multiple fishes in the pond at one time easily in the setup
 * Fixed the boundaries so they function more consistently
-
+1/20:
+* Attempted to implement a growing function
+* Attempt went horribly worng; commented out for now, will try again tomorrow
 
 *Random Notes*
 
