@@ -26,6 +26,11 @@ Alvin
 * Attempted to implement a growing function
 * Attempt went horribly wrong; took it out for now, will try again next time
 
+Jiaqi 
+1/20:
+- Changed order that objects are drawn for organization
+- Create an individual movement for the fish tail (using booleans to reverse the waving of the tail), and an function to change the coordinates of the position of the center bezier.
+
 
 *Random Notes*
 
