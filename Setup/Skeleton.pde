@@ -31,10 +31,21 @@ public class Skeleton{
 
       fill(223,112,432);
       vertex((wag*1.8)+x-12+wid/1.6, 6*len+y-20);
-      bezierVertex(((wag*1.5)+x-12+wid/1.6)-(2*scale*3), (6*len+y)+(5*scale*3), ((wag*1.5)+x-12+wid/1.6)+(3*scale*3)-tailchange, (6*len+y)+(6*scale*3), ((wag*1.8)+x-12+wid/1.6)+(7*scale*3), (6*len+y)+(11*scale*3));
-      bezierVertex(((wag*2)+x-12+wid/1.6)+(10*scale*3), (6*len+y)+(15*scale*3), ((wag*2)+x-12+wid/1.6)+(14*scale*3)-tailchange, (6*len+y)+(21*scale*3), ((wag*2)+x-12+wid/1.6)+(7*scale*3), (6*len+y)+(29*scale*3));
-      bezierVertex(((wag*2)+x-12+wid/1.6)+(9*scale*3), (6*len+y)+(26*scale*3), ((wag*2)+x-12+wid/1.6)+(7*scale*3)+tailchange, (6*len+y)+(22*scale*3), ((wag*2)+x-12+wid/1.6)+(3*scale*3), (6*len+y)+(19*scale*3));
-      bezierVertex(((wag*1.8)+x-12+wid/1.6)-(1*scale*3), (6*len+y)+(15*scale*3), ((wag*1.5)+x-12+wid/1.6)-(5*scale*3)+tailchange, (6*len+y)+(8*scale*3), ((wag*1.5)+x-12+wid/1.6)-(2*scale*3), (6*len+y)+(3*scale*3));
+      bezierVertex(((wag*1.5)+x-12+wid/1.6)-(2*scale*3), (6*len+y)+(5*scale*3), 
+                    ((wag*1.5)+x-12+wid/1.6)+(3*scale*3)-tailchange, (6*len+y)+(6*scale*3), 
+                    ((wag*1.8)+x-12+wid/1.6)+(7*scale*3), (6*len+y)+(11*scale*3));
+                    
+      bezierVertex(((wag*2)+x-12+wid/1.6)+(10*scale*3), (6*len+y)+(15*scale*3), 
+                    ((wag*2)+x-12+wid/1.6)+(14*scale*3)+tailchange, (6*len+y)+(21*scale*3), 
+                    ((wag*2)+x-12+wid/1.6)+(7*scale*3), (6*len+y)+(29*scale*3));
+                    
+      bezierVertex(((wag*2)+x-12+wid/1.6)+(9*scale*3), (6*len+y)+(26*scale*3), 
+                    ((wag*2)+x-12+wid/1.6)+(7*scale*3)+tailchange, (6*len+y)+(22*scale*3), 
+                    ((wag*2)+x-12+wid/1.6)+(3*scale*3), (6*len+y)+(19*scale*3));
+                    
+      bezierVertex(((wag*1.8)+x-12+wid/1.6)-(1*scale*3), (6*len+y)+(15*scale*3), 
+                    ((wag*1.5)+x-12+wid/1.6)-(5*scale*3)-tailchange, (6*len+y)+(8*scale*3), 
+                    ((wag*1.5)+x-12+wid/1.6)-(2*scale*3), (6*len+y)+(3*scale*3));
    
     endShape();
     
@@ -118,7 +129,7 @@ public class Skeleton{
     if(tailchange<20 && reverse==true){
         tailchange--;
     }
-    if(tailchange<-20 && reverse==true){
+    if(tailchange<-10 && reverse==true){
       reverse=false;
       tailchange++;
     }
