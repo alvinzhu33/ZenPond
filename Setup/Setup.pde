@@ -18,8 +18,8 @@ void setup(){
   frameRate(35);
   f = createFont("Arial",32,false);
   
-  s1 = new Skeleton(500, 500, 100);
-  s2 = new Skeleton(300,300,90);
+  s1 = new Skeleton(500, 500, (int)(Math.random()*20)+40);
+  s2 = new Skeleton(300,300,(int)(Math.random()*20)+40);
   
   lp1 = new Lilypad(110,570,150);
   lp2 = new Lilypad(800,170,120);
@@ -35,7 +35,7 @@ void draw(){
   background(bg);
   
   s1.move();
-//  s2.move();
+  s2.move();
   
   lp1.drawLilypad(65);
   lp2.drawLilypad(175);
@@ -55,8 +55,3 @@ void draw(){
   textAlign(CENTER);
   text((millis()/1000) + " sec", width/2, 60);
 }
-
-/*void mousePressed(){
-  fishx = mouseX;
-  fishy = mouseY;
-}*/

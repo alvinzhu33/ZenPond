@@ -51,8 +51,8 @@ public class Skeleton{
     
     fill(204, 102, 0, 240);
     
-    quad((wag+x)+wid/2, 0+y, (wag+x)-wid/2, 
-    0+y,(wag*1.01+x)-(wid), len+y, (wag*1.01+x)+(wid), len+y);
+    quad((wag+x)+wid/2, 0+y, (wag+x)-wid/2, 0+y,
+    (wag*1.01+x)-(wid), len+y, (wag*1.01+x)+(wid), len+y);
     
     quad((wag*1.01+x)+wid, len+y, (wag*1.01+x)-wid, len+y, 
     (wag*1.10)+x-wid, 2*len+y, (wag*1.10)+x+wid, 2*len+y);
@@ -98,26 +98,26 @@ public class Skeleton{
     rotate(orientation);
     
     //Wagging motion
+    System.out.println(wag);
     if(reverse){
-      wag--;
-      if(wag==-len*9/5.0){
+      wag-=1.0;
+      if(wag==-(len*9.0/5.0)){
         reverse=false;
       }
     }
     else{
-      wag++;
-      if(wag==len*9/5.0){
+      wag+=1.0;
+      if(wag==len*9.0/5.0){
         reverse=true;
       }
     }
+    boundary();
     
     //Draw fish
     bones1(0,0);
     bones2(0,0);
     bones3(0,0);
     popMatrix();
-    
-    boundary();
     
     if(tailchange<20 && reverse==false){
       tailchange++;
@@ -134,7 +134,7 @@ public class Skeleton{
       tailchange++;
     }
     
-    
+    grow();
   }
   
   void boundary(){
@@ -149,6 +149,13 @@ public class Skeleton{
     }
     if(fishx>900+s1.len*10){
       fishx=-s1.len*10;
+    }
+  }
+  
+  void grow(){
+    if(millis()%10000>9000 && millis()%10000<10000 && len<=20){
+        len=len*1.005;
+        wid=wid*1.005;
     }
   }
 }
