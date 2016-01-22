@@ -78,11 +78,11 @@ public class Skeleton{
     
     //void eyes(){
     fill(245,255,235,240);
-    ellipse(((wag*1.01)+x)+wid, len+y, 22*scale/2, 22*scale/2);
-    ellipse(((wag*1.01)+x)-wid, len+y, 22*scale/2, 22*scale/2);
+    ellipse(((wag*1.01)+x)+wid, len+y, 22*len/20, 22*len/20);
+    ellipse(((wag*1.01)+x)-wid, len+y, 22*len/20, 22*len/20);
     fill(0,200,100,250);
-    ellipse(((wag*1.01)+x)+wid, len+y-2, 12*scale/2, 12*scale/2);
-    ellipse(((wag*1.01)+x)-wid, len+y-2, 12*scale/2, 12*scale/2);
+    ellipse(((wag*1.01)+x)+wid, len+y-2, 12*len/20, 12*len/20);
+    ellipse(((wag*1.01)+x)-wid, len+y-2, 12*len/20, 12*len/20);
   }
   
   void move(){
@@ -141,21 +141,21 @@ public class Skeleton{
   
   void boundary(){
     if(fishy<-s1.len*10){
-      fishy=675+s1.len*10;
+      fishy=680;
     }
     if(fishy>675+s1.len*10){
-      fishy=-s1.len*10;
+      fishy=-10;
     }
     if(fishx<-s1.len*10){
-      fishx=900+s1.len*10;
+      fishx=910;
     }
     if(fishx>900+s1.len*10){
-      fishx=-s1.len*10;
+      fishx=-10;
     }
   }
   
   void grow(){
-    if( len<=20 && millis()%10000>9000 && millis()%10000<10000){
+    if(len<=15 && millis()%10000>9000 && millis()%10000<10000){
         len=len*1.005;
         wid=wid*1.005;
     }
