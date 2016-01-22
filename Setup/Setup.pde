@@ -35,7 +35,7 @@ void draw(){
   background(bg);
   
   s1.move();
-  s2.move();
+  //s2.move();
   
   lp1.drawLilypad(65);
   lp2.drawLilypad(175);

@@ -32,6 +32,9 @@ Alvin
 * The fish still grows a little too large (either that or must make eyes scalable as well
 * Discovered that the wagging function becomes more off the longer the length
 
+1/22:
+* Modified the wag function so the wags are balanced even if the length grows longer
+
 
 *Random Notes*
 

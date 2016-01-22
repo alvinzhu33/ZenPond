@@ -9,7 +9,7 @@ public class Skeleton{
   
   float tailchange = 1;
   
-  float wag = 0;
+  float wag = 0.0;
   boolean reverse = false;
   float orientation;
   
@@ -100,15 +100,17 @@ public class Skeleton{
     //Wagging motion
     System.out.println(wag);
     if(reverse){
-      wag-=1.0;
-      if(wag==-(len*9.0/5.0)){
+      wag--;
+      if(wag<=-(len*9.0/5.0)){
         reverse=false;
+        wag=-(len*9/5)+1;
       }
     }
     else{
-      wag+=1.0;
-      if(wag==len*9.0/5.0){
+      wag++;
+      if(wag>=(len*9.0/5.0)){
         reverse=true;
+        wag=(len*9/5)-1;
       }
     }
     boundary();
@@ -153,7 +155,7 @@ public class Skeleton{
   }
   
   void grow(){
-    if(millis()%10000>9000 && millis()%10000<10000 && len<=20){
+    if( len<=20 && millis()%10000>9000 && millis()%10000<10000){
         len=len*1.005;
         wid=wid*1.005;
     }
