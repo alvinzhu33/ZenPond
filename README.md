@@ -34,6 +34,17 @@ Alvin
 
 1/22:
 * Modified the wag function so the wags are balanced even if the length grows longer
+* 
+
+Jiaqi
+1/20:
+* Changed order that objects are drawn for organization
+* Create an individual movement for the fish tail (using booleans to reverse the waving of the tail), and an function to change the coordinates of the position of the center bezier.
+
+1/21:
+* Made corrections on the fish tail movement 
+* Added variables to make code more flexible to work with
+
 
 
 *Random Notes*
