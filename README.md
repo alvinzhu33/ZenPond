@@ -45,6 +45,8 @@ Jiaqi
 * Made corrections on the fish tail movement 
 * Added variables to make code more flexible to work with
 
+1/22:
+* Implemented drifting motion 
 
 
 *Random Notes*
