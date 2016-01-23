@@ -1,9 +1,13 @@
 import java.util.*;
 
 public class Flower{
-  int xvalue;
-  int yvalue;
+  float xvalue;
+  float yvalue;
   int size;
+  
+ boolean up = true; 
+ int upcount = 0;
+ int leftcount = 0;
   
   //Large flower colors
   int lr;
@@ -26,8 +30,28 @@ public class Flower{
     sb = (76+(int)(Math.random()*70));
   }
   
+void drift(){
+  if (up==true){
+   yvalue-= 0.1; 
+   upcount++;
+   if(upcount >= 50){
+     up = false;
+     upcount = 0; 
+   }
+  }
+  if(up==false){
+    yvalue+= 0.1;
+    upcount++; 
+    if(upcount >= 50){
+     up = true;
+     upcount = 0; 
+   }
+  }
+ }
+  
  public void drawFlower(){
     //Larger flower
+    drift(); 
     int degrees=0;
     int start=60;
     fill(232,144,203);
@@ -37,9 +61,9 @@ public class Flower{
       rotate(radians(start + degrees));
       noStroke();
       beginShape();
-      vertex(0,0);
-      bezier(0,0,size/2,size/2,size/5,size,0,size);
-      bezier(0,0,-size/2,size/2,-size/5,size,0,size);
+        vertex(0,0);
+        bezier(0,0,size/2,size/2,size/5,size,0,size);
+        bezier(0,0,-size/2,size/2,-size/5,size,0,size);
       endShape();
       popMatrix();
       degrees+=60;
@@ -55,9 +79,9 @@ public class Flower{
       rotate(radians(start + degrees));
       noStroke();
       beginShape();
-      vertex(0,0);
-      bezier(0,0,size/2,size/2,size/5,size,0,size);
-      bezier(0,0,-size/2,size/2,-size/5,size,0,size);
+        vertex(0,0);
+        bezier(0,0,size/2,size/2,size/5,size,0,size);
+        bezier(0,0,-size/2,size/2,-size/5,size,0,size);
       endShape();
       popMatrix();
       degrees+=60;

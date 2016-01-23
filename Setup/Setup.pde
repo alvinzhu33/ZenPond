@@ -41,6 +41,9 @@ void draw(){
   lp2.drawLilypad(175);
   lp3.drawLilypad(182);
   
+  fl1.drift();
+  fl2.drift();
+  fl3.drift();
   
   fl1.drawFlower();
   fl2.drawFlower();
