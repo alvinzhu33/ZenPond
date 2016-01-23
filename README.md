@@ -37,6 +37,7 @@ Alvin
 * 
 
 Jiaqi
+
 1/20:
 * Changed order that objects are drawn for organization
 * Create an individual movement for the fish tail (using booleans to reverse the waving of the tail), and an function to change the coordinates of the position of the center bezier.
@@ -48,6 +49,8 @@ Jiaqi
 1/22:
 * Implemented drifting motion 
 
+1/23:
+* Added on to drifting
 
 *Random Notes*
 
