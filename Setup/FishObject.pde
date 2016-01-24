@@ -98,7 +98,6 @@ public class FishObject{
     rotate(orientation);
     
     //Wagging motion
-    System.out.println(wag);
     if(reverse){
       wag--;
       if(wag<=-(len*9.0/5.0)){

@@ -1,4 +1,5 @@
 import java.util.*;
+
 PImage bg;
 
 PFont standard;
@@ -19,7 +20,10 @@ Flower fl3;
 void setup(){
   size(900,675);
   bg = loadImage("bg.jpg");
+  background(bg);
+  
   frameRate(35);
+  
   standard = createFont("Century Gothic",32,false);
   logo = createFont("Papyrus",100,false);
   
@@ -32,8 +36,8 @@ void setup(){
   fl2 = new Flower(800,200,50);
   fl3 = new Flower(700,80,30); 
   
-  s1 = new GoldFish(500, 500, (int)(Math.random()*20)+40);
-  s2 = new Koi(300,300,(int)(Math.random()*20)+40);
+  s1 = new GoldFish((int)(Math.random()*900), (int)(Math.random()*675), (int)(Math.random()*20)+40);
+  s2 = new Koi((int)(Math.random()*900), (int)(Math.random()*675), (int)(Math.random()*20)+40);
   
   welcome();
 }
@@ -60,12 +64,12 @@ void draw(){
     fill(0);
     textFont(standard, 40);
     text((millis()/1000) - initialTime + " sec", width/2, 60);
+    
+    resetButton();
   }
 }
 
 void welcome(){
-  background(bg);
-    
   lp1.drawLilypad(65);
   lp2.drawLilypad(175);
   lp3.drawLilypad(182);
@@ -104,10 +108,26 @@ void playButton(){
   text("Play", width/2, 570);
 }
 
+void resetButton(){
+  fill(177, 104, 213, 180);
+  rect(840,10,50,50,10,10,10,10);
+  fill(0);
+  textFont(standard, 16);
+  text("Reset",865,50);
+}
+
 void mousePressed(){
-  if(! play && mouseX >= 385 && mouseX <= 515 &&
+  if(! play){
+    if(mouseX >= 385 && mouseX <= 515 &&
     mouseY >= 520 && mouseY <= 600){
       play = true;
       initialTime=(millis()/1000);
+    }
+  }else{
+    if(mouseX >= 840 && mouseX <= 890 &&
+      mouseY >= 10 && mouseY <= 60){
+        play=false;
+        setup();
+      }
   }
 }
