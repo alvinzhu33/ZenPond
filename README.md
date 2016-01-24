@@ -56,6 +56,12 @@ Jiaqi
 
 1/23:
 * Added on to drifting
+* Deleted Skeleton.pde by merging it with FishObject
+* Turn FishObject into an inherited class with three sub fish classes (Koi, Goldfish, Catfish)
+
+1/24:
+* Started adding on to the individual fish classes for individualized features
+* Added drifting to the lilypads too
 
 *Random Notes*
 
