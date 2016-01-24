@@ -155,8 +155,8 @@ public class FishObject{
   
   void grow(){
     if(len<=15 && millis()%10000>9000 && millis()%10000<10000){
-        len=len*1.005;
-        wid=wid*1.005;
+        len=len*1.001;
+        wid=wid*1.001;
     }
   }
 }

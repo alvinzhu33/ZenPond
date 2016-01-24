@@ -140,22 +140,32 @@ void resetSymbol(){
 }
 
 void musicButton(){
-  fill(255);
+  if(music){
+    fill(120, 243, 149);
+  }else{
+    fill(243, 149, 120);
+  }
   rect(10, 10, 50, 50, 10, 10, 10, 10);
   fill(0);
+  triangle(27, 20, 27, 40, 47, 30);
   textFont(standard, 16);
   text("Music", 35, 55);
 }
 
 void musicControl(){
-  if(music){
-    tracks[0].rewind();
-    tracks[0].pause();
-    music = false;
-  }
-  else{
+  if(! play){
     tracks[0].play();
     music = true;
+  }
+  else{
+    if(music){
+      tracks[0].mute();
+      music = false;
+    }
+    else{
+      tracks[0].unmute();
+      music = true;
+    }
   }
 }
 
@@ -163,13 +173,15 @@ void mousePressed(){
   if(! play){
     if(mouseX >= 385 && mouseX <= 515 &&
     mouseY >= 520 && mouseY <= 600){
+      musicControl();
       play = true;
       initialTime=(millis()/1000);
-      musicControl();
     }
   }else{
     if(mouseX >= 840 && mouseX <= 890 &&
       mouseY >= 10 && mouseY <= 60){
+        music = true;
+        musicControl();
         play=false;
         setup();
       }
