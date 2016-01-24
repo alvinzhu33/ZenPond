@@ -1,10 +1,14 @@
+import ddf.minim.*;
 import java.util.*;
 
 PImage bg;
+Minim minim;
+AudioPlayer[] tracks = new AudioPlayer[1];
 
 PFont standard;
 PFont logo;
 boolean play = false;
+boolean music = false;
 
 int initialTime;
 
@@ -21,6 +25,9 @@ void setup(){
   size(900,675);
   bg = loadImage("bg.jpg");
   background(bg);
+  
+  minim = new Minim(this);
+  tracks[0] = minim.loadFile("Track1.mp3");
   
   frameRate(35);
   
@@ -66,6 +73,7 @@ void draw(){
     text((millis()/1000) - initialTime + " sec", width/2, 60);
     
     resetButton();
+    musicButton();
   }
 }
 
@@ -131,18 +139,43 @@ void resetSymbol(){
   }
 }
 
+void musicButton(){
+  fill(255);
+  rect(10, 10, 50, 50, 10, 10, 10, 10);
+  fill(0);
+  textFont(standard, 16);
+  text("Music", 35, 55);
+}
+
+void musicControl(){
+  if(music){
+    tracks[0].rewind();
+    tracks[0].pause();
+    music = false;
+  }
+  else{
+    tracks[0].play();
+    music = true;
+  }
+}
+
 void mousePressed(){
   if(! play){
     if(mouseX >= 385 && mouseX <= 515 &&
     mouseY >= 520 && mouseY <= 600){
       play = true;
       initialTime=(millis()/1000);
+      musicControl();
     }
   }else{
     if(mouseX >= 840 && mouseX <= 890 &&
       mouseY >= 10 && mouseY <= 60){
         play=false;
         setup();
+      }
+    if(mouseX >=10 && mouseX <= 60 &&
+      mouseY >=10 && mouseY <= 60){
+        musicControl();
       }
   }
 }
