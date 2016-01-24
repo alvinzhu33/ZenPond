@@ -34,7 +34,12 @@ Alvin
 
 1/22:
 * Modified the wag function so the wags are balanced even if the length grows longer
-* 
+* Made a scalable eye so the eyes grow bigger as the fish grows bigger
+* Fixed boundaries once again so there are less waiting
+* Decreased max length of the fish
+
+1/23:
+* Created a welcome screen
 
 Jiaqi
 
