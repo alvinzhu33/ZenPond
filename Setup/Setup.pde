@@ -7,7 +7,7 @@ boolean play = false;
 
 int initialTime;
 
-Koi s1;
+GoldFish s1;
 Koi s2;
 Lilypad lp1;
 Lilypad lp2;
@@ -32,7 +32,7 @@ void setup(){
   fl2 = new Flower(800,200,50);
   fl3 = new Flower(700,80,30); 
   
-  s1 = new Koi(500, 500, (int)(Math.random()*20)+40);
+  s1 = new GoldFish(500, 500, (int)(Math.random()*20)+40);
   s2 = new Koi(300,300,(int)(Math.random()*20)+40);
   
   welcome();
@@ -43,15 +43,11 @@ void draw(){
     background(bg);
   
     s1.move();
-    //s2.move();
+    s2.move();
   
     lp1.drawLilypad(65);
     lp2.drawLilypad(175);
     lp3.drawLilypad(182);
-  
-    fl1.drift();
-    fl2.drift();
-    fl3.drift();
   
     fl1.drawFlower();
     fl2.drawFlower();

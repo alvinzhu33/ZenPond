@@ -5,7 +5,6 @@ public class Flower{
   
  boolean up = true; 
  int upcount = 0;
- int leftcount = 0;
   
   //Large flower colors
   int lr;
