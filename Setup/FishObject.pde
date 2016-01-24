@@ -27,11 +27,44 @@ public class FishObject{
   void bones1(float x, float y){
     noStroke();
     
-     beginShape();
+    //Upper body
+    fill(204, 102, 0, 240);
+    quad((wag+x)+wid/2, 0+y, (wag+x)-wid/2, 0+y,
+    (wag*1.01+x)-(wid), len+y, (wag*1.01+x)+(wid), len+y);
+    quad((wag*1.01+x)+wid, len+y, (wag*1.01+x)-wid, len+y, 
+    (wag*1.10)+x-wid, 2*len+y, (wag*1.10)+x+wid, 2*len+y);
+    quad((wag*1.10)+x+wid, 2*len+y, (wag*1.10)+x-wid, 2*len+y,
+    (wag*1.2)+x-wid/1.1, 3*len+y, (wag*1.2)+x+wid/1.1, 3*len+y);
+    
+    //Eyes
+    fill(245,255,235,240);
+    ellipse(((wag*1.01)+x)+wid, len+y, 22*len/20, 22*len/20);
+    ellipse(((wag*1.01)+x)-wid, len+y, 22*len/20, 22*len/20);
+    fill(0,200,100,250);
+    ellipse(((wag*1.01)+x)+wid, len+y-2, 12*len/20, 12*len/20);
+    ellipse(((wag*1.01)+x)-wid, len+y-2, 12*len/20, 12*len/20);
+  }
+  
+  void bones2(float x, float y){
+    //Lower body
+    fill(204, 102, 0, 240);
+    quad((wag*1.2)+x+wid/1.1, 3*len+y,(wag*1.2)+x-wid/1.1, 3*len+y, 
+    (wag*1.3)+x-wid/1.2, 4*len+y, (wag*1.3)+x+wid/1.2, 4*len+y);
+   
+    quad((wag*1.3)+x+wid/1.2, 4*len+y, (wag*1.3)+x-wid/1.2, 4*len+y, 
+    (wag*1.4)+x-wid/1.4, 5*len+y, (wag*1.4)+x+wid/1.4, 5*len+y);
+    
+    quad((wag*1.4)+x+wid/1.4, 5*len+y, (wag*1.4)+x-wid/1.4, 5*len+y, 
+    (wag*1.5)+x+6-wid/1.6, 6*len+y, (wag*1.5)+x-6+wid/1.6, 6*len+y);
+  }
+  
+  void bones3(float x, float y){
+    //Tail
+    beginShape();
 
       fill(223,112,432);
-      vertex((wag*1.8)+x-12+wid/1.6, 6*len+y-20);
-      bezierVertex(((wag*1.5)+x-12+wid/1.6)-(2*scale*3), (6*len+y)+(5*scale*3), 
+      vertex((wag*1.5)+x, 6*len+y);
+      /*bezierVertex(((wag*1.5)+x-12+wid/1.6)-(2*scale*3), (6*len+y)+(5*scale*3), 
                     ((wag*1.5)+x-12+wid/1.6)+(3*scale*3)-tailchange, (6*len+y)+(6*scale*3), 
                     ((wag*1.8)+x-12+wid/1.6)+(7*scale*3), (6*len+y)+(11*scale*3));
                     
@@ -45,44 +78,23 @@ public class FishObject{
                     
       bezierVertex(((wag*1.8)+x-12+wid/1.6)-(1*scale*3), (6*len+y)+(15*scale*3), 
                     ((wag*1.5)+x-12+wid/1.6)-(5*scale*3)-tailchange, (6*len+y)+(8*scale*3), 
-                    ((wag*1.5)+x-12+wid/1.6)-(2*scale*3), (6*len+y)+(3*scale*3));
-   
+                    ((wag*1.5)+x-12+wid/1.6)-(2*scale*3), (6*len+y)+(3*scale*3));*/
+      bezierVertex(((wag*1.5)+x), (6*len+y), 
+                    ((wag*1.8)+x+wid/1.6)+tailchange, (8*len+y), 
+                    ((wag*1.5)+x+wid/1.6), (10*len+y));
+                    
+      bezierVertex(((wag*1.5)+x+wid/1.6), (10*len+y), 
+                    ((wag*1.8)+x+wid/1.6)-tailchange, (12*len+y), 
+                    ((wag*1.5)+x-wid/1.6)+tailchange, (14*len+y));
+                    
+      bezierVertex(((wag*1.5)+x-wid/1.6)+tailchange, (14*len+y), 
+                    ((wag*1.8)+x-wid/1.6)-tailchange, (12*len+y), 
+                    ((wag*1.5)+x-wid/1.6), (10*len+y));
+                    
+      bezierVertex(((wag*1.5)+x-wid/1.6), (10*len+y), 
+                    ((wag*1.8)+x-wid/1.6)+tailchange, (8*len+y), 
+                    ((wag*1.5)+x), (6*len+y));
     endShape();
-    
-    fill(204, 102, 0, 240);
-    
-    quad((wag+x)+wid/2, 0+y, (wag+x)-wid/2, 0+y,
-    (wag*1.01+x)-(wid), len+y, (wag*1.01+x)+(wid), len+y);
-    
-    quad((wag*1.01+x)+wid, len+y, (wag*1.01+x)-wid, len+y, 
-    (wag*1.10)+x-wid, 2*len+y, (wag*1.10)+x+wid, 2*len+y);
-    
-    quad((wag*1.10)+x+wid, 2*len+y, (wag*1.10)+x-wid, 2*len+y,
-    (wag*1.2)+x-wid/1.1, 3*len+y, (wag*1.2)+x+wid/1.1, 3*len+y);
-  }
-  
-  void bones2(float x, float y){
-    
-    quad((wag*1.2)+x+wid/1.1, 3*len+y,(wag*1.2)+x-wid/1.1, 3*len+y, 
-    (wag*1.3)+x-wid/1.2, 4*len+y, (wag*1.3)+x+wid/1.2, 4*len+y);
-   
-    quad((wag*1.3)+x+wid/1.2, 4*len+y, (wag*1.3)+x-wid/1.2, 4*len+y, 
-    (wag*1.4)+x-wid/1.4, 5*len+y, (wag*1.4)+x+wid/1.4, 5*len+y);
-    
-    quad((wag*1.4)+x+wid/1.4, 5*len+y, (wag*1.4)+x-wid/1.4, 5*len+y, 
-    (wag*1.5)+x+6-wid/1.6, 6*len+y, (wag*1.5)+x-6+wid/1.6, 6*len+y);
-  }
-  
-  void bones3(float x, float y){
-  
-    
-    //void eyes(){
-    fill(245,255,235,240);
-    ellipse(((wag*1.01)+x)+wid, len+y, 22*len/20, 22*len/20);
-    ellipse(((wag*1.01)+x)-wid, len+y, 22*len/20, 22*len/20);
-    fill(0,200,100,250);
-    ellipse(((wag*1.01)+x)+wid, len+y-2, 12*len/20, 12*len/20);
-    ellipse(((wag*1.01)+x)-wid, len+y-2, 12*len/20, 12*len/20);
   }
   
   void move(){
@@ -139,16 +151,16 @@ public class FishObject{
   }
   
   void boundary(){
-    if(fishy<-s1.len*10){
+    if(fishy<-len*10){
       fishy=680;
     }
-    if(fishy>675+s1.len*10){
+    if(fishy>675+len*10){
       fishy=-10;
     }
-    if(fishx<-s1.len*10){
+    if(fishx<-len*10){
       fishx=910;
     }
-    if(fishx>900+s1.len*10){
+    if(fishx>900+len*10){
       fishx=-10;
     }
   }
