@@ -5,10 +5,9 @@ public class Flower{
   float yvalue;
   int size;
   
- boolean up = randomchoice(); 
+ boolean up = true; 
  int upcount = 0;
  int leftcount = 0;
- 
   
   //Large flower colors
   int lr;
@@ -31,20 +30,9 @@ public class Flower{
     sb = (76+(int)(Math.random()*70));
   }
   
-public boolean randomchoice(){
-  if ((int)(Math.random()*2) == 1){
-    return true;
-  }else{
-    return false;
-  }
-}
-
 void drift(){
   if (up==true){
-   yvalue-= 0.08; 
-   if(randomchoice()){
-     xvalue+= 0.05;
-   }
+   yvalue-= 0.1; 
    upcount++;
    if(upcount >= 50){
      up = false;
@@ -52,10 +40,7 @@ void drift(){
    }
   }
   if(up==false){
-    yvalue+= 0.08;
-    if(randomchoice()){
-       xvalue-= 0.05;
-     }
+    yvalue+= 0.1;
     upcount++; 
     if(upcount >= 50){
      up = true;

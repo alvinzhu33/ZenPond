@@ -7,8 +7,8 @@ boolean play = false;
 
 int initialTime;
 
-Skeleton s1;
-Skeleton s2;
+FishObject s1;
+FishObject s2;
 Lilypad lp1;
 Lilypad lp2;
 Lilypad lp3;
@@ -32,8 +32,8 @@ void setup(){
   fl2 = new Flower(800,200,50);
   fl3 = new Flower(700,80,30); 
   
-  s1 = new Skeleton(500, 500, (int)(Math.random()*20)+40);
-  s2 = new Skeleton(300,300,(int)(Math.random()*20)+40);
+  s1 = new FishObject(500, 500, (int)(Math.random()*20)+40);
+  s2 = new FishObject(300,300,(int)(Math.random()*20)+40);
   
   welcome();
 }
