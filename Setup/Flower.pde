@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class Flower{
   float xvalue;
   float yvalue;
