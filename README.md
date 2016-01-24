@@ -34,9 +34,15 @@ Alvin
 
 1/22:
 * Modified the wag function so the wags are balanced even if the length grows longer
-* 
+* Made a scalable eye so the eyes grow bigger as the fish grows bigger
+* Fixed boundaries once again so there are less waiting
+* Decreased max length of the fish
+
+1/23:
+* Created a welcome screen
 
 Jiaqi
+
 1/20:
 * Changed order that objects are drawn for organization
 * Create an individual movement for the fish tail (using booleans to reverse the waving of the tail), and an function to change the coordinates of the position of the center bezier.
@@ -45,7 +51,11 @@ Jiaqi
 * Made corrections on the fish tail movement 
 * Added variables to make code more flexible to work with
 
+1/22:
+* Implemented drifting motion 
 
+1/23:
+* Added on to drifting
 
 *Random Notes*
 
