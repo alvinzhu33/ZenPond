@@ -111,9 +111,24 @@ void playButton(){
 void resetButton(){
   fill(177, 104, 213, 180);
   rect(840,10,50,50,10,10,10,10);
+  resetSymbol();
   fill(0);
   textFont(standard, 16);
-  text("Reset",865,50);
+  text("Reset",865,55);
+}
+
+void resetSymbol(){
+  int degrees = 0;
+  noStroke();
+  fill(0);
+  while(degrees<360){
+    pushMatrix();
+    translate(865,27);
+    rotate(radians(degrees));
+    rect(-1.5,5,3,7,10,10,10,10);
+    popMatrix();
+    degrees+=60;
+  }
 }
 
 void mousePressed(){
