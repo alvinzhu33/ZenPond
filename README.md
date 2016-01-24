@@ -3,13 +3,14 @@
 
 
 **Description**
-A beautiful and elegant virtual pond where fish come to swim in a zen, peaceful environment.
+A beautiful and elegant virtual pond where fish come to swim in a zen, peaceful environment. This game is is for your inner peace and amusement. Enjoy!
 
 **Directions to Run**
-Simply clone this repo and press play.
+Please download the Minim library by: Sketch - Import Library... - Add Library... - and searching for "Minim" under "Libraries".
+Then just clone and press play!
 
 **Directions**
-Sit back and relax by watching the fish swim around. There are no complicated buttons. This is for YOUR inner peace and amusement.
+Sit back and relax by watching the fish swim around. You will be greated with a welcome screen. Once you click play, the game would start. There are no complicated buttons in this game, just a music button and a reset button. The music button will be green if music is playing while red if it is not. The reset button takes you right back to the welcome menu and resets the game from there. (Make sure to turn the volume down as the music is quite loud).
 
 **Changelog**
 
@@ -40,6 +41,13 @@ Alvin
 
 1/23:
 * Created a welcome screen
+
+1/24:
+* Created a reset button
+* Implemented sound into the project (using the surf theme from Pokemon RSE)
+* Made a button to mute/unmute the sound
+* Made fish spawn at different locations every time
+* Made fish have a slower growth rate
 
 Jiaqi
 
