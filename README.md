@@ -70,6 +70,9 @@ Jiaqi
 1/24:
 * Started adding on to the individual fish classes for individualized features
 * Added drifting to the lilypads too
+* Changed the appearance of each fish (goldfish has twin tails, catfish has moving whiskers and blunted tail, colors are diff)
+* Created varied speeds for each fish
+* Made volume lower 
 
 *Random Notes*
 
