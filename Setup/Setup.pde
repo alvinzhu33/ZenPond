@@ -3,7 +3,7 @@ import java.util.*;
 
 PImage bg;
 Minim minim;
-AudioPlayer[] tracks = new AudioPlayer[1];
+AudioPlayer tracks;
 
 PFont standard;
 PFont logo;
@@ -27,7 +27,9 @@ void setup(){
   background(bg);
   
   minim = new Minim(this);
-  tracks[0] = minim.loadFile("Track1.mp3");
+  tracks = minim.loadFile("Track1.mp3");
+  tracks.setGain(-25.0);
+  
   
   frameRate(35);
   
@@ -154,16 +156,16 @@ void musicButton(){
 
 void musicControl(){
   if(! play){
-    tracks[0].play();
+    tracks.play();
     music = true;
   }
   else{
     if(music){
-      tracks[0].mute();
+      tracks.mute();
       music = false;
     }
     else{
-      tracks[0].unmute();
+      tracks.unmute();
       music = true;
     }
   }

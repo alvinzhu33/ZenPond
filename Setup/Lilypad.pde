@@ -5,8 +5,8 @@ public class Lilypad{
   float ypos;
   float size;
   
-  boolean up = false; 
-  int upcount = 0;
+  boolean left = false; 
+  int leftcount = 0;
   
   //Lilypad colors
   int r;
@@ -23,20 +23,20 @@ public class Lilypad{
   }
   
   void drift(){
-  if (up==true){
-   ypos-= 0.1; 
-   upcount++;
-   if(upcount >= 50){
-     up = false;
-     upcount = 0; 
+  if (left==true){
+   xpos-= 0.07; 
+   leftcount++;
+   if(leftcount >= 50){
+     left = false;
+     leftcount = 0; 
    }
   }
-  if(up==false){
-    ypos+= 0.1;
-    upcount++; 
-    if(upcount >= 50){
-     up = true;
-     upcount = 0; 
+  if(left==false){
+    xpos+= 0.07;
+    leftcount++; 
+    if(leftcount >= 50){
+     left = true;
+     leftcount = 0; 
    }
   }
  }

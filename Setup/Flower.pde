@@ -29,7 +29,7 @@ public class Flower{
   
 void drift(){
   if (up==true){
-   yvalue-= 0.1; 
+   yvalue-= 0.12; 
    upcount++;
    if(upcount >= 50){
      up = false;
@@ -37,7 +37,7 @@ void drift(){
    }
   }
   if(up==false){
-    yvalue+= 0.1;
+    yvalue+= 0.12;
     upcount++; 
     if(upcount >= 50){
      up = true;
