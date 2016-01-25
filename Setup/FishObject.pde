@@ -17,7 +17,7 @@ public class FishObject{
      len = l/9.0;//Include tail later
      wid = l/5.0;
      fishx=x;
-     fishy=y;
+     fishy= y;
      orientation=(int)(Math.random()*360);
  
    }
@@ -79,7 +79,7 @@ public class FishObject{
     endShape();
   }
   
-  void move(int r, int g, int b){
+  void move(){
     //Random orientation
     if((float)Math.random()*10<1){
       orientation += ((float)Math.random()*11/100.0)-5/100.0;
@@ -109,7 +109,7 @@ public class FishObject{
     boundary();
     
     //Draw fish
-    bones1(0,0, r, g, b);
+    bones1(0,0,0,0,0);
     bones2(0,0);
     bones3(0,0);
     popMatrix();

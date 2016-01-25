@@ -12,9 +12,12 @@ boolean music = false;
 
 int initialTime;
 
-GoldFish s1;
+FishObject[] fishes;
+int numFishes;
+
+/*GoldFish s1;
 Koi s2;
-CatFish s3;
+CatFish s3;*/
 
 Lilypad lp1;
 Lilypad lp2;
@@ -22,6 +25,7 @@ Lilypad lp3;
 Flower fl1;
 Flower fl2;
 Flower fl3;
+
 
 void setup(){
   size(900,675);
@@ -31,7 +35,6 @@ void setup(){
   minim = new Minim(this);
   tracks = minim.loadFile("Track1.mp3");
   tracks.setGain(-25.0);
-  tracks.loop();
   
   frameRate(35);
   
@@ -47,9 +50,25 @@ void setup(){
   fl2 = new Flower(800,200,5);
   fl3 = new Flower(700,80,3); 
   
-  s1 = new GoldFish((int)(Math.random()*900), (int)(Math.random()*675), (int)(Math.random()*20)+40);
-  s2 = new Koi((int)(Math.random()*900), (int)(Math.random()*675), (int)(Math.random()*20)+40);
-  s3 = new CatFish((int)(Math.random()*900), (int)(Math.random()*675), (int)(Math.random()*20)+40);
+  //s1 = new GoldFish((int)(Math.random()*900), (int)(Math.random()*675), (int)(Math.random()*20)+40);
+  //s2 = new Koi((int)(Math.random()*900), (int)(Math.random()*675), (int)(Math.random()*20)+40);
+  //s3 = new CatFish((int)(Math.random()*900), (int)(Math.random()*675), (int)(Math.random()*20)+40);
+  
+  numFishes=(int)(Math.random()*6)+3;
+  
+  fishes = new FishObject[numFishes];
+  for(int i=0; i<numFishes; i++){
+    int fishType = (int)(Math.random()*3);
+    if(fishType == 0){
+      fishes[i] = new GoldFish((int)(Math.random()*900), (int)(Math.random()*675), (int)(Math.random()*20)+40);
+    }
+    if(fishType == 1){
+      fishes[i] = new Koi((int)(Math.random()*900), (int)(Math.random()*675), (int)(Math.random()*20)+40);
+    }
+    if(fishType == 2){
+      fishes[i] = new CatFish((int)(Math.random()*900), (int)(Math.random()*675), (int)(Math.random()*20)+40);
+    }
+  }
   
   welcome();
 }
@@ -58,9 +77,9 @@ void draw(){
   if(play){
     background(bg);
   
-    s1.move();
-    s2.move();
-    s3.move();
+    for(int i=0; i<numFishes; i++){
+      fishes[i].move();
+    }
   
     lp1.drawLilypad(65);
     lp2.drawLilypad(175);
@@ -160,7 +179,7 @@ void musicButton(){
 
 void musicControl(){
   if(! play){
-    tracks.play();
+    tracks.loop();
     music = true;
   }
   else{
