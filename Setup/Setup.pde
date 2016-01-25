@@ -34,7 +34,7 @@ void setup(){
   
   minim = new Minim(this);
   tracks = minim.loadFile("Track1.mp3");
-  tracks.setGain(-25.0);
+  tracks.setGain(-40.0);
   
   frameRate(35);
   
