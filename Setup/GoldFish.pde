@@ -34,16 +34,27 @@ public class GoldFish extends FishObject{
     //Tail
    
     beginShape();
-      vertex((wag*1.5)+x, 6*len+y);
+      vertex((wag*1.5)+x, 4*len+y);
       
-      bezierVertex(((wag*1.5)+x), (6*len+y), 
-                    ((wag*1.8)+x+wid/1.6)+tailchange, (8*len+y), 
-                    ((wag*1.5)+x+wid/1.6), (10*len+y));
-                    
-      bezierVertex(((wag*1.5)+x+wid/1.6), (10*len+y), 
-                    ((wag*1.8)+x+wid/1.6)-tailchange, (12*len+y), 
-                    ((wag*1.5)+x-wid/1.6)+tailchange, (14*len+y));
-                    
+      bezierVertex((((wag/2)*1.5)+x+wid/1.6), (9*len+y), 
+                    (((wag/2)*1.8)+x+wid/1.6)-tailchange, (11*len+y), 
+                    (((wag/2)*1.5)+x-wid/1.6)+tailchange, (13*len+y));
+      
+      bezierVertex((((wag/2)*1.5)+x-wid/1.6)+tailchange, (13*len+y), 
+                    (((wag/2)*1.8)+x-wid/1.6)-tailchange, (11*len+y), 
+                    (((wag/2)*1.5)+x-wid/1.6), (9*len+y));                 
+    endShape();
+    
+    beginShape();
+      vertex((wag*1.5)+x, 4*len+y);
+      
+      bezierVertex((((-wag/10)*1.5)+x+wid/1.6), (9*len+y), 
+                    (((-wag/10)*1.8)+x+wid/1.6)-tailchange, (11*len+y), 
+                    (((-wag/10)*1.5)+x-wid/1.6)+tailchange, (13*len+y));
+      
+      bezierVertex((((-wag/10)*1.5)+x-wid/1.6)+tailchange, (13*len+y), 
+                    (((-wag/10)*1.8)+x-wid/1.6)-tailchange, (11*len+y), 
+                    (((-wag/10)*1.5)+x-wid/1.6), (9*len+y));                 
     endShape();
     
   }
@@ -52,8 +63,8 @@ public class GoldFish extends FishObject{
     if((float)Math.random()*10<1){
       orientation += ((float)Math.random()*11/100.0)-5/100.0;
     }
-    fishx+=sin(orientation);
-    fishy-=cos(orientation);
+    fishx+=(sin(orientation))*2;
+    fishy-=(cos(orientation))*2;
     
     pushMatrix();
     translate(fishx,fishy);

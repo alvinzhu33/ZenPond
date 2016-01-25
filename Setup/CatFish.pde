@@ -6,6 +6,33 @@ public class CatFish extends FishObject{
     len = len*2;
   } 
   
+  void bones1(float x, float y, int r, int g, int b){
+    noFill();
+    stroke(56, 54, 77);
+    bezier(((wag*1.01)+x)-wid+5, len+y-2, ((wag*1.02)+x)+12, (1.6*len)+y-22, (((wag*1.5)*1.03)+x)-34, (2.2*len)+y-42, (((wag*2)*1.05)+x)-16, (2.8*len)+y-62);
+    bezier(((wag*1.01)+x)+wid-5, len+y-2, ((wag*1.02)+x)-12, (1.6*len)+y-22, (((wag*1.5)*1.03)+x)+34, (2.2*len)+y-42, (((wag*2)*1.05)+x)+16, (2.8*len)+y-62);
+    
+    noStroke();
+    
+    //Upper body
+    fill(r, g, b, 240);
+    quad((wag+x)+wid/2, 0+y, (wag+x)-wid/2, 0+y,
+    (wag*1.01+x)-(wid), len+y, (wag*1.01+x)+(wid), len+y);
+    quad((wag*1.01+x)+wid, len+y, (wag*1.01+x)-wid, len+y, 
+    (wag*1.10)+x-wid, 2*len+y, (wag*1.10)+x+wid, 2*len+y);
+    quad((wag*1.10)+x+wid, 2*len+y, (wag*1.10)+x-wid, 2*len+y,
+    (wag*1.2)+x-wid/1.1, 3*len+y, (wag*1.2)+x+wid/1.1, 3*len+y);
+    
+    //Eyes
+    fill(245,255,235,240);
+    ellipse(((wag*1.01)+x)+wid, len+y, 22*len/20, 22*len/20);
+    ellipse(((wag*1.01)+x)-wid, len+y, 22*len/20, 22*len/20);
+    fill(r-60, g+50, b+50, 240);
+    ellipse(((wag*1.01)+x)+wid, len+y-2, 12*len/20, 12*len/20);
+    ellipse(((wag*1.01)+x)-wid, len+y-2, 12*len/20, 12*len/20);
+    fill(r, g, b, 240);
+  }
+  
   void bones3(float x, float y){
     //Tail
     beginShape();
@@ -27,8 +54,8 @@ public class CatFish extends FishObject{
       if((float)Math.random()*10<1){
         orientation += ((float)Math.random()*11/100.0)-5/100.0;
       }
-      fishx+=sin(orientation);
-      fishy-=cos(orientation);
+      fishx+=(sin(orientation))/2;
+      fishy-=(cos(orientation))/2;
       
       pushMatrix();
       translate(fishx,fishy);

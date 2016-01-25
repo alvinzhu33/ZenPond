@@ -43,9 +43,9 @@ void setup(){
   lp3 = new Lilypad(680,70,90);
   
   
-  fl1 = new Flower(170,570,60); 
-  fl2 = new Flower(800,200,50);
-  fl3 = new Flower(700,80,30); 
+  fl1 = new Flower(170,570,6); 
+  fl2 = new Flower(800,200,5);
+  fl3 = new Flower(700,80,3); 
   
   s1 = new GoldFish((int)(Math.random()*900), (int)(Math.random()*675), (int)(Math.random()*20)+40);
   s2 = new Koi((int)(Math.random()*900), (int)(Math.random()*675), (int)(Math.random()*20)+40);
