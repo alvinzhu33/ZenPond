@@ -36,7 +36,7 @@ void setup(){
   tracks = minim.loadFile("Track1.mp3");
   tracks.setGain(-40.0);
   
-  frameRate(35);
+  frameRate(65);
   
   standard = createFont("Century Gothic",32,false);
   logo = createFont("Papyrus",100,false);

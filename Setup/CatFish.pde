@@ -9,8 +9,8 @@ public class CatFish extends FishObject{
   void bones1(float x, float y, int r, int g, int b){
     noFill();
     stroke(56, 54, 77);
-    bezier(((wag*1.01)+x)-wid+5, len+y-2, ((wag*1.02)+x)+12, (1.6*len)+y-22, (((wag*1.5)*1.03)+x)-34, (2.2*len)+y-42, (((wag*2)*1.05)+x)-16, (2.8*len)+y-62);
-    bezier(((wag*1.01)+x)+wid-5, len+y-2, ((wag*1.02)+x)-12, (1.6*len)+y-22, (((wag*1.5)*1.03)+x)+34, (2.2*len)+y-42, (((wag*2)*1.05)+x)+16, (2.8*len)+y-62);
+    bezier(((wag*1.01)+x)-wid+5, len+y-(len/10*2), ((wag*1.02)+x)+(len/10*12), (1.6*len)+y-(len/10*22), (((wag*1.5)*1.03)+x)-(len/10*34), (2.2*len)+y-(len/10*42), (((wag*2)*1.05)+x)-(len/10*16), (2.8*len)+y-(len/10*62));
+    bezier(((wag*1.01)+x)+wid-5, len+y-(len/10*2), ((wag*1.02)+x)-(len/10*12), (1.6*len)+y-(len/10*22), (((wag*1.5)*1.03)+x)+(len/10*34), (2.2*len)+y-(len/10*42), (((wag*2)*1.05)+x)+(len/10*16), (2.8*len)+y-(len/10*62));
     
     noStroke();
     
