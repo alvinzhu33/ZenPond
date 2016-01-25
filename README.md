@@ -48,6 +48,8 @@ Alvin
 * Made a button to mute/unmute the sound
 * Made fish spawn at different locations every time
 * Made fish have a slower growth rate
+* Made the music loop after it ends (still need to snip the music file better so the loop plays through more nicely)
+* Successfully made a randomized spawn for each fish (random number of fishes, random species, random places)
 
 Jiaqi
 
