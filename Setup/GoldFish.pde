@@ -125,5 +125,11 @@ public class GoldFish extends FishObject{
       fishx=-10;
     }
   }
-
+  
+  void grow(){
+    if(len<=7 && millis()%10000>9000 && millis()%10000<10000){
+        len=len*1.005;
+        wid=wid*1.005;
+    }
+  }
 }
