@@ -19,16 +19,14 @@ public class FishObject{
      fishx=x;
      fishy=y;
      orientation=(int)(Math.random()*360);
-     bones1(x,y);
-     bones2(x,y);
-     bones3(x,y);
+ 
    }
   
-  void bones1(float x, float y){
+  void bones1(float x, float y, int r, int g, int b){
     noStroke();
     
     //Upper body
-    fill(204, 102, 0, 240);
+    fill(r, g, b, 240);
     quad((wag+x)+wid/2, 0+y, (wag+x)-wid/2, 0+y,
     (wag*1.01+x)-(wid), len+y, (wag*1.01+x)+(wid), len+y);
     quad((wag*1.01+x)+wid, len+y, (wag*1.01+x)-wid, len+y, 
@@ -40,14 +38,14 @@ public class FishObject{
     fill(245,255,235,240);
     ellipse(((wag*1.01)+x)+wid, len+y, 22*len/20, 22*len/20);
     ellipse(((wag*1.01)+x)-wid, len+y, 22*len/20, 22*len/20);
-    fill(0,200,100,250);
+    fill(r-60, g+50, b+50, 240);
     ellipse(((wag*1.01)+x)+wid, len+y-2, 12*len/20, 12*len/20);
     ellipse(((wag*1.01)+x)-wid, len+y-2, 12*len/20, 12*len/20);
+    fill(r, g, b, 240);
   }
   
   void bones2(float x, float y){
     //Lower body
-    fill(204, 102, 0, 240);
     quad((wag*1.2)+x+wid/1.1, 3*len+y,(wag*1.2)+x-wid/1.1, 3*len+y, 
     (wag*1.3)+x-wid/1.2, 4*len+y, (wag*1.3)+x+wid/1.2, 4*len+y);
    
@@ -61,24 +59,8 @@ public class FishObject{
   void bones3(float x, float y){
     //Tail
     beginShape();
-
-      fill(223,112,432);
       vertex((wag*1.5)+x, 6*len+y);
-      /*bezierVertex(((wag*1.5)+x-12+wid/1.6)-(2*scale*3), (6*len+y)+(5*scale*3), 
-                    ((wag*1.5)+x-12+wid/1.6)+(3*scale*3)-tailchange, (6*len+y)+(6*scale*3), 
-                    ((wag*1.8)+x-12+wid/1.6)+(7*scale*3), (6*len+y)+(11*scale*3));
-                    
-      bezierVertex(((wag*2)+x-12+wid/1.6)+(10*scale*3), (6*len+y)+(15*scale*3), 
-                    ((wag*2)+x-12+wid/1.6)+(14*scale*3)+tailchange, (6*len+y)+(21*scale*3), 
-                    ((wag*2)+x-12+wid/1.6)+(7*scale*3), (6*len+y)+(29*scale*3));
-                    
-      bezierVertex(((wag*2)+x-12+wid/1.6)+(9*scale*3), (6*len+y)+(26*scale*3), 
-                    ((wag*2)+x-12+wid/1.6)+(7*scale*3)+tailchange, (6*len+y)+(22*scale*3), 
-                    ((wag*2)+x-12+wid/1.6)+(3*scale*3), (6*len+y)+(19*scale*3));
-                    
-      bezierVertex(((wag*1.8)+x-12+wid/1.6)-(1*scale*3), (6*len+y)+(15*scale*3), 
-                    ((wag*1.5)+x-12+wid/1.6)-(5*scale*3)-tailchange, (6*len+y)+(8*scale*3), 
-                    ((wag*1.5)+x-12+wid/1.6)-(2*scale*3), (6*len+y)+(3*scale*3));*/
+      
       bezierVertex(((wag*1.5)+x), (6*len+y), 
                     ((wag*1.8)+x+wid/1.6)+tailchange, (8*len+y), 
                     ((wag*1.5)+x+wid/1.6), (10*len+y));
@@ -97,7 +79,7 @@ public class FishObject{
     endShape();
   }
   
-  void move(){
+  void move(int r, int g, int b){
     //Random orientation
     if((float)Math.random()*10<1){
       orientation += ((float)Math.random()*11/100.0)-5/100.0;
@@ -127,7 +109,7 @@ public class FishObject{
     boundary();
     
     //Draw fish
-    bones1(0,0);
+    bones1(0,0, r, g, b);
     bones2(0,0);
     bones3(0,0);
     popMatrix();
@@ -171,4 +153,5 @@ public class FishObject{
         wid=wid*1.001;
     }
   }
+  
 }

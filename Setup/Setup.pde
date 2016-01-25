@@ -14,6 +14,8 @@ int initialTime;
 
 GoldFish s1;
 Koi s2;
+CatFish s3;
+
 Lilypad lp1;
 Lilypad lp2;
 Lilypad lp3;
@@ -29,7 +31,7 @@ void setup(){
   minim = new Minim(this);
   tracks = minim.loadFile("Track1.mp3");
   tracks.setGain(-25.0);
-  
+  tracks.loop();
   
   frameRate(35);
   
@@ -47,6 +49,7 @@ void setup(){
   
   s1 = new GoldFish((int)(Math.random()*900), (int)(Math.random()*675), (int)(Math.random()*20)+40);
   s2 = new Koi((int)(Math.random()*900), (int)(Math.random()*675), (int)(Math.random()*20)+40);
+  s3 = new CatFish((int)(Math.random()*900), (int)(Math.random()*675), (int)(Math.random()*20)+40);
   
   welcome();
 }
@@ -57,6 +60,7 @@ void draw(){
   
     s1.move();
     s2.move();
+    s3.move();
   
     lp1.drawLilypad(65);
     lp2.drawLilypad(175);

@@ -24,7 +24,7 @@ public class Lilypad{
   
   void drift(){
   if (left==true){
-   xpos-= 0.07; 
+   xpos-= 0.05; 
    leftcount++;
    if(leftcount >= 50){
      left = false;
@@ -32,7 +32,7 @@ public class Lilypad{
    }
   }
   if(left==false){
-    xpos+= 0.07;
+    xpos+= 0.05;
     leftcount++; 
     if(leftcount >= 50){
      left = true;
