@@ -240,4 +240,19 @@ void mousePressed(){
 void makeFood(float xpos, float ypos){
   fill(122,112,39);
   ellipse(xpos,ypos,5,5);
+  System.out.println(fishes[1].fishx);
+}
+void eatFood(float xpos, float ypos){
+  
+  for(int i=0; i<numFishes; i++){
+    float currentx = fishes[i].fishx;
+    float currenty = fishes[i].fishy;
+    for(int j=0; j<foodCounter; j++){
+      if (currentx==food[j][0] && currenty==food[j][1]){
+        
+        
+      }
+    }
+  }
+ 
 }
