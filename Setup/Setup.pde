@@ -3,7 +3,8 @@ import java.util.*;
 
 PImage bg;
 Minim minim;
-AudioPlayer tracks;
+AudioPlayer[] tracks = new AudioPlayer[4];
+AudioPlayer main;
 
 PFont standard;
 PFont logo;
@@ -23,8 +24,11 @@ void setup(){
   background(bg);
   
   minim = new Minim(this);
-  tracks = minim.loadFile("Track1.mp3");
-  tracks.setGain(-20.0);
+  for(int i=0; i<4; i++){
+    tracks[i]=minim.loadFile("Track"+(i+1)+".mp3");
+    tracks[i].setGain(-40.0);
+  }
+  main = tracks[0];
   
   frameRate(65);
   
@@ -40,13 +44,13 @@ void setup(){
   for(int i=0; i<numFishes; i++){
     int fishType = (int)(Math.random()*3);
     if(fishType == 0){
-      fishes[i] = new GoldFish((int)(Math.random()*900), (int)(Math.random()*675), (int)(Math.random()*20)+40);
+      fishes[i] = new GoldFish((int)(Math.random()*900), (int)(Math.random()*675), (int)(Math.random()*20)+20);
     }
     if(fishType == 1){
-      fishes[i] = new Koi((int)(Math.random()*900), (int)(Math.random()*675), (int)(Math.random()*20)+40);
+      fishes[i] = new Koi((int)(Math.random()*900), (int)(Math.random()*675), (int)(Math.random()*20)+20);
     }
     if(fishType == 2){
-      fishes[i] = new CatFish((int)(Math.random()*900), (int)(Math.random()*675), (int)(Math.random()*20)+40);
+      fishes[i] = new CatFish((int)(Math.random()*900), (int)(Math.random()*675), (int)(Math.random()*20)+20);
     }
   }
   
@@ -69,8 +73,9 @@ void draw(){
     textFont(standard, 40);
     text((millis()/1000) - initialTime + " sec", width/2, 60);
     
-    resetButton();
     musicButton();
+    trackButton();
+    resetButton();
   }
 }
 
@@ -147,19 +152,50 @@ void musicButton(){
 
 void musicControl(){
   if(! play){
-    tracks.loop();
+    main.loop();
     music = true;
   }
   else{
     if(music){
-      tracks.mute();
+      main.mute();
       music = false;
     }
     else{
-      tracks.unmute();
+      main.unmute();
       music = true;
     }
   }
+}
+
+void trackButton(){
+  fill(86,199,162);
+  rect(70,10,50,50,10,10,10,10);
+  textFont(standard, 14);
+  fill(0);
+  text("Track",95,30);
+  textFont(standard, 25);
+  for(int i=0; i<4; i++){
+    if(main==tracks[i]){
+      text(i+1,95,55); 
+    }
+  }
+}
+
+void trackControl(){
+  for(int i=0; i<4; i++){
+    if(main==tracks[i]){
+      main.pause();
+      main.rewind();
+      if(i==3){
+        main=tracks[0];
+      }
+      else{
+        main=tracks[i+1];
+      }
+      i=50;
+    }
+  }
+  main.loop();
 }
 
 void mousePressed(){
@@ -181,6 +217,10 @@ void mousePressed(){
     if(mouseX >=10 && mouseX <= 60 &&
       mouseY >=10 && mouseY <= 60){
         musicControl();
+      }
+    if(mouseX >= 70 && mouseX <= 120 &&
+      mouseY >=10 && mouseY <=60){
+        trackControl();
       }
   }
 }

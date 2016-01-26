@@ -120,8 +120,8 @@ public class CatFish extends FishObject{
 
   void grow(){
     if(len<=20 && millis()%10000>9000 && millis()%10000<10000){
-        len=len*1.005;
-        wid=wid*1.005;
+        len=len*1.003;
+        wid=wid*1.003;
     }
   }
 }
