@@ -272,6 +272,6 @@ void eatFood(int i){
 
 void moreFood(){
   if(millis()%5000>4500 && millis()%5000<4550){
-    maxFood+= 10;
+    maxFood+= 3;
   }
 }
