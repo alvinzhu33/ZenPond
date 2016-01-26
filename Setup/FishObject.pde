@@ -153,4 +153,8 @@ public class FishObject{
         wid=wid*1.005;
     }
   }
+  
+  float maxSize(){
+    return 12;
+  }
 }

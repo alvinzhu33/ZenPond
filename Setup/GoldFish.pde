@@ -132,4 +132,8 @@ public class GoldFish extends FishObject{
         wid=wid*1.003;
     }
   }
+  
+  float maxSize(){
+    return 12;
+  }
 }

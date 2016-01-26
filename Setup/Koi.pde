@@ -89,4 +89,8 @@ public class Koi extends FishObject{
         wid=wid*1.003;
     }
   }
+  
+  float maxSize(){
+    return 18;
+  }
 }

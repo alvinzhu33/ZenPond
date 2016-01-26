@@ -80,7 +80,9 @@ void draw(){
   
     fill(0);
     textFont(standard, 40);
-    text((millis()/1000) - initialTime + " sec", width/2, 60);
+    text((millis()/1000) - initialTime + " sec", width/2-150, 60);
+    textFont(standard, 30);
+    text(9-foodCounter + " Fish Pellets", width/2+100, 60);
     
     musicButton();
     trackButton();
@@ -221,20 +223,23 @@ void mousePressed(){
         music = true;
         musicControl();
         play=false;
+        food.clear();
+        foodCounter=0;
         setup();
-      }
+      }else{
     if(mouseX >=10 && mouseX <= 60 &&
       mouseY >=10 && mouseY <= 60){
         musicControl();
       }else{
-    if(mouseX >= 70 && mouseX <= 120 &&
-      mouseY >=10 && mouseY <=60){
-        trackControl();
-      }else{
-        if (foodCounter<9){
-          food.add(mouseX);
-          food.add(mouseY);
-          foodCounter++;
+        if(mouseX >= 70 && mouseX <= 120 &&
+          mouseY >=10 && mouseY <=60){
+            trackControl();
+        }else{
+          if (foodCounter<9){
+            food.add(mouseX);
+            food.add(mouseY);
+            foodCounter++;
+          }
         }
       }
       }
@@ -250,12 +255,14 @@ void eatFood(int i){
   float currentx = fishes[i].fishx;
   float currenty = fishes[i].fishy;
   for(int j=0; j<foodCounter; j++){
-    if (currentx<(int)(food.get(j*2))+5 && currentx>(int)(food.get(j*2))-5 &&
+    if(currentx<(int)(food.get(j*2))+5 && currentx>(int)(food.get(j*2))-5 &&
         currenty<(int)(food.get(j*2+1))+5 && currenty>(int)(food.get(j*2+1))-5){
       food.remove(j*2);
       food.remove(j*2);
       foodCounter--;
-      fishes[i].len=fishes[i].len*1.01;
+      if(fishes[i].len<fishes[i].maxSize()){
+        fishes[i].len=fishes[i].len*1.01;
+      }
     }
   }
 }
