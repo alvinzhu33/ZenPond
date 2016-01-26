@@ -226,16 +226,18 @@ void mousePressed(){
     if(mouseX >=10 && mouseX <= 60 &&
       mouseY >=10 && mouseY <= 60){
         musicControl();
-      }
+      }else{
     if(mouseX >= 70 && mouseX <= 120 &&
       mouseY >=10 && mouseY <=60){
         trackControl();
+      }else{
+        if (foodCounter<9){
+          food.add(mouseX);
+          food.add(mouseY);
+          foodCounter++;
+        }
       }
-     if (foodCounter<9){
-      food.add(mouseX);
-      food.add(mouseY);
-      foodCounter++;
-    }
+      }
   }
 }
 
