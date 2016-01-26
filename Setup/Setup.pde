@@ -15,7 +15,8 @@ boolean music = false;
 int initialTime;
 
 ArrayList food = new ArrayList(10); 
-int foodCounter = 0; 
+int foodCounter = 0;
+int maxFood = 10;
 
 FishObject[] fishes;
 int numFishes;
@@ -77,12 +78,14 @@ void draw(){
     for(int i=0; i<3; i++){
       blossoms[i].drawBlossom();
     }
+    
+    moreFood();
   
     fill(0);
     textFont(standard, 40);
     text((millis()/1000) - initialTime + " sec", width/2-150, 60);
     textFont(standard, 30);
-    text(9-foodCounter + " Fish Pellets", width/2+100, 60);
+    text(maxFood-foodCounter + " Fish Pellets", width/2+100, 60);
     
     musicButton();
     trackButton();
@@ -235,7 +238,7 @@ void mousePressed(){
           mouseY >=10 && mouseY <=60){
             trackControl();
         }else{
-          if (foodCounter<9){
+          if (foodCounter<maxFood){
             food.add(mouseX);
             food.add(mouseY);
             foodCounter++;
@@ -264,5 +267,11 @@ void eatFood(int i){
         fishes[i].len=fishes[i].len*1.01;
       }
     }
+  }
+}
+
+void moreFood(){
+  if(millis()%5000>4500 && millis()%5000<4550){
+    maxFood++;
   }
 }
