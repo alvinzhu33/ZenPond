@@ -23,7 +23,7 @@ void setup(){
   
   minim = new Minim(this);
   tracks = minim.loadFile("Track1.mp3");
-  tracks.setGain(-40.0);
+  tracks.setGain(-20.0);
   
   frameRate(65);
   
@@ -34,7 +34,7 @@ void setup(){
   blossoms[1] = new Blossom("ver",800,120,50);
   blossoms[2] = new Blossom("hor", 70, 80, 30);
   
-  numFishes=(int)(Math.random()*10)+5;
+  numFishes=(int)(Math.random()*5)+3;
   fishes = new FishObject[numFishes];
   for(int i=0; i<numFishes; i++){
     int fishType = (int)(Math.random()*3);
@@ -181,5 +181,14 @@ void mousePressed(){
       mouseY >=10 && mouseY <= 60){
         musicControl();
       }
+  }
+}
+void makeFood(){
+  if (mousePressed){
+      fill(122,112,39);
+      triangle(mouseX, mouseY, mouseX+2, mouseY+5, mouseX+3, mouseY-4);
+      triangle(mouseX+10, mouseY-10, mouseX+12.5, mouseY-12, mouseX+11, mouseY-8);
+      triangle(mouseX+24, mouseY-10, mouseX+25, mouseY-8, mouseX+26.5, mouseY-12);
+      triangle(mouseX+12, mouseY, mouseX+14.5, mouseY-2, mouseX+13, mouseY+2);
   }
 }

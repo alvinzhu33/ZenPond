@@ -3,6 +3,7 @@ import java.util.*;
 public class Blossom{
   float xpos;
   float ypos;
+
   float size;
   float angle;
   
@@ -17,6 +18,10 @@ public class Blossom{
   float xvalue;
   float yvalue;
   float petal;
+  
+  float rand = (float)(Math.random()*50)-25; 
+  float fxvalue;
+  float fyvalue;
   
   boolean up = true; 
   int upcount = 0;
@@ -48,6 +53,9 @@ public class Blossom{
     petal = p;
     xvalue = xpos;
     yvalue = ypos;
+    fxvalue = xvalue+rand;
+    fyvalue = yvalue+rand;
+    
     lr = (232+(int)(Math.random()*50));
     lg = (144+(int)(Math.random()*50));
     lb = (203+(int)(Math.random()*50));
@@ -90,7 +98,7 @@ public class Blossom{
   
 void driftFlower(){
   if (up==true){
-   yvalue-= 0.14; 
+   fyvalue-= 0.14; 
    upcount++;
    if(upcount >= 50){
      up = false;
@@ -98,7 +106,7 @@ void driftFlower(){
    }
   }
   if(up==false){
-    yvalue+= 0.14;
+    fyvalue+= 0.14;
     upcount++; 
     if(upcount >= 50){
      up = true;
@@ -116,7 +124,7 @@ void driftFlower(){
     fill(232,144,203);
     while(degrees<360){
       pushMatrix();
-      translate(xvalue,yvalue);
+      translate(fxvalue, fyvalue);
       rotate(radians(start + degrees));
       noStroke();
       beginShape();
@@ -134,7 +142,7 @@ void driftFlower(){
     fill(sr,sg,sb,180);
     while(degrees<390){
       pushMatrix();
-      translate(xvalue,yvalue);
+      translate(fxvalue,fyvalue);
       rotate(radians(start + degrees));
       noStroke();
       beginShape();
