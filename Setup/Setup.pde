@@ -228,6 +228,7 @@ void mousePressed(){
         play=false;
         food.clear();
         foodCounter=0;
+        maxFood=10;
         setup();
       }else{
     if(mouseX >=10 && mouseX <= 60 &&
