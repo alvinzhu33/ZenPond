@@ -1,5 +1,6 @@
 import ddf.minim.*;
 import java.util.*;
+import java.util.Arrays;
 
 PImage bg;
 Minim minim;
@@ -10,9 +11,11 @@ PFont standard;
 PFont logo;
 boolean play = false;
 boolean music = false;
-ArrayList<Integer> food = new ArrayList<Integer>(); 
 
 int initialTime;
+
+float[][] food = new float[10][2]; 
+int foodCounter = 0; 
 
 FishObject[] fishes;
 int numFishes;
@@ -24,13 +27,14 @@ void setup(){
   background(bg);
   
   minim = new Minim(this);
+  
   for(int i=0; i<4; i++){
     tracks[i]=minim.loadFile("Track"+(i+1)+".mp3");
-    tracks[i].setGain(-40.0);
+    tracks[i].setGain(-30.0);
   }
   main = tracks[0];
   
-  frameRate(65);
+  frameRate(30);
   
   standard = createFont("Century Gothic",32,false);
   logo = createFont("Papyrus",100,false);
@@ -60,6 +64,10 @@ void setup(){
 void draw(){
   if(play){
     background(bg);
+    
+    for(int i=0; i<foodCounter; i++){
+      makeFood(food[i][0], food[i][1]);
+    }
   
     for(int i=0; i<numFishes; i++){
       fishes[i].move();
@@ -222,18 +230,14 @@ void mousePressed(){
       mouseY >=10 && mouseY <=60){
         trackControl();
       }
+     if (foodCounter <= 9){
+      food[foodCounter][0]=mouseX;
+      food[foodCounter][1]=mouseY;
+      foodCounter++;
+    }
   }
 }
-void makeFood(){
-  if (mousePressed){
-      food.add(mouseX);
-      food.add(mouseY); 
-      //i need help here 
-      //System.out.println(Arrays.toString(food));
-      fill(122,112,39);
-      triangle(mouseX, mouseY, mouseX+2, mouseY+5, mouseX+3, mouseY-4);
-      triangle(mouseX+10, mouseY-10, mouseX+12.5, mouseY-12, mouseX+11, mouseY-8);
-      triangle(mouseX+24, mouseY-10, mouseX+25, mouseY-8, mouseX+26.5, mouseY-12);
-      triangle(mouseX+12, mouseY, mouseX+14.5, mouseY-2, mouseX+13, mouseY+2);
-  }
+void makeFood(float xpos, float ypos){
+  fill(122,112,39);
+  ellipse(xpos,ypos,5,5);
 }
