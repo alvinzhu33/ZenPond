@@ -266,6 +266,7 @@ void eatFood(int i){
       foodCounter--;
       if(fishes[i].len<fishes[i].maxSize()){
         fishes[i].len=fishes[i].len*1.01;
+        fishes[i].wid=fishes[i].wid*1.01;
       }
     }
   }
