@@ -14,7 +14,7 @@ boolean music = false;
 
 int initialTime;
 
-float[][] food = new float[10][2]; 
+ArrayList food = new ArrayList(10); 
 int foodCounter = 0; 
 
 FishObject[] fishes;
@@ -66,11 +66,12 @@ void draw(){
     background(bg);
     
     for(int i=0; i<foodCounter; i++){
-      makeFood(food[i][0], food[i][1]);
+      makeFood((int)food.get(i*2), (int)food.get(i*2+1));
     }
   
     for(int i=0; i<numFishes; i++){
       fishes[i].move();
+      eatFood(i);
     }
     
     for(int i=0; i<3; i++){
@@ -230,29 +231,29 @@ void mousePressed(){
       mouseY >=10 && mouseY <=60){
         trackControl();
       }
-     if (foodCounter <= 9){
-      food[foodCounter][0]=mouseX;
-      food[foodCounter][1]=mouseY;
+     if (foodCounter<9){
+      food.add(mouseX);
+      food.add(mouseY);
       foodCounter++;
     }
   }
 }
+
 void makeFood(float xpos, float ypos){
   fill(122,112,39);
   ellipse(xpos,ypos,5,5);
-  System.out.println(fishes[1].fishx);
 }
-void eatFood(float xpos, float ypos){
-  
-  for(int i=0; i<numFishes; i++){
-    float currentx = fishes[i].fishx;
-    float currenty = fishes[i].fishy;
-    for(int j=0; j<foodCounter; j++){
-      if (currentx==food[j][0] && currenty==food[j][1]){
-        
-        
-      }
+
+void eatFood(int i){
+  float currentx = fishes[i].fishx;
+  float currenty = fishes[i].fishy;
+  for(int j=0; j<foodCounter; j++){
+    if (currentx<(int)(food.get(j*2))+5 && currentx>(int)(food.get(j*2))-5 &&
+        currenty<(int)(food.get(j*2+1))+5 && currenty>(int)(food.get(j*2+1))-5){
+      food.remove(j*2);
+      food.remove(j*2);
+      foodCounter--;
+      fishes[i].len=fishes[i].len*1.01;
     }
   }
- 
 }
