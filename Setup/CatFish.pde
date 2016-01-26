@@ -54,8 +54,8 @@ public class CatFish extends FishObject{
       if((float)Math.random()*10<1){
         orientation += ((float)Math.random()*11/100.0)-5/100.0;
       }
-      fishx+=(sin(orientation))/2;
-      fishy-=(cos(orientation))/2;
+      fishx+=(sin(orientation))/1.5;
+      fishy-=(cos(orientation))/1.5;
       
       pushMatrix();
       translate(fishx,fishy);

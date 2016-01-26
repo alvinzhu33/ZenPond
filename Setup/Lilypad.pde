@@ -4,6 +4,7 @@ public class Lilypad{
   float xpos;
   float ypos;
   float size;
+  float angle;
   
   boolean left = false; 
   int leftcount = 0;
@@ -13,10 +14,11 @@ public class Lilypad{
   int g;
   int b;
   
-  public Lilypad(int x, int y, int s){
+  public Lilypad(int x, int y, int s, float ang){
     xpos = x;
     ypos = y;
     size = s;
+    angle = ang;
     r = (25+(int)(Math.random()*60));
     g = (87+(int)(Math.random()*60));
     b = (35+(int)(Math.random()*60));
@@ -41,7 +43,7 @@ public class Lilypad{
   }
  }
   
-  public void drawLilypad(int angle){
+  public void drawLilypad(){
     drift();
     noStroke();
     pushMatrix();

@@ -1,10 +1,10 @@
 public class Flower{
   float xvalue;
   float yvalue;
-  int size;
+  float size;
   
- boolean up = true; 
- int upcount = 0;
+  boolean up = true; 
+  int upcount = 0;
   
   //Large flower colors
   int lr;
@@ -15,7 +15,7 @@ public class Flower{
   int sg;
   int sb;
   
-  public Flower(int x, int y, int s){
+  public Flower(int x, int y, float s){
     xvalue = x;
     yvalue = y;
     size = s;
@@ -68,7 +68,7 @@ void drift(){
     
     //Smaller flower
     degrees=30;
-    size=size*3/4;
+    float tempsize=size*3/4;
     fill(sr,sg,sb,180);
     while(degrees<390){
       pushMatrix();
@@ -77,8 +77,8 @@ void drift(){
       noStroke();
       beginShape();
         vertex(0,0);
-        bezier(0,0,size/2,size/2,size/5,size,0,size);
-        bezier(0,0,-size/2,size/2,-size/5,size,0,size);
+        bezier(0,0,tempsize/2,tempsize/2,tempsize/5,tempsize,0,tempsize);
+        bezier(0,0,-tempsize/2,tempsize/2,-tempsize/5,tempsize,0,tempsize);
       endShape();
       popMatrix();
       degrees+=60;

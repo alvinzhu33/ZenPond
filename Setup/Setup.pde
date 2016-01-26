@@ -14,18 +14,8 @@ int initialTime;
 
 FishObject[] fishes;
 int numFishes;
-
-/*GoldFish s1;
-Koi s2;
-CatFish s3;*/
-
-Lilypad lp1;
-Lilypad lp2;
-Lilypad lp3;
-Flower fl1;
-Flower fl2;
-Flower fl3;
-
+Lilypad[] lillies = new Lilypad[3];
+Flower[] flowers = new Flower[3];
 
 void setup(){
   size(900,675);
@@ -41,21 +31,15 @@ void setup(){
   standard = createFont("Century Gothic",32,false);
   logo = createFont("Papyrus",100,false);
   
-  lp1 = new Lilypad(110,570,150);
-  lp2 = new Lilypad(800,170,120);
-  lp3 = new Lilypad(680,70,90);
+  lillies[0] = new Lilypad(110,570,150,65);
+  lillies[1] = new Lilypad(800,170,120,175);
+  lillies[2] = new Lilypad(680,70,90,182);
   
+  flowers[0] = new Flower(170,570,60); 
+  flowers[1] = new Flower(800,200,50);
+  flowers[2] = new Flower(700,80,30); 
   
-  fl1 = new Flower(170,570,6); 
-  fl2 = new Flower(800,200,5);
-  fl3 = new Flower(700,80,3); 
-  
-  //s1 = new GoldFish((int)(Math.random()*900), (int)(Math.random()*675), (int)(Math.random()*20)+40);
-  //s2 = new Koi((int)(Math.random()*900), (int)(Math.random()*675), (int)(Math.random()*20)+40);
-  //s3 = new CatFish((int)(Math.random()*900), (int)(Math.random()*675), (int)(Math.random()*20)+40);
-  
-  numFishes=(int)(Math.random()*6)+3;
-  
+  numFishes=(int)(Math.random()*10)+5;
   fishes = new FishObject[numFishes];
   for(int i=0; i<numFishes; i++){
     int fishType = (int)(Math.random()*3);
@@ -80,18 +64,11 @@ void draw(){
     for(int i=0; i<numFishes; i++){
       fishes[i].move();
     }
-  
-    lp1.drawLilypad(65);
-    lp2.drawLilypad(175);
-    lp3.drawLilypad(182);
-  
-    fl1.drawFlower();
-    fl2.drawFlower();
-    fl3.drawFlower();
-  
-    fl1.size = 60;
-    fl2.size = 50;
-    fl3.size = 30;
+    
+    for(int i=0; i<3; i++){
+      lillies[i].drawLilypad();
+      flowers[i].drawFlower();
+    }
   
     fill(0);
     textFont(standard, 40);
@@ -103,13 +80,10 @@ void draw(){
 }
 
 void welcome(){
-  lp1.drawLilypad(65);
-  lp2.drawLilypad(175);
-  lp3.drawLilypad(182);
-  
-  fl1.drawFlower();
-  fl2.drawFlower();
-  fl3.drawFlower();
+  for(int i=0; i<3; i++){
+      lillies[i].drawLilypad();
+      flowers[i].drawFlower();
+  }
   
   noStroke();
   fill(235,235,235,230);
