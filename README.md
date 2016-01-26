@@ -92,6 +92,8 @@ Jiaqi
 * Fixed positioning of flowers and lilypads
 * Created fish food with mouse positioning 
 * Started eatFood function
+* Added moreFood function
+* Added fins to Koi
 
 *Random Notes*
 
