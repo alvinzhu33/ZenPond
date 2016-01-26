@@ -9,6 +9,7 @@ PFont standard;
 PFont logo;
 boolean play = false;
 boolean music = false;
+ArrayList<Integer> food = new ArrayList<Integer>(); 
 
 int initialTime;
 
@@ -185,6 +186,10 @@ void mousePressed(){
 }
 void makeFood(){
   if (mousePressed){
+      food.add(mouseX);
+      food.add(mouseY); 
+      //i need help here 
+      //System.out.println(Arrays.toString(food));
       fill(122,112,39);
       triangle(mouseX, mouseY, mouseX+2, mouseY+5, mouseX+3, mouseY-4);
       triangle(mouseX+10, mouseY-10, mouseX+12.5, mouseY-12, mouseX+11, mouseY-8);
