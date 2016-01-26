@@ -7,7 +7,7 @@ A beautiful and elegant virtual pond where fish come to swim in a zen, peaceful 
 
 **Directions to Run**
 Please download the Minim library by: Sketch - Import Library... - Add Library... - and searching for "Minim" under "Libraries".
-Then just clone and press play!
+Then just clone (which might take a long time due to having to download 4 mp3 files and 1 picture), open in processing, and press play!
 
 **Directions**
 Sit back and relax by watching the fish swim around. You will be greated with a welcome screen. Once you click play, the game would start. There are no complicated buttons in this game, just a music button and a reset button. The music button will be green if music is playing while red if it is not. The reset button takes you right back to the welcome menu and resets the game from there. (Make sure to turn the volume down as the music is quite loud).
@@ -50,6 +50,15 @@ Alvin
 * Made fish have a slower growth rate
 * Made the music loop after it ends (still need to snip the music file better so the loop plays through more nicely)
 * Successfully made a randomized spawn for each fish (random number of fishes, random species, random places)
+
+1/25
+* Each fish now has a different max length
+* Increased number of fishes at spawn
+* Made a new file that consolidated (and thus replaces) the Lilypad and Flower file (Lilypad + Flower = Blossom).
+* Blossom randomly spawn around the edge of the screen
+* Random lilypad orientation
+* Faster catfish speed
+* Added 3 new tracks and a new button to switch between them; from Tracks 1 to 4, they are the surf themes of Pokemon Red/Blue, Pokemon Ruby/Sapphire, Pokemon Diamond/Pearl, and Pokemon X/Y
 
 Jiaqi
 
