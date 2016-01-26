@@ -14,8 +14,7 @@ int initialTime;
 
 FishObject[] fishes;
 int numFishes;
-Lilypad[] lillies = new Lilypad[3];
-Flower[] flowers = new Flower[3];
+Blossom[] blossoms = new Blossom[3];
 
 void setup(){
   size(900,675);
@@ -31,13 +30,9 @@ void setup(){
   standard = createFont("Century Gothic",32,false);
   logo = createFont("Papyrus",100,false);
   
-  lillies[0] = new Lilypad(110,570,150,65);
-  lillies[1] = new Lilypad(800,170,120,175);
-  lillies[2] = new Lilypad(680,70,90,182);
-  
-  flowers[0] = new Flower(170,570,60); 
-  flowers[1] = new Flower(800,200,50);
-  flowers[2] = new Flower(700,80,30); 
+  blossoms[0] = new Blossom("ver",110,150,60);
+  blossoms[1] = new Blossom("ver",800,120,50);
+  blossoms[2] = new Blossom("hor", 70, 80, 30);
   
   numFishes=(int)(Math.random()*10)+5;
   fishes = new FishObject[numFishes];
@@ -66,8 +61,7 @@ void draw(){
     }
     
     for(int i=0; i<3; i++){
-      lillies[i].drawLilypad();
-      flowers[i].drawFlower();
+      blossoms[i].drawBlossom();
     }
   
     fill(0);
@@ -81,8 +75,7 @@ void draw(){
 
 void welcome(){
   for(int i=0; i<3; i++){
-      lillies[i].drawLilypad();
-      flowers[i].drawFlower();
+      blossoms[i].drawBlossom();
   }
   
   noStroke();
