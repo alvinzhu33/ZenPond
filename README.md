@@ -85,6 +85,12 @@ Jiaqi
 * Created varied speeds for each fish
 * Made volume lower 
 
+1/25:
+* Finished Catfish design
+* Fixed positioning of flowers and lilypads
+* Created fish food with mouse positioning 
+* Started eatFood function
+
 *Random Notes*
 
 Goldfish: ~10 in (half the size of Koifish)
