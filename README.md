@@ -10,7 +10,9 @@ Please download the Minim library by: Sketch - Import Library... - Add Library..
 Then just clone (which might take a long time due to having to download 4 mp3 files and 1 picture), open in processing, and press play!
 
 **Directions**
-Sit back and relax by watching the fish swim around. You will be greated with a welcome screen. Once you click play, the game would start. There are no complicated buttons in this game, just a music button and a reset button. The music button will be green if music is playing while red if it is not. The reset button takes you right back to the welcome menu and resets the game from there. (Make sure to turn the volume down as the music is quite loud).
+Sit back and relax by watching the fish swim around. You will be greated with a welcome screen. Once you click play, the game would start. There are no complicated buttons in this game, just three buttons. The music button will be green if music is playing while red if it is not. The track button would allow you to change the background music. The reset button takes you right back to the welcome menu and resets the game from there.
+
+You will also have fish pellets available to aid your growing fish. The fish can grow by itself until a certain amount but to reach its true potential, feed it!
 
 **Changelog**
 
