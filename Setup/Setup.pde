@@ -2,6 +2,7 @@ import ddf.minim.*;
 import java.util.*;
 import java.util.Arrays;
 
+
 PImage bg;
 Minim minim;
 AudioPlayer[] tracks = new AudioPlayer[4];
